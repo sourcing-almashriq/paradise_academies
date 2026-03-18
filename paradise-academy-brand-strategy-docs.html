@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise Academy — Documentos de Marca</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --eng:#1B5FA8;--eng-d:#0D3B6E;--eng-l:#E8F0FB;
+  --art:#0F7A55;--art-d:#074D35;--art-l:#E2F5EE;
+  --uni:#A0420A;--uni-d:#6B2B06;--uni-l:#FBF0E4;
+  --gold:#C8993A;--ink:#0F0E0C;--paper:#F9F7F2;
+  --mid:#EDEAE3;--muted:#9C9890;--border:#E0DDD6;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+
+/* COVER */
+.cover{background:var(--ink);min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem,5vw,4rem);position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;top:-35%;right:-15%;width:650px;height:650px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none}
+.cover-eye{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem}
+.cover-title{font-family:'Fraunces',serif;font-size:clamp(44px,8vw,88px);font-weight:300;color:#fff;line-height:.92;margin-bottom:1.75rem}
+.cover-title em{font-style:italic;color:rgba(255,255,255,.35)}
+.cover-desc{font-size:14px;color:rgba(255,255,255,.4);max-width:500px;line-height:1.7;margin-bottom:2.5rem}
+.cover-pills{display:flex;gap:8px;flex-wrap:wrap}
+.cpill{padding:.45rem 1rem;border-radius:100px;font-size:11px;font-weight:500}
+.cover-note{font-size:11px;color:rgba(255,255,255,.25);margin-top:1.5rem;line-height:1.6;max-width:480px}
+
+/* NAV */
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;display:flex;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.ni{padding:.85rem 1.25rem;font-size:12px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:all .15s;min-height:44px;display:flex;align-items:center;gap:.4rem}
+.ni:hover{color:var(--ink)}
+.ni.e.on{color:var(--eng);border-color:var(--eng)}
+.ni.a.on{color:var(--art);border-color:var(--art)}
+.ni.u.on{color:var(--uni);border-color:var(--uni)}
+
+/* SECTIONS */
+.sec{display:none;max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 6rem}
+.sec.on{display:block}
+
+/* BRAND HERO */
+.bhero{border-radius:16px;padding:clamp(1.75rem,4vw,3rem);margin-bottom:2rem;position:relative;overflow:hidden;color:#fff}
+.bhero-deco{position:absolute;width:300px;height:300px;border-radius:50%;opacity:.1;top:-60px;right:-60px}
+.bhero-eye{font-size:10px;letter-spacing:.15em;text-transform:uppercase;opacity:.55;margin-bottom:.5rem}
+.bhero-name{font-family:'Fraunces',serif;font-size:clamp(36px,6vw,60px);font-weight:300;line-height:.95;margin-bottom:.5rem}
+.bhero-tag{font-size:clamp(14px,2.5vw,18px);font-weight:300;opacity:.65;margin-bottom:.75rem}
+.bhero-positioning{font-size:13px;opacity:.55;max-width:520px;line-height:1.7;padding-top:.75rem;border-top:1px solid rgba(255,255,255,.15)}
+
+/* SECTION LABEL */
+.slbl{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:1.75rem 0 .9rem;display:flex;align-items:center;gap:.6rem}
+.slbl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.35rem;margin-bottom:.85rem}
+.card-title{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+.card p{font-size:13px;color:#444;line-height:1.7}
+
+/* TWO COL */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:.85rem}
+@media(max-width:580px){.g2{grid-template-columns:1fr}}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:.85rem}
+@media(max-width:640px){.g3{grid-template-columns:1fr}}
+
+/* PAIN / SOLUTION */
+.ps-pair{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:10px}
+.ps-pain{padding:.85rem 1.1rem;border-bottom:1px solid var(--border)}
+.ps-sol{padding:.85rem 1.1rem}
+.ps-lbl{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.3rem}
+.ps-txt{font-size:13px;line-height:1.6}
+.ps-pain .ps-lbl{color:#991f1f}
+.ps-pain .ps-txt{color:#3d1a1a}
+.ps-sol .ps-lbl{color:#0a5c3f}
+.ps-sol .ps-txt{color:#1a3d2e}
+.ps-pain{background:#fff8f8}
+.ps-sol{background:#f4fbf7}
+
+/* DIFFERENTIATORS */
+.diff-item{background:#fff;border:1px solid var(--border);border-radius:10px;padding:.9rem 1.1rem;margin-bottom:8px;display:flex;gap:.85rem;align-items:flex-start}
+.diff-num{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--border);flex-shrink:0;width:24px;line-height:1.2}
+.diff-body{flex:1}
+.diff-title{font-size:13px;font-weight:600;color:var(--ink);margin-bottom:.2rem}
+.diff-desc{font-size:12px;color:#555;line-height:1.55}
+
+/* AUDIENCE */
+.audience-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1.1rem 1.25rem;margin-bottom:10px}
+.aud-header{display:flex;align-items:center;gap:.75rem;margin-bottom:.75rem}
+.aud-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.aud-name{font-size:13px;font-weight:600;color:var(--ink)}
+.aud-desc{font-size:11px;color:var(--muted)}
+.aud-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;font-size:12px}
+@media(max-width:520px){.aud-grid{grid-template-columns:1fr}}
+.aud-cell-lbl{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.aud-cell-val{color:#333;line-height:1.5}
+
+/* VOICE */
+.voice-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:.5rem}
+@media(max-width:480px){.voice-grid{grid-template-columns:1fr}}
+.vyes,.vno{padding:.65rem .9rem;border-radius:8px;font-size:12px;line-height:1.45}
+.vyes{background:var(--art-l);color:#0a5c3f}
+.vno{background:#fff3f3;color:#8B2020}
+.vyes::before{content:'✓  ';font-weight:700}
+.vno::before{content:'✗  ';font-weight:700}
+
+/* MESSAGING */
+.msg-item{background:#fff;border-left:3px solid;border-radius:0 10px 10px 0;padding:.9rem 1.1rem;margin-bottom:8px}
+.msg-label{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem;opacity:.6}
+.msg-text{font-size:13px;line-height:1.65;color:#333}
+.msg-sub{font-size:11px;color:var(--muted);margin-top:.3rem;font-style:italic}
+
+/* AI PROMPT SECTION */
+.prompt-box{background:var(--ink);border-radius:12px;padding:1.25rem 1.35rem;margin-bottom:10px}
+.prompt-label{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.6rem;display:flex;align-items:center;gap:.4rem}
+.prompt-label span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:2px 7px;font-size:9px}
+.prompt-text{font-size:12px;color:rgba(255,255,255,.75);line-height:1.7;font-family:monospace}
+.copy-btn{display:inline-flex;align-items:center;gap:.3rem;margin-top:.65rem;font-size:10px;padding:4px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.15);background:transparent;cursor:pointer;color:rgba(255,255,255,.4);transition:all .15s;font-family:'DM Sans',sans-serif}
+.copy-btn:hover{background:rgba(255,255,255,.07);color:rgba(255,255,255,.7)}
+
+/* PALETTE SWATCHES */
+.pal{display:flex;gap:6px;flex-wrap:wrap}
+.sw{border-radius:8px;height:48px;flex:1;min-width:48px;display:flex;align-items:flex-end;padding:5px 7px}
+.sw span{font-size:8px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+/* COMPETITIVE */
+.comp-row{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:7px}
+.comp-name{font-size:12px;font-weight:600;width:130px;flex-shrink:0;color:var(--ink)}
+.comp-desc{font-size:12px;color:#555;line-height:1.55;flex:1}
+.comp-gap{font-size:11px;color:var(--eng);font-weight:500;margin-top:.2rem}
+
+/* METRICS */
+.metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:.85rem}
+@media(max-width:500px){.metric-grid{grid-template-columns:repeat(2,1fr)}}
+.metric{background:var(--mid);border-radius:10px;padding:.85rem 1rem}
+.metric-n{font-family:'Fraunces',serif;font-size:24px;font-weight:300;line-height:1;margin-bottom:.2rem}
+.metric-l{font-size:11px;color:var(--muted)}
+
+/* FOOTER */
+.page-footer{background:var(--ink);color:rgba(255,255,255,.3);text-align:center;padding:2rem;font-size:11px;line-height:1.6;margin-top:3rem}
+.page-footer strong{color:rgba(255,255,255,.55)}
+
+/* PRINT */
+@media print{.nav{position:relative;overflow:visible}.cover{min-height:auto}}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <div class="cover-eye">Paradise Academy · Documentos estratégicos de marca · Lima 2025</div>
+    <h1 class="cover-title">Brand<br>Strategy<br><em>Documents</em></h1>
+    <p class="cover-desc">Investigación de mercado, posicionamiento, audiencias, puntos de dolor, soluciones y diferenciadores para los tres programas de Paradise Academy. Diseñados para alimentar herramientas de IA.</p>
+  </div>
+  <div>
+    <div class="cover-pills">
+      <span class="cpill" style="background:var(--eng);color:#fff">Paradise Atlas · Inglés</span>
+      <span class="cpill" style="background:var(--art);color:#fff">Paradise Studio · Arte</span>
+      <span class="cpill" style="background:var(--uni);color:#fff">Paradise Ascend · Preuniversitario</span>
+    </div>
+    <div class="cover-note">Este documento incluye: contexto de mercado, análisis competitivo, arquetipos de cliente, pains &amp; solutions, diferenciadores, mensajes clave, voz de marca, identidad visual y prompts listos para usar en ChatGPT, Midjourney, Claude, ElevenLabs y otras herramientas de IA.</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="ni e on" id="ni-e" onclick="show('e')">🗺 Paradise Atlas</div>
+  <div class="ni a" id="ni-a" onclick="show('a')">🎨 Paradise Studio</div>
+  <div class="ni u" id="ni-u" onclick="show('u')">🚀 Paradise Ascend</div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     PARADISE ATLAS — BRAND DOCUMENT
+════════════════════════════════════════ -->
+<div class="sec on" id="sec-e">
+
+  <div class="bhero" style="background:var(--eng-d)">
+    <div class="bhero-deco" style="background:#fff"></div>
+    <div class="bhero-eye">Documento de Marca · Paradise Atlas</div>
+    <div class="bhero-name">Paradise Atlas</div>
+    <div class="bhero-tag">Tu idioma, tu mapa al mundo.</div>
+    <div class="bhero-positioning">Programa de inglés conversacional para niños, jóvenes y adultos en Lima. Clases en grupos reducidos con enfoque en hablar desde el primer día. Modalidades presenciales flexibles: grupos regulares, intensivos (5x semana), solo sábados y programa de adultos en horario nocturno.</div>
+  </div>
+
+  <!-- MARKET CONTEXT -->
+  <div class="slbl">Contexto de mercado — Lima 2025</div>
+  <div class="metric-grid">
+    <div class="metric"><div class="metric-n" style="color:var(--eng)">100+</div><div class="metric-l">Academias de inglés registradas en Lima</div></div>
+    <div class="metric"><div class="metric-n" style="color:var(--eng)">30M</div><div class="metric-l">Peruanos — economía creciendo al 5–9% anual</div></div>
+    <div class="metric"><div class="metric-n" style="color:var(--eng)">↑50%</div><div class="metric-l">Diferencial salarial bilingüe vs. monolingüe en Lima</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Contexto y oportunidad</div>
+    <p>Lima es el mercado de inglés más grande del Perú por concentración de población y demanda empresarial. La economía peruana en crecimiento sostenido crea alta demanda de profesionales bilingües. El mercado está saturado de academias grandes (El Británico, Fast Language, Think-e, ICPNA) con grupos numerosos, métodos gramaticales tradicionales y precios elevados. La brecha de mercado real está en la academia de tamaño mediano con enfoque conversacional, grupos pequeños, horarios flexibles y precio accesible — exactamente el espacio donde Paradise Atlas puede operar con ventaja de agilidad.</p>
+  </div>
+
+  <!-- COMPETITIVE LANDSCAPE -->
+  <div class="slbl">Panorama competitivo</div>
+  <div class="comp-row">
+    <div><div class="comp-name">El Británico</div></div>
+    <div><div class="comp-desc">Mayor academia de inglés del Perú. Muy reconocida, precios altos (S/400–700/mes), grupos de hasta 20+ alumnos, metodología fija, burocracia institucional.</div><div class="comp-gap">Brecha Atlas: grupos pequeños, más personalizado, precio accesible.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">ICPNA</div></div>
+    <div><div class="comp-desc">Instituto Cultural Peruano Norteamericano. Reconocido y con certificación, pero clases masivas y ciclos rígidos. Precio medio-alto.</div><div class="comp-gap">Brecha Atlas: mayor flexibilidad de horarios, modalidad intensiva 5x.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Think-e Perú</div></div>
+    <div><div class="comp-desc">Enfoque en comunicación práctica. Miraflores. Precio similar a Atlas. Metodología comunicativa ya establecida.</div><div class="comp-gap">Brecha Atlas: más modalidades (sábados, intensivo), acceso geográfico desde el colegio.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Apps (Duolingo, Babbel)</div></div>
+    <div><div class="comp-desc">Competencia indirecta pero muy presente en el imaginario. Percepción de "aprendo inglés gratis". No generan hablantes fluidos.</div><div class="comp-gap">Brecha Atlas: hablar real vs. gamificación. Conversación humana vs. pantalla.</div></div>
+  </div>
+
+  <!-- AUDIENCES -->
+  <div class="slbl">Arquetipos de cliente</div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--eng-l);color:var(--eng)">👦</div>
+      <div><div class="aud-name">Papás / Mamás de Lima</div><div class="aud-desc">35–50 años · Clase media / media-alta · Tienen hijos 6–17 años</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Que su hijo hable inglés con fluidez para tener más oportunidades laborales y académicas</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">WhatsApp grupos de padres, Instagram, recomendaciones de otros papás</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Grupos pequeños, resultados visibles, cercanía al colegio, precio razonable</div></div>
+    </div>
+  </div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--eng-l);color:var(--eng)">💼</div>
+      <div><div class="aud-name">Profesional adulto</div><div class="aud-desc">25–40 años · Trabaja en empresa · Necesita inglés para ascender o cambiar de trabajo</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Hablar inglés en reuniones y entrevistas. Mejorar el CV. Abrir posibilidades internacionales.</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">LinkedIn, Google, recomendaciones laborales, Instagram</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Horarios nocturnos o de sábados, enfoque en conversación de negocios, resultados rápidos</div></div>
+    </div>
+  </div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--eng-l);color:var(--eng)">🎓</div>
+      <div><div class="aud-name">Joven universitario / egresado</div><div class="aud-desc">18–25 años · Quiere diferenciarse laboralmente o viajar al extranjero</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Hablar fluido, conseguir pasantías o trabajo en empresa multinacional, viajar</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">TikTok, Instagram, Google, grupos de Facebook universitarios</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Precio accesible, intensivo para avanzar rápido, comunidad de alumnos similar a ellos</div></div>
+    </div>
+  </div>
+
+  <!-- PAINS & SOLUTIONS -->
+  <div class="slbl">Puntos de dolor y soluciones</div>
+
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 1</div><div class="ps-txt">"Llevo años 'aprendiendo inglés' pero no puedo sostener una conversación. Los métodos anteriores me enseñaron gramática pero nunca a hablar."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Atlas</div><div class="ps-txt">Enfoque 100% conversacional desde la primera clase. El alumno habla desde el día 1 — sin esperar a "tener el nivel suficiente". La gramática se enseña en contexto, no como fin en sí misma.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 2</div><div class="ps-txt">"Las academias grandes tienen grupos de 20+ alumnos. Me pierdo, no practico suficiente, el profe no me conoce."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Atlas</div><div class="ps-txt">Grupos máximo 12 alumnos. Cada alumno habla en cada clase. El profesor aprende los errores específicos de cada persona y los corrige en contexto.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 3</div><div class="ps-txt">"Los horarios de las academias no se adaptan a mi vida — trabajo, tengo hijos, no puedo ir todos los días."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Atlas</div><div class="ps-txt">5 modalidades: grupos regulares (mañana/tarde/noche), intensivo 5x semana, solo sábados, adultos nocturnos y children afternoons. Una modalidad para cada estilo de vida.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 4</div><div class="ps-txt">"Las apps de inglés me entretienen pero no aprendo a hablar de verdad. Ya llevo 2 años con Duolingo."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Atlas</div><div class="ps-txt">La conversación humana en tiempo real es irreemplazable. La retroalimentación instantánea de un profesor y la presión social positiva de un grupo hacen que el cerebro retenga el idioma de manera diferente.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 5</div><div class="ps-txt">"No sé si realmente voy a mejorar. He empezado y abandonado muchas veces."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Atlas</div><div class="ps-txt">Primera clase gratis sin compromiso. Sistema de niveles visible con hitos claros. El alumno siente progreso desde la primera semana. Comunidad de alumnos que se motivan mutuamente.</div></div>
+  </div>
+
+  <!-- DIFFERENTIATORS -->
+  <div class="slbl">Diferenciadores únicos de Paradise Atlas</div>
+  <div class="diff-item"><div class="diff-num">1</div><div class="diff-body"><div class="diff-title">Grupos máximo 12 — no 20, no 25</div><div class="diff-desc">En Lima, la mayoría de academias tienen grupos de 15–25 alumnos. Atlas opera con máximo 12. Eso significa que cada alumno habla, practica y recibe atención real cada clase.</div></div></div>
+  <div class="diff-item"><div class="diff-num">2</div><div class="diff-body"><div class="diff-title">5 modalidades en un solo programa</div><div class="diff-desc">Ningún competidor local ofrece grupos regulares + intensivo 5x/semana + solo sábados + adultos nocturnos en el mismo centro. Atlas cubre a toda la familia.</div></div></div>
+  <div class="diff-item"><div class="diff-num">3</div><div class="diff-body"><div class="diff-title">Acceso directo desde el colegio</div><div class="diff-desc">Al operar dentro de la infraestructura escolar, los padres que ya confían en la institución son los primeros clientes. La confianza ya está construida — no hace falta empezar de cero.</div></div></div>
+  <div class="diff-item"><div class="diff-num">4</div><div class="diff-body"><div class="diff-title">Ruta Cambridge integrada</div><div class="diff-desc">El programa está diseñado para que los alumnos puedan optar por certificación Cambridge (KET, PET, FCE). Esto agrega valor tangible y diferenciador en el CV del alumno.</div></div></div>
+  <div class="diff-item"><div class="diff-num">5</div><div class="diff-body"><div class="diff-title">Precios accesibles sin sacrificar calidad</div><div class="diff-desc">S/200–280/mes vs. S/400–700 de El Británico o ICPNA. Mismo o mayor calidad de interacción por alumno gracias a grupos más pequeños, a menor precio.</div></div></div>
+
+  <!-- MESSAGING -->
+  <div class="slbl">Mensajes clave por audiencia</div>
+  <div class="msg-item" style="border-color:var(--eng);background:var(--eng-l)">
+    <div class="msg-label" style="color:var(--eng)">Para padres de familia</div>
+    <div class="msg-text">"Tu hijo va a hablar inglés con fluidez — no memorizar reglas. En Paradise Atlas aprende a comunicarse desde el primer día, en grupos pequeños donde el profesor lo conoce por su nombre."</div>
+    <div class="msg-sub">Canal principal: WhatsApp, Instagram, boca a boca</div>
+  </div>
+  <div class="msg-item" style="border-color:var(--eng);background:var(--eng-l)">
+    <div class="msg-label" style="color:var(--eng)">Para profesionales adultos</div>
+    <div class="msg-text">"El inglés que necesitas para tu próxima reunión, entrevista o ascenso. Atlas entiende tu ritmo: clases nocturnas, solo sábados o intensivo de 4 semanas si el tiempo es lo que te falta."</div>
+    <div class="msg-sub">Canal principal: LinkedIn, Instagram, Google Search</div>
+  </div>
+  <div class="msg-item" style="border-color:var(--eng);background:var(--eng-l)">
+    <div class="msg-label" style="color:var(--eng)">Para jóvenes universitarios</div>
+    <div class="msg-text">"¿Cuántos años llevas con Duolingo sin poder tener una conversación? En Atlas hablas desde el primer día. Sin vergüenza. Sin memorizar listas. Solo inglés real."</div>
+    <div class="msg-sub">Canal principal: TikTok, Instagram Reels, referidos</div>
+  </div>
+
+  <!-- BRAND VOICE -->
+  <div class="slbl">Voz y tono de marca</div>
+  <div class="card" style="margin-bottom:.85rem">
+    <div class="card-title">Personalidad de Atlas</div>
+    <p style="margin-bottom:.85rem">Paradise Atlas habla como <strong>un amigo que ya domina el inglés y quiere que tú también lo logres</strong>. No es el profesor estricto de la academia. No es el app gamificada. Es alguien cercano, que entiende tus excusas porque las ha escuchado mil veces — y sabe cómo superarlas.</p>
+    <div class="voice-grid">
+      <div class="vyes">Motivador y directo, celebra el progreso</div>
+      <div class="vno">Formal, académico o distante</div>
+      <div class="vyes">Habla de posibilidades y apertura al mundo</div>
+      <div class="vno">Presiona, culpabiliza o intimida</div>
+      <div class="vyes">Usa humor ligero y referencias culturales</div>
+      <div class="vno">Jerga técnica de enseñanza de idiomas</div>
+      <div class="vyes">Celebra pequeños logros públicamente</div>
+      <div class="vno">Compara al alumno con otros negativamente</div>
+    </div>
+  </div>
+
+  <!-- VISUAL IDENTITY -->
+  <div class="slbl">Identidad visual</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Paleta de color</div>
+      <div class="pal">
+        <div class="sw" style="background:#1B5FA8"><span style="color:#fff">Azul Atlas<br>#1B5FA8</span></div>
+        <div class="sw" style="background:#0D3B6E"><span style="color:#fff">Profundo<br>#0D3B6E</span></div>
+        <div class="sw" style="background:#E8F0FB"><span style="color:#1B5FA8">Suave<br>#E8F0FB</span></div>
+        <div class="sw" style="background:#C8993A"><span style="color:#fff">Dorado<br>#C8993A</span></div>
+        <div class="sw" style="background:#F9F7F2"><span style="color:#9C9890">Crema<br>#F9F7F2</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Dirección estética</div>
+      <p style="font-size:13px;color:#444;line-height:1.7"><strong>Tipografía:</strong> Fraunces (titulares — editorial, aspiracional) + DM Sans (cuerpo — limpio, moderno)<br><br><strong>Fotografía:</strong> Luz natural, tonos azules y crema. Personas latinoamericanas reales en conversación auténtica. Nada de fotos de stock genérico.<br><br><strong>Estética general:</strong> Editorial moderno. Mapas y elementos cartográficos como motivo decorativo. Sensación de apertura y movimiento.</p>
+    </div>
+  </div>
+
+  <!-- AI PROMPTS -->
+  <div class="slbl">Prompts listos para herramientas de IA</div>
+  <div class="prompt-box">
+    <div class="prompt-label">ChatGPT / Claude <span>Copywriting</span></div>
+    <div class="prompt-text">Eres el copywriter de Paradise Atlas, una academia de inglés en Lima, Perú. La marca habla como un amigo cercano que domina el inglés y quiere que sus alumnos lo logren. Tono: motivador, directo, con humor ligero. Nunca formal ni académico. Los colores de marca son azul #1B5FA8 y dorado #C8993A. Los programas disponibles son: grupos regulares (kids, teens, adultos), intensivo 5x semana, solo sábados, Business English y prep TOEFL/IELTS. El precio comienza desde S/200/mes. Primera clase gratis. Grupos máximo 12 alumnos. Escribe [TIPO DE CONTENIDO] para [AUDIENCIA] de [PLATAFORMA].</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Midjourney / DALL-E <span>Imágenes</span></div>
+    <div class="prompt-text">Create a lifestyle photography style image for Paradise Atlas, an English academy in Lima Peru. Show [young Latin professional / Latin children in a classroom / Latin adult students in conversation]. The mood is warm, aspirational, and authentic. Color palette: blues (#1B5FA8), cream (#F9F7F2), warm natural light. No generic stock photo aesthetics. Editorial, modern, real people. The setting is [a small classroom with 8-10 students / a café study environment / an outdoor urban Lima setting]. --ar 1:1 --style raw --v 6</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">ElevenLabs / HeyGen <span>Voz / Video</span></div>
+    <div class="prompt-text">Voz de marca: Paradise Atlas. Descripción: amigable, cercana, motivadora, ligeramente joven (25-35 años percibido). No formal. No de noticias. Como hablarías con un amigo inteligente que quiere lo mejor para ti. Velocidad: normal-rápida. Énfasis en palabras clave como "hablar", "primer día", "gratis", "ya". Idioma: español peruano neutro, sin acento marcado regional.</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Canva AI / Adobe Firefly <span>Diseño</span></div>
+    <div class="prompt-text">Design a social media post for Paradise Atlas English Academy Lima. Brand colors: primary blue #1B5FA8, dark blue #0D3B6E, light blue #E8F0FB, gold accent #C8993A, cream background #F9F7F2. Fonts: Fraunces (serif, elegant, headlines) + DM Sans (body, clean). Style: editorial modern, minimal, premium but accessible. No clipart, no generic education icons. Layout: [describe el layout específico del post que necesitas].</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+
+</div><!-- end atlas -->
+
+
+<!-- ════════════════════════════════════════
+     PARADISE STUDIO — BRAND DOCUMENT
+════════════════════════════════════════ -->
+<div class="sec" id="sec-a">
+
+  <div class="bhero" style="background:var(--art-d)">
+    <div class="bhero-deco" style="background:#fff"></div>
+    <div class="bhero-eye">Documento de Marca · Paradise Studio</div>
+    <div class="bhero-name">Paradise Studio</div>
+    <div class="bhero-tag">Tu estudio. Tu obra. Tu mundo.</div>
+    <div class="bhero-positioning">Academia de arte con talleres de dibujo, pintura y creatividad para niños (6+), adolescentes y adultos en Lima. Grupos reducidos, enfoque en proceso creativo, exposiciones al final de cada ciclo. Talleres para niños después del colegio, adultos en fines de semana y track de portafolio para teens que buscan carrera artística.</div>
+  </div>
+
+  <!-- MARKET CONTEXT -->
+  <div class="slbl">Contexto de mercado — Lima 2025</div>
+  <div class="metric-grid">
+    <div class="metric"><div class="metric-n" style="color:var(--art)">-75%</div><div class="metric-l">Reducción de cortisol al practicar arte (ciencia respaldada)</div></div>
+    <div class="metric"><div class="metric-n" style="color:var(--art)">Fragm.</div><div class="metric-l">Mercado muy fragmentado — sin líder claro de marca en Lima</div></div>
+    <div class="metric"><div class="metric-n" style="color:var(--art)">↑</div><div class="metric-l">Demanda creciente post-pandemia de actividades presenciales creativas</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Contexto y oportunidad</div>
+    <p>El mercado de talleres de arte en Lima está muy fragmentado. Los competidores principales son: centros culturales de museos (MALI, Bellas Artes, MAC Lima), instituciones municipales con talleres baratos, y academias pequeñas de barrio sin branding ni presencia digital. No existe en Lima una marca de academia de arte moderna, con identidad fuerte, presencia en redes y posicionamiento claro para la clase media. Corriente Alterna y escuelas como El Cubo atienden el segmento más adulto-profesional. Nadie está capturando al padre de familia que quiere una alternativa de enriquecimiento para su hijo con una marca en la que confíe y que se vea bien en redes.</p>
+  </div>
+
+  <!-- COMPETITIVE -->
+  <div class="slbl">Panorama competitivo</div>
+  <div class="comp-row">
+    <div><div class="comp-name">MALI / MAC Lima</div></div>
+    <div><div class="comp-desc">Museos con talleres educativos. Prestigio cultural alto pero limitados en horarios, capacidad y acceso. No tienen marketing activo en redes.</div><div class="comp-gap" style="color:var(--art)">Brecha Studio: más accesible, más horarios, marca activa en IG/TikTok.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Corriente Alterna</div></div>
+    <div><div class="comp-desc">Academia de artes bien establecida en La Victoria/Miraflores. Fuerte en adultos y carrera profesional. Grupos medianos, precio S/200–350.</div><div class="comp-gap" style="color:var(--art)">Brecha Studio: mejor posicionamiento para familias y niños, cercanía geográfica, exposiciones como evento social.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Talleres municipales</div></div>
+    <div><div class="comp-desc">Gratuitos o muy baratos. Accesibles pero con calidad variable, sin seguimiento ni resultados visibles.</div><div class="comp-gap" style="color:var(--art)">Brecha Studio: calidad demostrable, portafolios reales, exposición de fin de ciclo como diferenciador.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Academias de barrio</div></div>
+    <div><div class="comp-desc">Numerosas en cada distrito. Sin branding, sin presencia digital, sin diferenciación clara. Operan por referidos únicamente.</div><div class="comp-gap" style="color:var(--art)">Brecha Studio: primera academia de arte con marca visual fuerte en Lima dirigida a familia media.</div></div>
+  </div>
+
+  <!-- AUDIENCES -->
+  <div class="slbl">Arquetipos de cliente</div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--art-l);color:var(--art)">👨‍👩‍👦</div>
+      <div><div class="aud-name">Padres con hijos 6–14 años</div><div class="aud-desc">30–45 años · Clase media · Buscan enriquecimiento y actividades de calidad para sus hijos</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Una actividad extraescolar donde el hijo se exprese, aprenda y tenga logros visibles</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">WhatsApp grupos de padres, Instagram, Google "talleres de arte para niños Lima"</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Obras que el niño lleva a casa, exposición de fin de ciclo, precio accesible, horario after school</div></div>
+    </div>
+  </div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--art-l);color:var(--art)">🎨</div>
+      <div><div class="aud-name">Adulto 25–45 que quiere crear</div><div class="aud-desc">Profesional estresado · Busca un espacio para desconectar y expresarse · "Nunca tuve tiempo para el arte"</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Un espacio sin presión para crear algo propio. Bienestar. Hobby con resultado tangible.</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">Instagram, TikTok (contenido de arte relajante), recomendaciones de amigos</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Ambiente relajado, horario de fin de semana, "no necesitas experiencia", precio accesible</div></div>
+    </div>
+  </div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--art-l);color:var(--art)">📐</div>
+      <div><div class="aud-name">Teen 14–18 con aspiración artística</div><div class="aud-desc">Quiere estudiar diseño, arquitectura, artes visuales · Necesita portafolio para postular</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Construir un portafolio sólido para postular a Bellas Artes, PUCP Diseño, UPC Arquitectura</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">TikTok, Instagram, YouTube de artistas peruanos, recomendaciones en el colegio</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Track específico de portafolio, resultados de exalumnos admitidos, calidad técnica real</div></div>
+    </div>
+  </div>
+
+  <!-- PAINS & SOLUTIONS -->
+  <div class="slbl">Puntos de dolor y soluciones</div>
+
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 1</div><div class="ps-txt">"Yo no tengo talento para el arte. Nunca supe dibujar y da vergüenza intentarlo de adulto."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Studio</div><div class="ps-txt">El talento artístico es un mito. Lo que existe es método y práctica. El taller de adultos de Studio está diseñado específicamente para personas sin experiencia previa — sin presión, sin vergüenza, con resultados visibles desde la primera clase.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 2</div><div class="ps-txt">"Mi hijo tiene mucha pantalla y no tiene actividades creativas. Quiero que haga algo con las manos pero los talleres que encuentro son caros o muy básicos."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Studio</div><div class="ps-txt">Talleres after school y de sábados para niños desde S/150/mes con material incluido. Grupos reducidos donde cada niño recibe atención real. El niño lleva su obra a casa cada clase — el resultado es visible inmediatamente.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 3</div><div class="ps-txt">"Estoy muy estresado/a con el trabajo. Necesito desconectarme pero no sé qué hacer los fines de semana."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Studio</div><div class="ps-txt">El arte activa el estado de "flow" — el mismo estado mental que la meditación, pero produciendo algo tangible. El taller de adultos de sábados está diseñado como espacio de desconexión: sin celulares, sin presión, solo crear.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 4</div><div class="ps-txt">"Mi hijo quiere estudiar diseño o arquitectura pero no sé cómo ayudarlo a preparar el portafolio para postular."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Studio</div><div class="ps-txt">Track de portafolio específico para teens que postulan a carreras artísticas en PUCP, UPC, ULIMA y Bellas Artes. El programa construye obra por obra una colección coherente acompañada de carta de intención.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 5</div><div class="ps-txt">"¿Cómo sé que mi hijo realmente está aprendiendo y progresando?"</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Studio</div><div class="ps-txt">La exposición de fin de ciclo hace el progreso completamente visible. La familia viene, ve las obras, y puede comparar con el primer trabajo del ciclo. El resultado del aprendizaje es tangible y celebrado públicamente.</div></div>
+  </div>
+
+  <!-- DIFFERENTIATORS -->
+  <div class="slbl">Diferenciadores únicos de Paradise Studio</div>
+  <div class="diff-item"><div class="diff-num">1</div><div class="diff-body"><div class="diff-title">La exposición como diferenciador emocional</div><div class="diff-desc">Al final de cada ciclo los alumnos exponen su obra. Las familias vienen. Es un evento, no un examen. Ningún competidor en el segmento medio hace esto de forma sistemática — y es el momento más compartido en redes.</div></div></div>
+  <div class="diff-item"><div class="diff-num">2</div><div class="diff-body"><div class="diff-title">La marca más visible del nicho en Lima</div><div class="diff-desc">El mercado de arte en Lima está completamente sin marcar. Los competidores no tienen branding, presencia en TikTok ni Instagram activo. Studio puede ser el primero en posicionarse como la academia de arte de referencia en redes.</div></div></div>
+  <div class="diff-item"><div class="diff-num">3</div><div class="diff-body"><div class="diff-title">Para toda la familia bajo un mismo techo</div><div class="diff-desc">Niños 6+, teens con track de portafolio, adultos en fin de semana, fiestas de cumpleaños. Una sola institución que acompaña a la familia en diferentes etapas — lo que aumenta el LTV por núcleo familiar.</div></div></div>
+  <div class="diff-item"><div class="diff-num">4</div><div class="diff-body"><div class="diff-title">Acceso sin experiencia previa requerida</div><div class="diff-desc">"Nunca he dibujado" es la norma, no la excepción. Studio elimina el miedo de entrada — el programa está diseñado para partir de cero en todos los grupos.</div></div></div>
+  <div class="diff-item"><div class="diff-num">5</div><div class="diff-body"><div class="diff-title">Fiestas de arte como canal de adquisición</div><div class="diff-desc">Las fiestas de cumpleaños de arte son eventos de alto impacto donde padres de familia que no conocen Studio viven la experiencia en primera persona. Cada fiesta es una campaña de captación de 10–15 familias nuevas.</div></div></div>
+
+  <!-- MESSAGING -->
+  <div class="slbl">Mensajes clave por audiencia</div>
+  <div class="msg-item" style="border-color:var(--art);background:var(--art-l)">
+    <div class="msg-label" style="color:var(--art)">Para padres de familia</div>
+    <div class="msg-text">"Tu hijo va a crear algo con sus manos, verlo crecer clase a clase, y al final del ciclo exponer su obra frente a la familia. El arte no es un hobby — es la mejor inversión en su desarrollo emocional e intelectual."</div>
+    <div class="msg-sub">Canal: WhatsApp, Instagram, boca a boca en el colegio</div>
+  </div>
+  <div class="msg-item" style="border-color:var(--art);background:var(--art-l)">
+    <div class="msg-label" style="color:var(--art)">Para adultos que quieren crear</div>
+    <div class="msg-text">"Llevas años diciéndote que no tienes talento. Miente. Lo que no has tenido es el método y el espacio. Paradise Studio te da los dos — sin presión, solo crear. Los sábados son tuyos."</div>
+    <div class="msg-sub">Canal: Instagram, TikTok (contenido de arte relajante)</div>
+  </div>
+  <div class="msg-item" style="border-color:var(--art);background:var(--art-l)">
+    <div class="msg-label" style="color:var(--art)">Para teens aspirantes a carrera artística</div>
+    <div class="msg-text">"El portafolio es lo que te hace entrar a la carrera que quieres. En Studio lo construimos pieza por pieza — dibujo, pintura, composición — hasta que sea tan bueno que no puedan decirte que no."</div>
+    <div class="msg-sub">Canal: TikTok, Instagram, recomendaciones en el colegio</div>
+  </div>
+
+  <!-- BRAND VOICE -->
+  <div class="slbl">Voz y tono de marca</div>
+  <div class="card" style="margin-bottom:.85rem">
+    <div class="card-title">Personalidad de Studio</div>
+    <p style="margin-bottom:.85rem">Paradise Studio habla como <strong>un artista que también es maestro paciente</strong>. Inspira sin imponer. Celebra el proceso, no solo el resultado. Ve el potencial creativo en cada persona — incluso en quien dice "no soy artista".</p>
+    <div class="voice-grid">
+      <div class="vyes">Inspirador, sensible, celebra el proceso</div>
+      <div class="vno">Técnico, competitivo, centrado en el resultado</div>
+      <div class="vyes">Invita con calma, no presiona</div>
+      <div class="vno">Lenguaje de marketing agresivo</div>
+      <div class="vyes">Visual y poético en los textos</div>
+      <div class="vno">Corporativo o institucional</div>
+      <div class="vyes">Habla de bienestar y autoexpresión</div>
+      <div class="vno">Compara con otros, genera inseguridad</div>
+    </div>
+  </div>
+
+  <!-- VISUAL IDENTITY -->
+  <div class="slbl">Identidad visual</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Paleta de color</div>
+      <div class="pal">
+        <div class="sw" style="background:#0F7A55"><span style="color:#fff">Verde Studio<br>#0F7A55</span></div>
+        <div class="sw" style="background:#074D35"><span style="color:#fff">Bosque<br>#074D35</span></div>
+        <div class="sw" style="background:#E2F5EE"><span style="color:#0F7A55">Suave<br>#E2F5EE</span></div>
+        <div class="sw" style="background:#E8A838"><span style="color:#fff">Ámbar<br>#E8A838</span></div>
+        <div class="sw" style="background:#F9F7F2"><span style="color:#9C9890">Crema<br>#F9F7F2</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Dirección estética</div>
+      <p style="font-size:13px;color:#444;line-height:1.7"><strong>Tipografía:</strong> Fraunces Italic (titulares — expresivo, artístico) + DM Sans Light (cuerpo — orgánico, no agresivo)<br><br><strong>Fotografía:</strong> Luz natural cálida, tonos verdes y ámbar. Manos creando, pintura en proceso, obras terminadas. Personas reales en estado de concentración y disfrute.<br><br><strong>Estética general:</strong> Orgánica y artesanal. Trazos y manchas de pintura como elementos decorativos. Sensación de taller real, no de academia genérica.</p>
+    </div>
+  </div>
+
+  <!-- AI PROMPTS -->
+  <div class="slbl">Prompts listos para herramientas de IA</div>
+  <div class="prompt-box">
+    <div class="prompt-label">ChatGPT / Claude <span>Copywriting</span></div>
+    <div class="prompt-text">Eres el copywriter de Paradise Studio, una academia de arte en Lima, Perú. La marca habla como un artista que también es maestro paciente — inspira sin imponer, celebra el proceso creativo. Tono: cálido, poético, cercano. Nunca técnico ni corporativo. Los colores de marca son verde esmeralda #0F7A55 y ámbar #E8A838. Los talleres disponibles son: dibujo y pintura para niños (desde 6 años, after school y sábados), taller de adultos (fines de semana, sin experiencia previa), track de portafolio para teens (14–18 años que postulan a carrera artística), y fiestas de cumpleaños de arte. Precio desde S/150/mes. No se requiere experiencia previa. Hay exposición de obras al final de cada ciclo. Escribe [TIPO DE CONTENIDO] para [AUDIENCIA] en [PLATAFORMA].</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Midjourney / DALL-E <span>Imágenes</span></div>
+    <div class="prompt-text">Create a warm lifestyle photography style image for Paradise Studio, an art academy in Lima Peru. Show [Latin child painting with watercolors / Latin adult relaxed drawing in a studio / teen carefully working on a portfolio drawing]. Mood: warm, creative, focused, joyful. Color palette: emerald green (#0F7A55), amber (#E8A838), cream (#F9F7F2), natural warm light. The setting should feel like an authentic art studio, not a generic stock classroom. Brushes, paint, paper textures visible. --ar 1:1 --style raw --v 6</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">ElevenLabs / HeyGen <span>Voz / Video</span></div>
+    <div class="prompt-text">Voz de marca: Paradise Studio. Descripción: cálida, suave, artística. Como un maestro de arte paciente y apasionado. No comercial. No de noticias. Evoca calma y creatividad. Velocidad: moderada, con pausas intencionales. Énfasis en palabras como "crear", "obra", "tuyo", "proceso", "sin presión". Idioma: español peruano neutro, tono contemplativo.</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Canva AI / Adobe Firefly <span>Diseño</span></div>
+    <div class="prompt-text">Design a social media post for Paradise Studio art academy Lima. Brand colors: primary green #0F7A55, dark green #074D35, light green #E2F5EE, amber accent #E8A838, cream background #F9F7F2. Fonts: Fraunces Italic (serif, expressive, artistic headlines) + DM Sans Light (body). Style: organic, artisanal, warm. Include subtle paint texture or brush stroke decorative elements. No clipart, no generic art school icons. Layout: [describe el layout específico del post].</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+
+</div><!-- end studio -->
+
+
+<!-- ════════════════════════════════════════
+     PARADISE ASCEND — BRAND DOCUMENT
+════════════════════════════════════════ -->
+<div class="sec" id="sec-u">
+
+  <div class="bhero" style="background:var(--uni-d)">
+    <div class="bhero-deco" style="background:#fff"></div>
+    <div class="bhero-eye">Documento de Marca · Paradise Ascend</div>
+    <div class="bhero-name">Paradise Ascend</div>
+    <div class="bhero-tag">Tu universidad, en cualquier parte del mundo.</div>
+    <div class="bhero-positioning">Preparación preuniversitaria en Lima con un diferenciador único: prepara para universidades peruanas (PUCP, UNMSM, UNI, UPC) E internacionales (España, EE.UU., Canadá, Europa). Grupos reducidos, profesores especializados por materia, simulacros tipo examen real y seguimiento semanal por alumno. Ciclos: regular (3 meses), intensivo (4 semanas), solo fines de semana y módulos por materia.</div>
+  </div>
+
+  <!-- MARKET CONTEXT -->
+  <div class="slbl">Contexto de mercado — Lima 2025</div>
+  <div class="metric-grid">
+    <div class="metric"><div class="metric-n" style="color:var(--uni)">68%</div><div class="metric-l">Ingresantes a universidades públicas en 2024 fueron de academia preuniversitaria (MINEDU)</div></div>
+    <div class="metric"><div class="metric-n" style="color:var(--uni)">30.9%</div><div class="metric-l">Jóvenes peruanos que logran acceder a educación superior (INEI 2022)</div></div>
+    <div class="metric"><div class="metric-n" style="color:var(--uni)">S/1,600</div><div class="metric-l">Diferencial salarial mensual entre profesionales con y sin título universitario en Lima</div></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Contexto y oportunidad</div>
+    <p>El mercado preuniversitario en Lima está dominado por marcas con 40+ años de historia: Pamer, ADUNI (César Vallejo), Trilce, Saco Oliveros. Son instituciones masivas, con grupos de 25–40 alumnos, precios de S/300–550/mes y cero diferenciación en marca. El 68% de ingresantes a universidades públicas en 2024 pasaron por academia. La oportunidad de Paradise Ascend es triple: (1) grupos más pequeños con seguimiento real, (2) el único programa en Lima que prepara para universidades internacionales además de las peruanas, y (3) una marca moderna que resuena con la generación de TikTok e Instagram.</p>
+  </div>
+
+  <!-- COMPETITIVE -->
+  <div class="slbl">Panorama competitivo</div>
+  <div class="comp-row">
+    <div><div class="comp-name">Pamer</div></div>
+    <div><div class="comp-desc">40+ años, líder en admisiones a UNI y San Marcos. Plataforma AI para simulacros en 2025. Grupos numerosos. S/500/mes.</div><div class="comp-gap" style="color:var(--uni)">Brecha Ascend: grupos reducidos, preparación internacional, marca moderna y digital.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Trilce</div></div>
+    <div><div class="comp-desc">Líder en UNMSM y PUCP. 20+ colegios en Perú. S/450/mes. Horarios flexibles. En 2025 añadió plataforma de realidad virtual.</div><div class="comp-gap" style="color:var(--uni)">Brecha Ascend: prep internacional exclusiva, grupos más pequeños, comunicación más cercana.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">ADUNI / César Vallejo</div></div>
+    <div><div class="comp-desc">Histórico líder en San Marcos. 57% de ingresantes a UNMSM habrían pasado por ADUNI. Enfoque en universidades nacionales, biblioteca propia.</div><div class="comp-gap" style="color:var(--uni)">Brecha Ascend: cobertura internacional, seguimiento personalizado, ambiente más pequeño.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">CEPREPUCP / CEPREUNI</div></div>
+    <div><div class="comp-desc">Centros pre de las propias universidades. Máximo prestigio para su universidad específica. Muy competitivo. Solo para esa uni.</div><div class="comp-gap" style="color:var(--uni)">Brecha Ascend: cubre múltiples universidades en un solo programa. Más versátil.</div></div>
+  </div>
+  <div class="comp-row">
+    <div><div class="comp-name">Academika (virtual gratuita)</div></div>
+    <div><div class="comp-desc">Academia 100% virtual gratuita con 2,700+ videos. Desde S/30/mes. Competencia de precio bajo.</div><div class="comp-gap" style="color:var(--uni)">Brecha Ascend: presencial, seguimiento real, simulacros físicos, preparación internacional que Academika no tiene.</div></div>
+  </div>
+
+  <!-- AUDIENCES -->
+  <div class="slbl">Arquetipos de cliente</div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--uni-l);color:var(--uni)">📚</div>
+      <div><div class="aud-name">El postulante directo — 16–18 años</div><div class="aud-desc">Egresa del colegio · Meta clara de ingresar a una universidad específica · Primera o segunda postulación</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Ingresar a la universidad que eligieron. Saber exactamente qué estudiar y cómo.</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">TikTok, Instagram, YouTube, grupos de WhatsApp de su colegio</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Simulacro gratis que muestra su nivel real, lista de ingresantes, precio claro</div></div>
+    </div>
+  </div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--uni-l);color:var(--uni)">👨‍👩‍🎓</div>
+      <div><div class="aud-name">El padre que invierte en el futuro</div><div class="aud-desc">35–50 años · Paga la academia · Quiere resultados claros y un programa confiable · Ve la academia como inversión</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Certeza de que su hijo tiene la mejor preparación posible. Transparencia y seguimiento.</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">Google, referencias de otros padres, Facebook, Instagram</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Tasa de ingresantes real, profesores con experiencia comprobada, seguimiento semanal</div></div>
+    </div>
+  </div>
+
+  <div class="audience-card">
+    <div class="aud-header">
+      <div class="aud-avatar" style="background:var(--uni-l);color:var(--uni)">🌎</div>
+      <div><div class="aud-name">El aspirante internacional — 16–20 años</div><div class="aud-desc">Quiere estudiar en España, EE.UU., Canadá · Familia con recursos · Busca guía especializada en proceso de admisión internacional</div></div>
+    </div>
+    <div class="aud-grid">
+      <div><div class="aud-cell-lbl">Qué quieren</div><div class="aud-cell-val">Entender el proceso de postulación internacional: requisitos, essays, SAT/IELTS, fechas límite</div></div>
+      <div><div class="aud-cell-lbl">Dónde buscan</div><div class="aud-cell-val">Instagram, YouTube, Google, foros de estudiantes internacionales peruanos</div></div>
+      <div><div class="aud-cell-lbl">Qué los convence</div><div class="aud-cell-val">Experiencia específica en admisiones internacionales, testimonios de alumnos admitidos al extranjero</div></div>
+    </div>
+  </div>
+
+  <!-- PAINS & SOLUTIONS -->
+  <div class="slbl">Puntos de dolor y soluciones</div>
+
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 1</div><div class="ps-txt">"Estudié mucho pero no ingresé. No sé en qué estoy fallando — y tengo miedo de que esto se repita el siguiente intento."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Ascend</div><div class="ps-txt">El simulacro gratuito diagnostica exactamente dónde está el alumno y cuánto tiempo necesita para alcanzar el puntaje de ingreso. El problema no es esfuerzo — es diagnóstico y método. Ascend da los dos.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 2</div><div class="ps-txt">"Las academias grandes tienen 25+ alumnos por salón. El profesor no me conoce, no sé si voy bien o mal, y cuando tengo dudas no hay tiempo de resolverlas."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Ascend</div><div class="ps-txt">Grupos de máximo 20 alumnos por materia con tutorías semanales individuales. El profesor conoce las fortalezas y debilidades de cada alumno. El seguimiento es semanal y personalizado.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 3</div><div class="ps-txt">"El examen es en 3 semanas y recién empiezo a buscar academia. Creo que ya es tarde."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Ascend</div><div class="ps-txt">El ciclo intensivo de 4 semanas está diseñado exactamente para esta situación. 30+ horas/semana, todos los temas del examen, simulacros diarios. No es tarde — pero hay que empezar hoy.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 4</div><div class="ps-txt">"Quiero estudiar en el extranjero pero no sé por dónde empezar. El proceso parece complicadísimo y costoso."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Ascend</div><div class="ps-txt">Paradise Ascend es el único programa en Lima que integra preparación para universidades locales e internacionales. Para la ruta internacional: orientación en selección de universidades, preparación de essays, guía de SAT/IELTS según destino, y acompañamiento en el proceso completo.</div></div>
+  </div>
+  <div class="ps-pair">
+    <div class="ps-pain"><div class="ps-lbl">Dolor 5</div><div class="ps-txt">"Trabajo o tengo otras responsabilidades y no puedo ir a clases todos los días de la semana."</div></div>
+    <div class="ps-sol"><div class="ps-lbl">Solución Ascend</div><div class="ps-txt">Ciclo de solo fines de semana diseñado específicamente para alumnos con tiempo limitado. Mismo contenido, misma calidad — comprimido en los dos días que tienes disponibles.</div></div>
+  </div>
+
+  <!-- DIFFERENTIATORS -->
+  <div class="slbl">Diferenciadores únicos de Paradise Ascend</div>
+  <div class="diff-item"><div class="diff-num">1</div><div class="diff-body"><div class="diff-title">El único preuniversitario con ruta internacional en Lima</div><div class="diff-desc">Ningún competidor local ofrece preparación formal para universidades internacionales. Ascend es el primero en integrar esta ruta — y el segmento de alumnos que quieren estudiar fuera está creciendo y no tiene oferta especializada.</div></div></div>
+  <div class="diff-item"><div class="diff-num">2</div><div class="diff-body"><div class="diff-title">Simulacro gratuito como lead magnet</div><div class="diff-desc">El simulacro resuelve la primera objeción: "no sé si lo necesito". Al tomar el simulacro el alumno descubre exactamente su nivel, la brecha que tiene y cuánto tiempo necesita. Convierte curiosos en alumnos con una sola interacción.</div></div></div>
+  <div class="diff-item"><div class="diff-num">3</div><div class="diff-body"><div class="diff-title">La marca más moderna del mercado preuniversitario</div><div class="diff-desc">Pamer, ADUNI y Trilce tienen branding de los años 90. Ascend puede ser la primera marca preuniversitaria con identidad visual moderna, presencia nativa en TikTok e Instagram, y lenguaje que conecta con la generación Z.</div></div></div>
+  <div class="diff-item"><div class="diff-num">4</div><div class="diff-body"><div class="diff-title">Resultados por universidad como activo de marketing</div><div class="diff-desc">Cada alumno que ingresa a una universidad es publicidad. Desde el primer ciclo, Ascend debe documentar y publicar cada ingresante por universidad. "X alumnos en PUCP, X en UNMSM, X en el extranjero" es el argumento más poderoso del mercado.</div></div></div>
+  <div class="diff-item"><div class="diff-num">5</div><div class="diff-body"><div class="diff-title">Infraestructura del colegio como ventaja de confianza</div><div class="diff-desc">Al nacer dentro de un colegio establecido, Ascend hereda la confianza que los padres ya tienen en la institución. La barrera de entrada es mucho menor que la de una academia desconocida.</div></div></div>
+
+  <!-- MESSAGING -->
+  <div class="slbl">Mensajes clave por audiencia</div>
+  <div class="msg-item" style="border-color:var(--uni);background:var(--uni-l)">
+    <div class="msg-label" style="color:var(--uni)">Para el alumno postulante</div>
+    <div class="msg-text">"La diferencia entre ingresar y no ingresar no es inteligencia — es preparación. En Ascend estructuramos tu prep exactamente como está el examen, te decimos dónde estás y qué te falta. Sin adivinanzas."</div>
+    <div class="msg-sub">Canal: TikTok, Instagram Reels, WhatsApp grupos de colegios</div>
+  </div>
+  <div class="msg-item" style="border-color:var(--uni);background:var(--uni-l)">
+    <div class="msg-label" style="color:var(--uni)">Para padres de familia</div>
+    <div class="msg-text">"En Ascend tu hijo no es un número en un salón de 30. Tiene seguimiento semanal, un profesor que lo conoce, y un simulacro que le muestra exactamente dónde está. Eso es preparación real."</div>
+    <div class="msg-sub">Canal: Facebook, Instagram, WhatsApp, referidos</div>
+  </div>
+  <div class="msg-item" style="border-color:var(--uni);background:var(--uni-l)">
+    <div class="msg-label" style="color:var(--uni)">Para el alumno con mira internacional</div>
+    <div class="msg-text">"¿Por qué limitarte a Lima cuando puedes apuntar al mundo? Ascend es el único lugar en Lima donde te preparas para las universidades del Perú Y para las del extranjero — en el mismo programa."</div>
+    <div class="msg-sub">Canal: Instagram, LinkedIn, Google Search "estudiar en el extranjero desde Lima"</div>
+  </div>
+
+  <!-- BRAND VOICE -->
+  <div class="slbl">Voz y tono de marca</div>
+  <div class="card" style="margin-bottom:.85rem">
+    <div class="card-title">Personalidad de Ascend</div>
+    <p style="margin-bottom:.85rem">Paradise Ascend habla como <strong>el hermano mayor que ya ingresó y sabe exactamente cómo hacerlo</strong>. No promete magia — promete método. Es directo, sin rodeos, pero nunca frío. Habla de realidades, datos y resultados. Respeta la inteligencia del alumno.</p>
+    <div class="voice-grid">
+      <div class="vyes">Directo, orientado a resultados reales</div>
+      <div class="vno">Promesas imposibles o motivación vacía</div>
+      <div class="vyes">Usa datos y resultados concretos</div>
+      <div class="vno">Lenguaje de miedo o presión negativa</div>
+      <div class="vyes">Urgente cuando la situación lo requiere</div>
+      <div class="vno">Condescendiente o paternalista</div>
+      <div class="vyes">Respeta la ambición del alumno</div>
+      <div class="vno">Minimiza el esfuerzo requerido</div>
+    </div>
+  </div>
+
+  <!-- VISUAL IDENTITY -->
+  <div class="slbl">Identidad visual</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Paleta de color</div>
+      <div class="pal">
+        <div class="sw" style="background:#A0420A"><span style="color:#fff">Terracota<br>#A0420A</span></div>
+        <div class="sw" style="background:#6B2B06"><span style="color:#fff">Oscuro<br>#6B2B06</span></div>
+        <div class="sw" style="background:#FBF0E4"><span style="color:#A0420A">Cálido<br>#FBF0E4</span></div>
+        <div class="sw" style="background:#C8993A"><span style="color:#fff">Dorado<br>#C8993A</span></div>
+        <div class="sw" style="background:#0F0E0C"><span style="color:#fff">Negro<br>#0F0E0C</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Dirección estética</div>
+      <p style="font-size:13px;color:#444;line-height:1.7"><strong>Tipografía:</strong> Fraunces Bold (titulares — poderoso, serio, ambicioso) + DM Sans Semibold (cuerpo — claro, firme, confiable)<br><br><strong>Fotografía:</strong> Tonos cálidos oscuros, terracota y dorado. Jóvenes latinoamericanos con expresión de determinación y logro. Campus universitarios imponentes.<br><br><strong>Estética general:</strong> Seria pero aspiracional. Más oscura y contrastada que las otras marcas — comunica peso y consecuencia. La decisión más importante de la vida.</p>
+    </div>
+  </div>
+
+  <!-- AI PROMPTS -->
+  <div class="slbl">Prompts listos para herramientas de IA</div>
+  <div class="prompt-box">
+    <div class="prompt-label">ChatGPT / Claude <span>Copywriting</span></div>
+    <div class="prompt-text">Eres el copywriter de Paradise Ascend, una academia preuniversitaria en Lima, Perú. La marca habla como el hermano mayor que ya ingresó a la universidad — directo, sin rodeos, orientado a resultados reales. Tono: serio pero cercano, motivador con base en datos, nunca condescendiente. Los colores de marca son terracota #A0420A y dorado #C8993A. Los programas disponibles son: ciclo regular (3 meses), ciclo intensivo (4 semanas), solo fines de semana, módulo por materia, y preparación para universidades internacionales (España, EE.UU., Canadá, Europa). El precio varía entre S/300–600 según ciclo. Simulacro gratuito de diagnóstico disponible. Grupos reducidos con seguimiento semanal. Universidades objetivo en Perú: PUCP, UNMSM, UNI, UPC. Escribe [TIPO DE CONTENIDO] para [AUDIENCIA] en [PLATAFORMA].</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Midjourney / DALL-E <span>Imágenes</span></div>
+    <div class="prompt-text">Create a motivational photography style image for Paradise Ascend, a university entrance prep academy in Lima Peru. Show [determined young Latin student studying intensely / Latin teen celebrating university acceptance / ambitious young Peruvian with university campus in background]. Mood: determined, aspirational, serious but hopeful. Color palette: terracotta (#A0420A), dark brown (#6B2B06), warm cream (#FBF0E4), gold (#C8993A). High contrast, cinematic feel. Not generic stock photo. --ar 1:1 --style raw --v 6</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">ElevenLabs / HeyGen <span>Voz / Video</span></div>
+    <div class="prompt-text">Voz de marca: Paradise Ascend. Descripción: confiada, directa, seria pero motivadora. Como habla alguien que sabe lo que se necesita para ingresar a la universidad — no lo endulza, pero tampoco asusta. Velocidad: normal, con énfasis claro en palabras de acción. Énfasis en: "ingresa", "resultado", "método", "hoy", "tu universidad". Idioma: español peruano neutro, tono ejecutivo pero accesible para un joven de 17 años.</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Canva AI / Adobe Firefly <span>Diseño</span></div>
+    <div class="prompt-text">Design a social media post for Paradise Ascend university prep academy Lima. Brand colors: primary terracotta #A0420A, dark #6B2B06, warm cream #FBF0E4, gold accent #C8993A, black #0F0E0C. Fonts: Fraunces Bold (strong, serious headlines) + DM Sans Semibold (body). Style: serious, aspirational, high contrast, cinematic. The visual should communicate weight and importance — this is the most important decision of their academic life. No clipart, no generic education icons. Layout: [describe el layout específico del post].</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+  <div class="prompt-box">
+    <div class="prompt-label">Meta Ads / Google Ads <span>Publicidad pagada</span></div>
+    <div class="prompt-text">Crea un anuncio de [Meta Ads / Google Search] para Paradise Ascend, academia preuniversitaria en Lima Perú. Objetivo: captación de alumnos para el próximo ciclo. Audiencia: [jóvenes 16–18 años que buscan academia preuniversitaria / padres 35–50 que buscan preparación para su hijo / alumnos que quieren estudiar en el extranjero]. Diferenciadores clave: único programa en Lima con preparación para universidades locales e internacionales, grupos reducidos, simulacro gratuito de diagnóstico. CTA: "Reserva tu simulacro gratis". Presupuesto implícito: accesible. Tono: directo, confiable, orientado a resultado.</div>
+    <button class="copy-btn" onclick="copyText(this)">Copiar prompt</button>
+  </div>
+
+</div><!-- end ascend -->
+
+<div class="page-footer">
+  <p><strong>Paradise Academy</strong> · Paradise Atlas · Paradise Studio · Paradise Ascend<br>Documentos estratégicos de marca · Lima 2025 · Confidencial</p>
+</div>
+
+<script>
+function show(b){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
+  document.querySelectorAll('.ni').forEach(function(n){n.classList.remove('on');});
+  document.getElementById('sec-'+b).classList.add('on');
+  document.getElementById('ni-'+b).classList.add('on');
+  window.scrollTo({top:document.querySelector('.nav').offsetTop-4,behavior:'smooth'});
+}
+function copyText(btn){
+  var txt = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(txt).then(function(){
+    btn.textContent='✓ Copiado';
+    setTimeout(function(){btn.textContent='Copiar prompt';},1800);
+  });
+}
+</script>
+</body>
+</html>

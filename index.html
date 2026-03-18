@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise Academy — Lima, Perú</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --eng:#1B5FA8;--eng-d:#0D3B6E;
+  --art:#0F7A55;--art-d:#074D35;
+  --uni:#A0420A;--uni-d:#6B2B06;
+  --gold:#C8993A;
+  --ink:#0C0B09;--white:#FAFAF8;
+  --wa:#25D366;--wa-d:#1DA851;
+}
+
+html,body{height:100%;overflow:hidden}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white)}
+
+/* TOPBAR */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 2rem;height:54px;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(12,11,9,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.tb-brand{font-family:'Fraunces',serif;font-size:17px;font-weight:300;color:rgba(255,255,255,.9)}
+.tb-brand span{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-left:.4rem;vertical-align:middle}
+.tb-right{display:flex;align-items:center;gap:.5rem}
+.tb-link{font-size:12px;color:rgba(255,255,255,.4);text-decoration:none;padding:.35rem .75rem;border-radius:6px;transition:all .15s}
+.tb-link:hover{color:rgba(255,255,255,.8);background:rgba(255,255,255,.06)}
+.tb-wa{display:inline-flex;align-items:center;gap:.4rem;font-size:12px;font-weight:600;padding:.4rem .9rem;border-radius:7px;background:var(--wa);color:var(--ink);text-decoration:none;transition:all .2s cubic-bezier(0.16,1,0.3,1);white-space:nowrap}
+.tb-wa:hover{background:var(--wa-d);transform:translateY(-1px) scale(0.98);box-shadow:0 4px 12px rgba(37,211,102,.25)}
+.tb-wa:active, .p-cta:active, .m-btn-main:active, .m-btn-wa:active{transform:scale(0.97) !important;box-shadow:none !important}
+.wa-svg{width:14px;height:14px;flex-shrink:0}
+
+/* ═══════════════════════
+   DESKTOP (>768px)
+═══════════════════════ */
+.desktop{display:flex;height:100vh;padding-top:54px}
+.stage{display:flex;flex:1}
+
+.panel{position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;justify-content:flex-end;padding:2.5rem 2rem;flex:1;transition:flex .5s cubic-bezier(.4,0,.2,1);border-right:1px solid rgba(255,255,255,.05)}
+.panel:last-child{border-right:none}
+
+.stage:has(.pa:hover) .pa{flex:1.65}
+.stage:has(.pa:hover) .ps,.stage:has(.pa:hover) .pu{flex:.68}
+.stage:has(.ps:hover) .ps{flex:1.65}
+.stage:has(.ps:hover) .pa,.stage:has(.ps:hover) .pu{flex:.68}
+.stage:has(.pu:hover) .pu{flex:1.65}
+.stage:has(.pu:hover) .pa,.stage:has(.pu:hover) .ps{flex:.68}
+
+.pa{background:var(--eng-d)}
+.ps{background:var(--art-d)}
+.pu{background:var(--uni-d)}
+
+.p-deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.dc{position:absolute;border-radius:50%;opacity:.08;transition:transform .6s cubic-bezier(.4,0,.2,1),opacity .4s}
+.panel:hover .dc{opacity:.14;transform:scale(1.08)}
+.dg{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(rgba(255,255,255,.4) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.4) 1px,transparent 1px);background-size:48px 48px}
+.dw{position:absolute;bottom:-20px;right:-10px;font-family:'Fraunces',serif;font-size:min(14vw,130px);font-weight:700;color:rgba(255,255,255,.04);line-height:1;user-select:none;transition:color .4s,transform .5s cubic-bezier(.4,0,.2,1)}
+.panel:hover .dw{color:rgba(255,255,255,.07);transform:translateX(-6px) translateY(-4px)}
+
+.panel::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;opacity:0;transition:opacity .3s}
+.pa::before{background:var(--eng)}
+.ps::before{background:var(--art)}
+.pu::before{background:var(--uni)}
+.panel:hover::before{opacity:1}
+
+.p-num{position:absolute;top:1.5rem;left:2rem;font-family:'Fraunces',serif;font-size:11px;font-weight:300;color:rgba(255,255,255,.15);letter-spacing:.1em}
+.p-price{position:absolute;top:1.5rem;right:1.75rem;font-size:12px;color:rgba(255,255,255,.3);text-align:right;line-height:1.3;transition:color .25s}
+.panel:hover .p-price{color:rgba(255,255,255,.55)}
+.p-price strong{display:block;font-size:15px;font-weight:500;font-family:'Fraunces',serif;color:rgba(255,255,255,.6)}
+.panel:hover .p-price strong{color:var(--gold)}
+
+.p-eye{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.65rem;display:flex;align-items:center;gap:.5rem;transition:color .25s}
+.p-eye::before{content:'';display:block;width:16px;height:1px;background:currentColor;transition:width .3s}
+.panel:hover .p-eye::before{width:28px}
+.p-name{font-family:'Fraunces',serif;font-size:clamp(32px,3.5vw,52px);font-weight:300;color:var(--white);line-height:.95;margin-bottom:.55rem;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.panel:hover .p-name{transform:translateY(-3px)}
+.p-tag{font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,.5);line-height:1.55;max-width:280px;font-weight:300;margin-bottom:1.5rem;transition:color .25s}
+.panel:hover .p-tag{color:rgba(255,255,255,.7)}
+.p-details{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1),opacity .3s;opacity:0}
+.panel:hover .p-details{max-height:220px;opacity:1}
+.p-pills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:1.25rem}
+.p-pill{font-size:10px;padding:.25rem .7rem;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.6)}
+.p-cta{display:inline-flex;align-items:center;gap:.5rem;font-size:13px;font-weight:600;padding:.75rem 1.5rem;border-radius:9px;text-decoration:none;transition:all .2s;background:var(--gold);color:var(--ink)}
+.p-cta:hover{transform:translateY(-2px)}
+.p-cta-arr{transition:transform .2s}
+.p-cta:hover .p-cta-arr{transform:translateX(4px)}
+
+.bottombar{position:fixed;bottom:0;left:0;right:0;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.bb-items{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.bb-item{font-size:11px;color:rgba(255,255,255,.25)}
+.bb-item strong{color:rgba(255,255,255,.4);font-weight:500}
+.bb-hint{font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.05em}
+
+/* ═══════════════════════
+   MOBILE (≤768px)
+═══════════════════════ */
+.mobile{display:none;flex-direction:column;min-height:100vh;padding-top:54px}
+
+.m-hero{padding:1.75rem 1.5rem 1.1rem}
+.m-hero-label{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.5rem}
+.m-hero-title{font-family:'Fraunces',serif;font-size:clamp(26px,8vw,36px);font-weight:300;color:var(--white);line-height:.95;margin-bottom:.45rem}
+.m-hero-title em{font-style:italic;color:rgba(255,255,255,.32)}
+.m-hero-sub{font-size:13px;color:rgba(255,255,255,.35);line-height:1.55;font-weight:300}
+
+.m-cards-header{display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;margin-bottom:.6rem;margin-top:1.25rem}
+.m-cards-label{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.m-cards-hint{font-size:11px;color:rgba(255,255,255,.18)}
+
+.m-row{display:flex;gap:10px;padding:0 1.5rem 1rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory}
+.m-row::-webkit-scrollbar{display:none}
+
+.mc{flex-shrink:0;width:calc(50vw - 1.75rem);max-width:190px;border-radius:16px;padding:1.1rem 1rem;cursor:pointer;border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;transition:border-color .2s,border-width .2s;scroll-snap-align:start}
+.mc.sel{border-width:2px}
+.mc-a{background:var(--eng-d)}.mc-a.sel{border-color:var(--eng)}
+.mc-s{background:var(--art-d)}.mc-s.sel{border-color:var(--art)}
+.mc-u{background:var(--uni-d)}.mc-u.sel{border-color:var(--uni)}
+
+.mc-eye{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.3rem}
+.mc-a .mc-eye{color:rgba(100,160,230,.85)}
+.mc-s .mc-eye{color:rgba(60,190,140,.85)}
+.mc-u .mc-eye{color:rgba(210,130,70,.85)}
+.mc-name{font-family:'Fraunces',serif;font-size:clamp(17px,5vw,22px);font-weight:300;color:var(--white);line-height:.92;margin-bottom:.3rem}
+.mc-tag{font-size:9px;color:rgba(255,255,255,.38);line-height:1.4;margin-bottom:.6rem;font-weight:300}
+.mc-price{font-size:10px;font-weight:500;color:var(--gold)}
+.mc-deco{position:absolute;bottom:-8px;right:-5px;font-family:'Fraunces',serif;font-size:48px;font-weight:700;color:rgba(255,255,255,.05);line-height:1;user-select:none}
+.mc-dot{position:absolute;top:.65rem;right:.7rem;width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:0;transition:opacity .2s}
+.mc.sel .mc-dot{opacity:1}
+
+.m-dots{display:flex;justify-content:center;gap:5px;margin-bottom:.85rem}
+.m-dot{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.15);transition:all .25s}
+.m-dot.on{width:18px;border-radius:3px;background:rgba(255,255,255,.5)}
+
+.m-detail-wrap{margin:0 1rem 1.25rem;border-radius:16px;overflow:hidden;border:1.5px solid rgba(255,255,255,.12)}
+.m-detail-body{padding:1.2rem 1.3rem 1rem}
+.m-detail-eye{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.35rem;opacity:.7}
+.m-detail-name{font-family:'Fraunces',serif;font-size:22px;font-weight:300;color:var(--white);line-height:1;margin-bottom:.35rem}
+.m-detail-tag{font-size:12px;color:rgba(255,255,255,.48);line-height:1.55;margin-bottom:.9rem;font-weight:300}
+.m-detail-pills{display:flex;flex-wrap:wrap;gap:5px}
+.m-dp{font-size:10px;padding:.25rem .65rem;border-radius:100px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.58)}
+
+.m-detail-footer{display:flex;gap:8px;padding:.9rem 1.3rem;border-top:1px solid rgba(255,255,255,.07);background:rgba(0,0,0,.2)}
+.m-btn-main{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:.3rem;font-size:13px;font-weight:600;padding:.75rem 1rem;border-radius:9px;text-decoration:none;color:var(--ink);transition:opacity .15s}
+.m-btn-main:hover{opacity:.88}
+.m-btn-wa{display:inline-flex;align-items:center;gap:.4rem;font-size:13px;font-weight:600;padding:.75rem 1.1rem;border-radius:9px;background:var(--wa);color:var(--ink);text-decoration:none;flex-shrink:0;white-space:nowrap}
+.m-btn-wa:hover{background:var(--wa-d)}
+
+.m-all-link{text-align:center;padding:.75rem 1.5rem 1.5rem}
+.m-all-link a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s}
+.m-all-link a:hover{color:rgba(255,255,255,.6)}
+
+/* SWITCH */
+@media(max-width:768px){
+  html,body{overflow:auto}
+  .desktop,.bottombar{display:none}
+  .mobile{display:flex}
+}
+@media(min-width:769px){
+  .mobile{display:none}
+}
+
+  /* APPLE-TIER UX OVERRIDES */
+  .hero-title { letter-spacing: -0.03em !important; }
+  .tb-brand { letter-spacing: -0.01em !important; }
+  .panel { padding: clamp(2rem, 5vw, 4rem) clamp(2rem, 4vw, 3rem) !important; }
+  .p-name { letter-spacing: -0.02em !important; }
+  a:focus-visible, button:focus-visible, .panel:focus-visible, .mc:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: inherit; }
+  .animate { animation: none !important; opacity: 0; transform: translateY(50px); transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .animate.is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<header class="topbar">
+  <div class="tb-brand">Paradise Academy<span>Lima, Perú</span></div>
+  <div class="tb-right">
+    <a class="tb-link" href="paradise-programs.html">Todos los programas</a>
+    <a class="tb-wa" href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Academy.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank">
+      <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- DESKTOP -->
+<div class="desktop">
+  <div class="stage">
+
+    <div class="panel pa" onclick="location.href='paradise-atlas.html'">
+      <div class="p-deco">
+        <div class="dg"></div>
+        <div class="dc" style="width:420px;height:420px;background:#fff;top:-160px;right:-120px"></div>
+        <div class="dc" style="width:180px;height:180px;background:var(--gold);bottom:-60px;left:-40px"></div>
+        <div class="dw">ATLAS</div>
+      </div>
+      <div class="p-num">01</div>
+      <div class="p-price"><strong>S/180</strong>desde / mes</div>
+      <div>
+        <div class="p-eye">Inglés</div>
+        <div class="p-name">Paradise<br>Atlas</div>
+        <div class="p-tag">Tu idioma, tu mapa al mundo.</div>
+        <div class="p-details">
+          <div class="p-pills">
+            <span class="p-pill">Grupos máx. 12</span>
+            <span class="p-pill">Kids · Teens · Adultos</span>
+            <span class="p-pill">Intensivo 5x semana</span>
+            <span class="p-pill">Solo sábados</span>
+            <span class="p-pill">Business English</span>
+          </div>
+          <a class="p-cta" href="paradise-atlas.html">Conocer el programa <span class="p-cta-arr">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel ps" onclick="location.href='paradise-studio.html'">
+      <div class="p-deco">
+        <div class="dg"></div>
+        <div class="dc" style="width:380px;height:380px;background:#fff;top:-140px;left:-80px"></div>
+        <div class="dc" style="width:200px;height:200px;background:#E8A838;bottom:-80px;right:-60px"></div>
+        <div class="dw">STUDIO</div>
+      </div>
+      <div class="p-num">02</div>
+      <div class="p-price"><strong>S/165</strong>desde / mes</div>
+      <div>
+        <div class="p-eye">Arte</div>
+        <div class="p-name">Paradise<br>Studio</div>
+        <div class="p-tag">Tu estudio. Tu obra. Tu mundo.</div>
+        <div class="p-details">
+          <div class="p-pills">
+            <span class="p-pill">Niños desde 6 años</span>
+            <span class="p-pill">Portafolio teens</span>
+            <span class="p-pill">Adultos fines de semana</span>
+            <span class="p-pill">Exposición al final del ciclo</span>
+          </div>
+          <a class="p-cta" href="paradise-studio.html" style="background:#E8A838">Conocer el programa <span class="p-cta-arr">→</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel pu" onclick="location.href='paradise-ascend.html'">
+      <div class="p-deco">
+        <div class="dg"></div>
+        <div class="dc" style="width:450px;height:450px;background:#fff;top:-180px;right:-160px"></div>
+        <div class="dc" style="width:160px;height:160px;background:var(--gold);bottom:-50px;left:-30px"></div>
+        <div class="dw">ASCEND</div>
+      </div>
+      <div class="p-num">03</div>
+      <div class="p-price"><strong>Gratis</strong>simulacro</div>
+      <div>
+        <div class="p-eye">Preuniversitario</div>
+        <div class="p-name">Paradise<br>Ascend</div>
+        <div class="p-tag">Tu universidad, en cualquier parte del mundo.</div>
+        <div class="p-details">
+          <div class="p-pills">
+            <span class="p-pill">PUCP · UNMSM · UNI</span>
+            <span class="p-pill">Universidades internacionales</span>
+            <span class="p-pill">Ciclo intensivo 4 semanas</span>
+            <span class="p-pill">Solo fines de semana</span>
+          </div>
+          <a class="p-cta" href="paradise-ascend.html">Conocer el programa <span class="p-cta-arr">→</span></a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="bottombar">
+  <div class="bb-items">
+    <span class="bb-item"><strong>Paradise Academy</strong> · Lima, Perú</span>
+    <span class="bb-item">📍 Dentro del colegio</span>
+    <span class="bb-item">Lun–Sáb 8am–8pm</span>
+  </div>
+  <span class="bb-hint">pasa el cursor para explorar</span>
+</footer>
+
+<!-- MOBILE -->
+<div class="mobile">
+
+  <div class="m-hero">
+    <div class="m-hero-label">Paradise Academy · Lima</div>
+    <h1 class="m-hero-title">¿Qué quieres<br><em>aprender?</em></h1>
+    <p class="m-hero-sub">Toca el programa que te interesa para ver los detalles y contactarnos.</p>
+  </div>
+
+  <div class="m-cards-header">
+    <span class="m-cards-label">Programas</span>
+    <span class="m-cards-hint">desliza para ver todos →</span>
+  </div>
+
+  <div class="m-row" id="mrow">
+    <div class="mc mc-a sel" id="mc-a" onclick="pick('atlas')">
+      <div class="mc-dot"></div>
+      <div class="mc-eye">Inglés</div>
+      <div class="mc-name">Paradise<br>Atlas</div>
+      <div class="mc-tag">Inglés conversacional</div>
+      <div class="mc-price">Desde S/180/mes</div>
+      <div class="mc-deco">A</div>
+    </div>
+    <div class="mc mc-s" id="mc-s" onclick="pick('studio')">
+      <div class="mc-dot"></div>
+      <div class="mc-eye">Arte</div>
+      <div class="mc-name">Paradise<br>Studio</div>
+      <div class="mc-tag">Para todas las edades</div>
+      <div class="mc-price">Desde S/165/mes</div>
+      <div class="mc-deco">S</div>
+    </div>
+    <div class="mc mc-u" id="mc-u" onclick="pick('ascend')">
+      <div class="mc-dot"></div>
+      <div class="mc-eye">Preuniversitario</div>
+      <div class="mc-name">Paradise<br>Ascend</div>
+      <div class="mc-tag">Perú e internacional</div>
+      <div class="mc-price">Simulacro gratis</div>
+      <div class="mc-deco">A</div>
+    </div>
+  </div>
+
+  <div class="m-dots">
+    <div class="m-dot on" id="d-atlas"></div>
+    <div class="m-dot" id="d-studio"></div>
+    <div class="m-dot" id="d-ascend"></div>
+  </div>
+
+  <div id="mdetail"></div>
+
+  <div class="m-all-link"><a href="paradise-programs.html">Ver todos los programas y modalidades →</a></div>
+
+</div>
+
+<script>
+var WA = 'https://wa.me/51952381451?text=';
+var WASVG = '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>';
+
+var D = {
+  atlas:{
+    id:'mc-a', dotId:'d-atlas',
+    bg:'#0D3B6E', border:'#1B5FA8',
+    eyeColor:'rgba(100,160,230,.85)', eye:'Inglés',
+    name:'Paradise Atlas',
+    tag:'Clases de inglés conversacional para niños, jóvenes y adultos. Grupos máximo 12 alumnos — practicas en cada clase.',
+    pills:['Regular 3x/semana','Intensivo 5x semana','Solo sábados','Business English','TOEFL / IELTS prep'],
+    href:'paradise-atlas.html',
+    ctaBg:'#C8993A',
+    waMsg:'Hola%2C%20me%20interesa%20Paradise%20Atlas.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F'
+  },
+  studio:{
+    id:'mc-s', dotId:'d-studio',
+    bg:'#074D35', border:'#0F7A55',
+    eyeColor:'rgba(60,190,140,.85)', eye:'Arte',
+    name:'Paradise Studio',
+    tag:'Talleres de dibujo y pintura para niños, teens y adultos. Exposición de obras al final de cada ciclo.',
+    pills:['Taller niños after school','Portafolio teens 14–18','Adultos fines de semana','Fiestas de arte'],
+    href:'paradise-studio.html',
+    ctaBg:'#E8A838',
+    waMsg:'Hola%2C%20me%20interesa%20Paradise%20Studio.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F'
+  },
+  ascend:{
+    id:'mc-u', dotId:'d-ascend',
+    bg:'#6B2B06', border:'#A0420A',
+    eyeColor:'rgba(210,130,70,.85)', eye:'Preuniversitario',
+    name:'Paradise Ascend',
+    tag:'Preparación para universidades peruanas e internacionales. El único programa en Lima con las dos rutas.',
+    pills:['PUCP · UNMSM · UNI · UPC','España · EE.UU. · Canadá · EU','Ciclo intensivo 4 semanas','Solo fines de semana','Simulacro de diagnóstico gratis'],
+    href:'paradise-ascend.html',
+    ctaBg:'#C8993A',
+    waMsg:'Hola%2C%20me%20interesa%20Paradise%20Ascend.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F'
+  }
+};
+
+function pick(brand){
+  var b = D[brand];
+  ['atlas','studio','ascend'].forEach(function(x){
+    var card = document.getElementById(D[x].id);
+    var dot  = document.getElementById(D[x].dotId);
+    var isSel = x === brand;
+    card.classList.toggle('sel', isSel);
+    dot.classList.toggle('on', isSel);
+  });
+  var pills = b.pills.map(function(p){
+    return '<span class="m-dp">'+p+'</span>';
+  }).join('');
+  document.getElementById('mdetail').innerHTML =
+    '<div class="m-detail-wrap" style="background:'+b.bg+';border-color:'+b.border+'">'+
+      '<div class="m-detail-body">'+
+        '<div class="m-detail-eye" style="color:'+b.eyeColor+'">'+b.eye+'</div>'+
+        '<div class="m-detail-name">'+b.name+'</div>'+
+        '<div class="m-detail-tag">'+b.tag+'</div>'+
+        '<div class="m-detail-pills">'+pills+'</div>'+
+      '</div>'+
+      '<div class="m-detail-footer">'+
+        '<a class="m-btn-main" href="'+b.href+'" style="background:'+b.ctaBg+'">Ver programa completo →</a>'+
+        '<a class="m-btn-wa" href="'+WA+b.waMsg+'" target="_blank">'+WASVG+' WA</a>'+
+      '</div>'+
+    '</div>';
+}
+
+pick('atlas');
+
+var row = document.getElementById('mrow');
+if(row && window.IntersectionObserver){
+  var cards = [{id:'mc-a',brand:'atlas'},{id:'mc-s',brand:'studio'},{id:'mc-u',brand:'ascend'}];
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && e.intersectionRatio >= .55){
+        pick(e.target.dataset.brand);
+      }
+    });
+  },{root:row,threshold:.55});
+  cards.forEach(function(c){
+    var el = document.getElementById(c.id);
+    if(el){ el.dataset.brand = c.brand; io.observe(el); }
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  const fadeObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        fadeObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll('.panel, .m-hero, .m-cards-header, .mc').forEach((el, index) => {
+    el.classList.add('animate');
+    if(el.classList.contains('panel') || el.classList.contains('mc')) {
+       el.style.transitionDelay = (index % 3) * 0.15 + 's';
+    }
+    fadeObserver.observe(el);
+  });
+});
+</script>
+</body>
+</html>

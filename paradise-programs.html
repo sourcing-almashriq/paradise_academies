@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise Academy — Programas</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --eng:#1B5FA8;--eng-d:#0D3B6E;--eng-l:#E8F0FB;
+  --art:#0F7A55;--art-d:#074D35;--art-l:#E2F5EE;
+  --uni:#A0420A;--uni-d:#6B2B06;--uni-l:#FBF0E4;
+  --gold:#C8993A;
+  --ink:#0F0E0C;--paper:#F9F7F2;--white:#ffffff;
+  --muted:#6B7280;--border:#E5E7EB;--mid:#F3F4F6;--surface:#FAFAFA;
+  --wa:#25D366;--wa-d:#1DA851;
+  --sidebar:260px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden;padding-top:52px}
+
+/* ── TOP NAV ── */
+.topnav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(15,14,12,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:0 1.5rem;height:52px;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.topnav-brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;transition:opacity .2s}
+.topnav-brand:hover{opacity:.8}
+.topnav-logo{font-family:'Fraunces',serif;font-size:16px;font-weight:400;color:var(--white);letter-spacing:.02em}
+.topnav-logo span{color:rgba(255,255,255,.7);font-style:italic}
+.topnav-links{display:flex;align-items:center;gap:.25rem}
+.topnav-link{font-size:12px;color:rgba(255,255,255,.5);text-decoration:none;padding:.4rem .85rem;border-radius:6px;transition:all .2s cubic-bezier(0.16,1,0.3,1);cursor:pointer;white-space:nowrap}
+.topnav-link:hover{color:var(--white);background:rgba(255,255,255,.07)}
+.topnav-link.active{color:var(--white);background:rgba(255,255,255,.1)}
+.topnav-wa{display:flex;align-items:center;gap:.45rem;font-size:12px;font-weight:600;color:var(--ink);background:var(--wa);border:none;border-radius:7px;padding:.4rem 1rem;cursor:pointer;transition:all .2s cubic-bezier(0.16,1,0.3,1);text-decoration:none;white-space:nowrap}
+.topnav-wa:hover{background:var(--wa-d);transform:translateY(-1px) scale(0.98);box-shadow:0 4px 12px rgba(37,211,102,.25)}
+.topnav-wa-icon{width:16px;height:16px;flex-shrink:0}
+@media(max-width:640px){.topnav-links{display:none}}
+
+/* ── LAYOUT ── */
+.layout{display:flex;min-height:100vh;padding-top:52px}
+
+/* ── SIDEBAR ── */
+.sidebar{width:var(--sidebar);flex-shrink:0;position:fixed;top:52px;left:0;bottom:0;background:var(--white);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow-y:auto;z-index:100;transition:transform .25s}
+@media(max-width:900px){.sidebar{transform:translateX(-100%);z-index:150}.sidebar.open{transform:translateX(0)}}
+.sidebar-section{padding:1.25rem 1rem .5rem}
+.sidebar-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 .5rem;margin-bottom:.4rem}
+.sidebar-brand-btn{display:flex;align-items:center;gap:.65rem;width:100%;padding:.65rem .75rem;border-radius:9px;border:none;background:transparent;cursor:pointer;transition:all .15s;text-align:left;margin-bottom:2px}
+.sidebar-brand-btn:hover{background:var(--mid)}
+.sidebar-brand-btn.active-atlas{background:var(--eng-l)}
+.sidebar-brand-btn.active-studio{background:var(--art-l)}
+.sidebar-brand-btn.active-ascend{background:var(--uni-l)}
+.sidebar-brand-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sidebar-brand-info{flex:1;min-width:0}
+.sidebar-brand-name{font-size:13px;font-weight:500;color:var(--ink);line-height:1.2}
+.sidebar-brand-btn.active-atlas .sidebar-brand-name{color:var(--eng-d)}
+.sidebar-brand-btn.active-studio .sidebar-brand-name{color:var(--art-d)}
+.sidebar-brand-btn.active-ascend .sidebar-brand-name{color:var(--uni-d)}
+.sidebar-brand-sub{font-size:11px;color:var(--muted)}
+
+.sidebar-prog-list{padding:0 1rem .75rem}
+.sidebar-prog-btn{display:flex;align-items:center;gap:.5rem;width:100%;padding:.5rem .75rem;border-radius:7px;border:none;background:transparent;cursor:pointer;transition:all .15s;text-align:left;font-size:12px;color:var(--muted);margin-bottom:1px}
+.sidebar-prog-btn:hover{background:var(--mid);color:var(--ink)}
+.sidebar-prog-btn.active{color:var(--ink);font-weight:500}
+.sidebar-prog-btn.active-atlas{background:var(--eng-l);color:var(--eng-d)}
+.sidebar-prog-btn.active-studio{background:var(--art-l);color:var(--art-d)}
+.sidebar-prog-btn.active-ascend{background:var(--uni-l);color:var(--uni-d)}
+.sidebar-prog-bullet{width:5px;height:5px;border-radius:50%;background:currentColor;flex-shrink:0;opacity:.5}
+
+.sidebar-divider{height:1px;background:var(--border);margin:.25rem 1rem}
+
+/* CONTACT SECTION IN SIDEBAR */
+.sidebar-contact{padding:1rem;margin-top:auto;border-top:1px solid var(--border)}
+.sidebar-contact-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem}
+.wa-btn{display:flex;align-items:center;gap:.6rem;width:100%;padding:.75rem 1rem;border-radius:10px;border:none;background:var(--wa);color:var(--white);cursor:pointer;transition:all .15s;font-size:13px;font-weight:500;text-decoration:none}
+.wa-btn:hover{background:var(--wa-d)}
+.wa-btn-icon{width:18px;height:18px;flex-shrink:0}
+.wa-note{font-size:11px;color:var(--muted);margin-top:.6rem;line-height:1.45}
+.location-pill{display:inline-flex;align-items:center;gap:.3rem;font-size:11px;color:var(--muted);margin-top:.5rem}
+
+/* ── MAIN ── */
+.main{flex:1;margin-left:var(--sidebar);padding:2rem 2.5rem;min-width:0}
+@media(max-width:900px){.main{margin-left:0;padding:1.5rem}}
+
+/* HEADER */
+.page-header{margin-bottom:2rem}
+.page-header-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:.5rem}
+.page-title{font-family:'Fraunces',serif;font-size:clamp(24px,3.5vw,34px);font-weight:300;color:var(--ink)}
+.page-title em{font-style:italic;color:var(--muted)}
+.page-subtitle{font-size:14px;color:var(--muted);max-width:500px;line-height:1.6}
+.mobile-menu-btn{display:none;align-items:center;gap:.4rem;padding:.5rem .85rem;border-radius:7px;border:1px solid var(--border);background:var(--white);cursor:pointer;font-size:13px;color:var(--ink)}
+@media(max-width:900px){.mobile-menu-btn{display:flex}}
+
+/* BRAND SWITCHER (mobile top) */
+.brand-switcher{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
+.brand-chip{padding:6px 14px;border-radius:100px;font-size:12px;font-weight:500;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--muted);transition:all .15s}
+.brand-chip:hover{border-color:var(--muted)}
+.brand-chip.chip-atlas.active{background:var(--eng);color:var(--white);border-color:var(--eng)}
+.brand-chip.chip-studio.active{background:var(--art);color:var(--white);border-color:var(--art)}
+.brand-chip.chip-ascend.active{background:var(--uni);color:var(--white);border-color:var(--uni)}
+
+/* BRAND PANEL */
+.brand-panel{display:none}.brand-panel.on{display:block}
+
+/* BRAND HERO STRIP */
+.brand-strip{border-radius:14px;padding:1.5rem 2rem;margin-bottom:1.75rem;color:var(--white);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.brand-strip-left{}
+.brand-strip-eyebrow{font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-bottom:.3rem;font-weight:500}
+.brand-strip-name{font-family:'Fraunces',serif;font-size:clamp(22px,3vw,30px);font-weight:300;line-height:1.1;margin-bottom:.25rem}
+.brand-strip-tag{font-size:13px;opacity:.6;font-weight:300}
+.brand-strip-pill{font-size:11px;padding:.35rem .85rem;border-radius:100px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);white-space:nowrap}
+
+/* PROGRAMS GRID */
+.prog-grid-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem}
+.prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:10px;margin-bottom:1.75rem}
+.prog-card{border:1px solid var(--border);border-radius:12px;padding:1rem 1.1rem;cursor:pointer;transition:all .3s cubic-bezier(0.16,1,0.3,1);background:var(--white);position:relative;user-select:none}
+.prog-card:hover{border-color:var(--muted);background:var(--surface);transform:translateY(-4px);box-shadow:0 12px 30px rgba(0,0,0,.08)}
+.prog-card.selected{border-width:2px;transform:translateY(-2px)}
+.prog-card.sel-atlas{border-color:var(--eng);background:var(--eng-l);box-shadow:0 0 0 4px rgba(27,95,168,.15)}
+.prog-card.sel-studio{border-color:var(--art);background:var(--art-l);box-shadow:0 0 0 4px rgba(15,122,85,.15)}
+.prog-card.sel-ascend{border-color:var(--uni);background:var(--uni-l);box-shadow:0 0 0 4px rgba(160,66,10,.15)}
+.prog-badge{font-size:10px;font-weight:500;padding:2px 7px;border-radius:4px;display:inline-block;margin-bottom:.5rem;letter-spacing:.03em}
+.prog-name{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.2rem;line-height:1.25}
+.prog-sub{font-size:11px;color:var(--muted);line-height:1.35}
+.prog-price{font-size:13px;font-weight:600;margin-top:.55rem}
+.prog-check{position:absolute;top:.65rem;right:.75rem;width:18px;height:18px;border-radius:50%;display:none;align-items:center;justify-content:center;font-size:10px;color:var(--white);font-weight:700}
+.prog-card.selected .prog-check{display:flex}
+
+/* DETAIL PANEL */
+.detail-wrap{display:none}
+.detail-wrap.on{display:block}
+.detail-panel{border:1px solid var(--border);border-radius:14px;background:var(--white);overflow:hidden}
+
+.dp-top{padding:1.5rem 1.75rem;border-bottom:1px solid var(--border)}
+.dp-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:.75rem;flex-wrap:wrap}
+.dp-name{font-family:'Fraunces',serif;font-size:clamp(20px,2.5vw,26px);font-weight:300;color:var(--ink);line-height:1.1}
+.dp-price-block{text-align:right;flex-shrink:0}
+.dp-price{font-family:'Fraunces',serif;font-size:clamp(22px,3vw,30px);font-weight:300;line-height:1}
+.dp-price-note{font-size:11px;color:var(--muted);margin-top:.2rem}
+.dp-tagline{font-size:14px;color:var(--muted);line-height:1.65;max-width:520px}
+
+.dp-body{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border)}
+@media(max-width:560px){.dp-body{grid-template-columns:1fr}}
+.dp-col{padding:1.25rem 1.75rem}
+.dp-col:first-child{border-right:1px solid var(--border)}
+@media(max-width:560px){.dp-col:first-child{border-right:none;border-bottom:1px solid var(--border)}}
+.dp-col-label{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.75rem}
+.dp-rows{display:flex;flex-direction:column;gap:.45rem}
+.dp-row{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:.35rem 0;border-bottom:1px solid var(--mid);gap:.5rem}
+.dp-row:last-child{border-bottom:none}
+.dp-row-k{color:var(--muted)}
+.dp-row-v{font-weight:500;color:var(--ink);text-align:right}
+.dp-includes{display:flex;flex-direction:column;gap:.45rem}
+.inc{font-size:13px;color:var(--muted);display:flex;align-items:flex-start;gap:.45rem;line-height:1.45}
+.inc-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0;margin-top:.45rem}
+
+/* CTA STRIP */
+.dp-cta{padding:1.25rem 1.75rem;background:var(--mid);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.dp-cta-left{}
+.dp-cta-title{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.2rem}
+.dp-cta-sub{font-size:12px;color:var(--muted)}
+.dp-cta-btns{display:flex;gap:8px;flex-wrap:wrap;flex-shrink:0}
+.btn-info{padding:.7rem 1.25rem;border-radius:8px;font-size:13px;font-weight:400;cursor:pointer;border:1px solid var(--border);background:var(--white);color:var(--muted);transition:all .15s;text-decoration:none;display:inline-flex;align-items:center}
+.btn-info:hover{background:var(--paper)}
+.btn-wa{display:inline-flex;align-items:center;gap:.45rem;padding:.7rem 1.25rem;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:var(--wa);color:var(--white);transition:all .15s;text-decoration:none;white-space:nowrap}
+.btn-wa:hover{background:var(--wa-d)}
+.btn-wa-icon{width:16px;height:16px;flex-shrink:0}
+
+/* EMPTY STATE */
+.select-hint{border:1px dashed var(--border);border-radius:14px;padding:3rem;text-align:center;color:var(--muted);font-size:14px;line-height:1.6}
+.select-hint strong{display:block;font-size:16px;color:var(--ink);margin-bottom:.35rem;font-weight:500}
+
+/* CONTACT PAGE */
+.contact-page{display:none}.contact-page.on{display:block}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem}
+@media(max-width:640px){.contact-grid{grid-template-columns:1fr}}
+.contact-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:1.75rem;transition:all .2s}
+.contact-card:hover{border-color:var(--muted)}
+.contact-card.wa-card{background:var(--wa);border-color:var(--wa);cursor:pointer}
+.contact-card.wa-card:hover{background:var(--wa-d);border-color:var(--wa-d)}
+.contact-icon{font-size:28px;margin-bottom:1rem;display:block}
+.contact-title{font-size:17px;font-weight:500;color:var(--ink);margin-bottom:.35rem}
+.wa-card .contact-title{color:var(--white)}
+.contact-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.wa-card .contact-desc{color:rgba(255,255,255,.75)}
+.contact-action{margin-top:1.25rem;display:inline-flex;align-items:center;gap:.35rem;font-size:13px;font-weight:500;color:var(--eng);cursor:pointer;text-decoration:none}
+.wa-card .contact-action{color:rgba(255,255,255,.9)}
+.contact-info-box{background:var(--mid);border-radius:10px;padding:1rem 1.25rem;margin-top:1.25rem;font-size:13px;color:var(--muted);line-height:1.6}
+.contact-info-box strong{color:var(--ink);font-weight:500}
+
+/* MOBILE OVERLAY */
+.sidebar-overlay{display:none;position:fixed;inset:0;top:52px;background:rgba(0,0,0,.4);z-index:140}
+@media(max-width:900px){.sidebar-overlay.on{display:block}}
+
+  /* APPLE-TIER UX OVERRIDES */
+  .main { padding: clamp(6rem, 10vw, 8rem) clamp(2rem, 5vw, 4rem) !important; }
+  .prog-card { box-shadow: 0 12px 30px rgba(0,0,0,0.05) !important; }
+  .detail-panel { box-shadow: 0 24px 60px rgba(0,0,0,0.04) !important; }
+  .contact-card { transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important; }
+  .contact-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.06) !important; }
+  *:focus-visible { outline: 2px solid var(--eng); outline-offset: 3px; border-radius: inherit; }
+  .animate { animation: none !important; opacity: 0; transform: translateY(40px); transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .animate.is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="topnav">
+  <a class="topnav-brand" id="topnav-back-link" href="paradise-atlas.html">
+    <div class="topnav-logo">← Volver a <span id="topnav-brand-name">Paradise Atlas</span></div>
+  </a>
+  <div class="topnav-links">
+    <div class="topnav-link active" id="nav-programas" onclick="showSection('programas')">Programas</div>
+    <div class="topnav-link" id="nav-contacto" onclick="showSection('contacto')">Contáctanos</div>
+  </div>
+  <a class="topnav-wa" id="topnav-wa-btn" href="https://wa.me/51952381451" target="_blank">
+    <svg class="topnav-wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    WhatsApp
+  </a>
+</nav>
+
+<!-- SIDEBAR OVERLAY (mobile) -->
+<div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+
+  <div class="sidebar-section">
+    <div class="sidebar-label">Programas</div>
+    <button class="sidebar-brand-btn" id="sb-atlas" onclick="switchBrand('atlas')">
+      <div class="sidebar-brand-dot" style="background:var(--eng)"></div>
+      <div class="sidebar-brand-info">
+        <div class="sidebar-brand-name">Paradise Atlas</div>
+        <div class="sidebar-brand-sub">Inglés</div>
+      </div>
+    </button>
+    <div class="sidebar-prog-list" id="spl-atlas"></div>
+
+    <button class="sidebar-brand-btn" id="sb-studio" onclick="switchBrand('studio')">
+      <div class="sidebar-brand-dot" style="background:var(--art)"></div>
+      <div class="sidebar-brand-info">
+        <div class="sidebar-brand-name">Paradise Studio</div>
+        <div class="sidebar-brand-sub">Arte</div>
+      </div>
+    </button>
+    <div class="sidebar-prog-list" id="spl-studio"></div>
+
+    <button class="sidebar-brand-btn" id="sb-ascend" onclick="switchBrand('ascend')">
+      <div class="sidebar-brand-dot" style="background:var(--uni)"></div>
+      <div class="sidebar-brand-info">
+        <div class="sidebar-brand-name">Paradise Ascend</div>
+        <div class="sidebar-brand-sub">Preuniversitario</div>
+      </div>
+    </button>
+    <div class="sidebar-prog-list" id="spl-ascend"></div>
+  </div>
+
+  <div class="sidebar-divider"></div>
+
+  <div class="sidebar-contact">
+    <div class="sidebar-contact-label">Contáctanos</div>
+    <a class="wa-btn" href="https://wa.me/51952381451" target="_blank">
+      <svg class="wa-btn-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Escribir al WhatsApp
+    </a>
+    <div class="wa-note">Respondemos en menos de una hora · Lun–Sáb 8am–8pm</div>
+    <div class="location-pill">📍 Lima, Perú</div>
+  </div>
+
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- PROGRAMS SECTION -->
+  <div id="section-programas">
+    <div class="page-header">
+      <div class="page-header-top">
+        <h1 class="page-title">Selecciona tu <em>programa</em></h1>
+        <button class="mobile-menu-btn" onclick="toggleSidebar()">☰ Menú</button>
+      </div>
+      <p class="page-subtitle">Elige el programa que más se adapta a ti. Selecciona una modalidad para ver todos los detalles y contactarnos directamente.</p>
+    </div>
+
+    <div class="brand-switcher">
+      <div class="brand-chip chip-atlas active" id="chip-atlas" onclick="switchBrand('atlas')">Paradise Atlas</div>
+      <div class="brand-chip chip-studio" id="chip-studio" onclick="switchBrand('studio')">Paradise Studio</div>
+      <div class="brand-chip chip-ascend" id="chip-ascend" onclick="switchBrand('ascend')">Paradise Ascend</div>
+    </div>
+
+    <!-- ATLAS -->
+    <div class="brand-panel on" id="bp-atlas">
+      <div class="brand-strip" style="background:var(--eng-d)">
+        <div class="brand-strip-left">
+          <div class="brand-strip-eyebrow">Paradise Academy</div>
+          <div class="brand-strip-name">Paradise Atlas</div>
+          <div class="brand-strip-tag">Tu idioma, tu mapa al mundo.</div>
+        </div>
+        <div class="brand-strip-pill">Desde S/180/mes</div>
+      </div>
+      <div class="prog-grid-label">Elige tu modalidad</div>
+      <div class="prog-grid" id="grid-atlas"></div>
+      <div class="detail-wrap" id="detail-atlas"></div>
+    </div>
+
+    <!-- STUDIO -->
+    <div class="brand-panel" id="bp-studio">
+      <div class="brand-strip" style="background:var(--art-d)">
+        <div class="brand-strip-left">
+          <div class="brand-strip-eyebrow">Paradise Academy</div>
+          <div class="brand-strip-name">Paradise Studio</div>
+          <div class="brand-strip-tag">Tu estudio. Tu obra. Tu mundo.</div>
+        </div>
+        <div class="brand-strip-pill">Desde S/165/mes</div>
+      </div>
+      <div class="prog-grid-label">Elige tu taller</div>
+      <div class="prog-grid" id="grid-studio"></div>
+      <div class="detail-wrap" id="detail-studio"></div>
+    </div>
+
+    <!-- ASCEND -->
+    <div class="brand-panel" id="bp-ascend">
+      <div class="brand-strip" style="background:var(--uni-d)">
+        <div class="brand-strip-left">
+          <div class="brand-strip-eyebrow">Paradise Academy</div>
+          <div class="brand-strip-name">Paradise Ascend</div>
+          <div class="brand-strip-tag">Tu universidad, en cualquier parte del mundo.</div>
+        </div>
+        <div class="brand-strip-pill">Simulacro gratis</div>
+      </div>
+      <div class="prog-grid-label">Elige tu ciclo</div>
+      <div class="prog-grid" id="grid-ascend"></div>
+      <div class="detail-wrap" id="detail-ascend"></div>
+    </div>
+  </div>
+
+  <!-- CONTACT SECTION -->
+  <div id="section-contacto" class="contact-page">
+    <div class="page-header">
+      <div class="page-header-top">
+        <h1 class="page-title">Contáctanos</h1>
+        <button class="mobile-menu-btn" onclick="toggleSidebar()">☰ Menú</button>
+      </div>
+      <p class="page-subtitle">Estamos disponibles para responder tus preguntas, ayudarte a elegir el programa correcto y coordinar tu primera clase o sesión gratis.</p>
+    </div>
+
+    <div class="contact-grid">
+      <a class="contact-card wa-card" href="https://wa.me/51952381451" target="_blank">
+        <span class="contact-icon" style="font-size:28px">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </span>
+        <div class="contact-title">WhatsApp</div>
+        <div class="contact-desc">La forma más rápida de contactarnos. Respondemos en menos de una hora en horario de atención.</div>
+        <div class="contact-action">Abrir WhatsApp →</div>
+      </a>
+
+      <div class="contact-card">
+        <span class="contact-icon">📍</span>
+        <div class="contact-title">Visítanos</div>
+        <div class="contact-desc">Estamos dentro de las instalaciones del colegio. Puedes venir a conocer el espacio y hablar con el coordinador de cada programa.</div>
+        <div class="contact-info-box"><strong>Lima, Perú</strong><br>Dirección exacta por confirmar · Acceso por la entrada principal del colegio</div>
+      </div>
+
+      <div class="contact-card">
+        <span class="contact-icon">🗓️</span>
+        <div class="contact-title">Horario de atención</div>
+        <div class="contact-desc">Coordinación disponible para resolver dudas, inscripciones y primera clase gratis.</div>
+        <div class="contact-info-box">
+          <strong>Lunes a viernes</strong> — 8:00 am a 8:00 pm<br>
+          <strong>Sábados</strong> — 8:00 am a 2:00 pm<br>
+          <strong>Domingos</strong> — Solo Atlas y Studio
+        </div>
+      </div>
+
+      <div class="contact-card">
+        <span class="contact-icon">❓</span>
+        <div class="contact-title">¿No sabes qué programa elegir?</div>
+        <div class="contact-desc">Cuéntanos tu situación por WhatsApp y te recomendamos el programa ideal según tu nivel, disponibilidad y objetivos.</div>
+        <a class="contact-action" href="https://wa.me/51952381451?text=Hola%2C%20no%20s%C3%A9%20qu%C3%A9%20programa%20de%20Paradise%20Academy%20es%20el%20m%C3%A1s%20indicado%20para%20m%C3%AD.%20%C2%BFMe%20pueden%20ayudar%3F" target="_blank">Pedir recomendación →</a>
+      </div>
+    </div>
+
+    <!-- PROGRAM SHORTCUTS FROM CONTACT -->
+    <div style="margin-top:2.5rem">
+      <div class="prog-grid-label">O selecciona directamente un programa</div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <button onclick="showSection('programas');switchBrand('atlas')" style="padding:.65rem 1.25rem;border-radius:8px;border:1px solid var(--eng);background:var(--eng-l);color:var(--eng-d);font-size:13px;font-weight:500;cursor:pointer">Paradise Atlas · Inglés →</button>
+        <button onclick="showSection('programas');switchBrand('studio')" style="padding:.65rem 1.25rem;border-radius:8px;border:1px solid var(--art);background:var(--art-l);color:var(--art-d);font-size:13px;font-weight:500;cursor:pointer">Paradise Studio · Arte →</button>
+        <button onclick="showSection('programas');switchBrand('ascend')" style="padding:.65rem 1.25rem;border-radius:8px;border:1px solid var(--uni);background:var(--uni-l);color:var(--uni-d);font-size:13px;font-weight:500;cursor:pointer">Paradise Ascend · Preuniversitario →</button>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+var WA_BASE='https://wa.me/51952381451?text=';
+var DATA={
+  atlas:{color:'#1B5FA8',selClass:'sel-atlas',
+    programs:[
+      {id:'regular',badge:'Más popular',bBg:'#E8F0FB',bC:'#0D3B6E',name:'Grupos regulares',sub:'3x semana · Mañana, tarde o noche',price:'S/200',period:'/mes',tagline:'Inglés conversacional para niños, teens y adultos. El grupo pequeño garantiza que practiques en cada clase.',rows:[['Frecuencia','3 veces/semana'],['Duración','Ciclos de 3 meses'],['Grupo','Máx. 12 alumnos'],['Edades','Kids · Teens · Adultos']],includes:['Evaluación de nivel inicial incluida','Material digital provisto por el profesor','Seguimiento de progreso por ciclo','Ruta Cambridge disponible'],wa:'Hola, me interesa inscribirme en los Grupos Regulares de Paradise Atlas. ¿Qué horarios tienen disponibles?'},
+      {id:'intensivo',badge:'Avanza rápido',bBg:'#FFF3CD',bC:'#856404',name:'Intensivo',sub:'5x semana · Resultados en semanas',price:'S/320',period:'/mes',tagline:'Para quien necesita avanzar rápido — vacaciones, antes de un viaje o cambio de trabajo.',rows:[['Frecuencia','5 veces/semana'],['Mínimo','4 semanas'],['Grupo','Máx. 12 alumnos'],['Nivel','Todos los niveles']],includes:['Ideal para vacaciones de julio y enero','Mismo método conversacional','Se puede continuar como grupo regular','Certificado de horas al finalizar'],wa:'Hola, me interesa el programa Intensivo de Paradise Atlas (5x semana). ¿Cuándo arranca el próximo ciclo?'},
+      {id:'sabados',badge:'Flexibilidad total',bBg:'#FDF6E8',bC:'#8a6520',name:'Solo sábados',sub:'2 hrs/sábado · Para la semana ocupada',price:'S/180',period:'/mes',tagline:'Diseñado para adultos que trabajan y no pueden comprometer días de semana.',rows:[['Frecuencia','1 sábado/semana'],['Duración','2 horas por sesión'],['Grupo','Máx. 12 alumnos'],['Perfil','Adultos 25–45']],includes:['Material de práctica para la semana','Posibilidad de subir a grupo regular','Sin ausencias forzadas por trabajo'],wa:'Hola, me interesa el programa Solo Sábados de Paradise Atlas. ¿Hay cupos disponibles?'},
+      {id:'business',badge:'Profesional',bBg:'#F0FDF4',bC:'#166534',name:'Business English',sub:'2x semana · Inglés laboral real',price:'S/350',period:'/mes',tagline:'Reuniones, presentaciones, emails y entrevistas. Inglés enfocado en el mundo profesional.',rows:[['Frecuencia','2 veces/semana'],['Horario','Noche o sábado'],['Grupo','Máx. 8 alumnos'],['Nivel mínimo','Pre-intermedio']],includes:['Vocabulario de negocios y corporativo','Práctica de presentaciones en inglés','Simulación de reuniones y entrevistas','Materiales Harvard Business Review'],wa:'Hola, me interesa el Business English de Paradise Atlas. Necesito el inglés para reuniones de trabajo.'},
+      {id:'toefl',badge:'Certificación',bBg:'#EFF6FF',bC:'#1D4ED8',name:'TOEFL / IELTS Prep',sub:'8 semanas · Score objetivo',price:'S/450',period:'/curso',tagline:'Preparación específica para obtener el puntaje que necesitas para estudiar en el extranjero.',rows:[['Formato','Curso de 8 semanas'],['Nivel mínimo','Intermedio B1+'],['Grupo','Máx. 8 alumnos'],['Resultado','Score objetivo']],includes:['Práctica con exámenes reales','Estrategias por sección: reading, listening, writing, speaking','Simulacros cronometrados cada semana','1 simulacro oficial incluido'],wa:'Hola, me interesa la preparación TOEFL/IELTS de Paradise Atlas. ¿Cuándo empieza el próximo curso?'}
+    ]
+  },
+  studio:{color:'#0F7A55',selClass:'sel-studio',
+    programs:[
+      {id:'ninos',badge:'Desde 6 años',bBg:'#E2F5EE',bC:'#074D35',name:'Taller niños',sub:'After school y sábados',price:'S/165',period:'/mes',tagline:'Dibujo y pintura para niños en grupos pequeños. El niño lleva su obra a casa cada clase.',rows:[['Edades','6–13 años'],['Horario','Tardes y sábados'],['Grupo','Máx. 10 alumnos'],['Materiales','Básicos incluidos']],includes:['Obra terminada en cada clase','Exposición de fin de ciclo con la familia','Progresión de técnicas: lápiz → acuarela → acrílico','Sin experiencia previa requerida'],wa:'Hola, me interesa inscribir a mi hijo/a en el Taller de Niños de Paradise Studio. ¿Qué horarios tienen?'},
+      {id:'intensivo',badge:'2x semana',bBg:'#FDF6E8',bC:'#8a6520',name:'Taller intensivo niños',sub:'Doble frecuencia · Avanza más rápido',price:'S/240',period:'/mes',tagline:'Para niños que quieren avanzar más rápido o prepararse para la exposición con mayor profundidad.',rows:[['Frecuencia','2 veces/semana'],['Edades','6–13 años'],['Grupo','Máx. 10 alumnos'],['Materiales','Incluidos']],includes:['Todo lo del taller regular, doble frecuencia','Mayor desarrollo técnico por ciclo','Ideal si el niño ya tomó el taller regular','Pieza adicional para la exposición'],wa:'Hola, me interesa el Taller Intensivo de niños de Paradise Studio (2 veces por semana). ¿Hay cupos?'},
+      {id:'portfolio',badge:'Carrera artística',bBg:'#E2F5EE',bC:'#074D35',name:'Portafolio teens',sub:'14–18 años · Para postular a la carrera que sueñas',price:'S/280',period:'/mes',tagline:'Para adolescentes que quieren estudiar diseño, arquitectura o artes. Construimos el portafolio de admisión.',rows:[['Edades','14–18 años'],['Objetivo','Portafolio de admisión'],['Grupo','Máx. 8 alumnos'],['Universidades','PUCP, UPC, ULIMA, Bellas Artes']],includes:['Dibujo técnico + composición + pintura','Construcción de portafolio pieza por pieza','Retroalimentación individual por obra','Carta de intención incluida'],wa:'Hola, me interesa el Track de Portafolio para teens de Paradise Studio. Quiero postular a una carrera artística.'},
+      {id:'adultos',badge:'Fines de semana',bBg:'#FDF6E8',bC:'#8a6520',name:'Taller adultos',sub:'Sin experiencia previa · Desconéctate',price:'S/210',period:'/mes',tagline:'Tu espacio de desconexión. Sin presión, sin juicio. Solo crear algo tuyo cada fin de semana.',rows:[['Horario','Sáb y Dom'],['Nivel','Sin experiencia OK'],['Grupo','Máx. 8 alumnos'],['Técnicas','Dibujo, acuarela, acrílico']],includes:['Ambiente 100% sin presión','Progresión natural de técnicas','Exposición de fin de ciclo opcional','Materiales disponibles en estudio'],wa:'Hola, me interesa el Taller de Adultos de Paradise Studio (fines de semana). No tengo experiencia previa.'},
+      {id:'fiesta',badge:'Evento',bBg:'#FBEAE8',bC:'#7A1A0A',name:'Fiesta de arte',sub:'Cumpleaños · Grupos · Eventos',price:'S/380',period:'/evento',tagline:'Una experiencia de cumpleaños completamente diferente. Los niños crean y se van con su obra como recuerdo.',rows:[['Duración','2 horas'],['Grupo','8–15 niños'],['Incluye','Materiales + guía'],['Edades','5–12 años']],includes:['Cada niño termina con su obra enmarcable','Materiales de arte incluidos','Guía de Paradise Studio durante el evento','Coordinación previa de temática'],wa:'Hola, me interesa organizar una Fiesta de Arte en Paradise Studio para el cumpleaños de mi hijo/a. ¿Qué fechas tienen?'}
+    ]
+  },
+  ascend:{color:'#A0420A',selClass:'sel-ascend',
+    programs:[
+      {id:'regular',badge:'Más completo',bBg:'#FBF0E4',bC:'#6B2B06',name:'Ciclo regular',sub:'3 meses · Preparación profunda',price:'S/500',period:'/mes',tagline:'La preparación más completa. Cubre todos los temas del examen con tiempo para practicar y hacer simulacros.',rows:[['Duración','3 meses'],['Frecuencia','3–4x semana'],['Grupo','Máx. 20 alumnos'],['Ideal para','Primer o segundo intento']],includes:['Todas las materias del examen objetivo','Simulacros semanales tipo examen real','Seguimiento individual semanal','Banco de preguntas de años anteriores'],wa:'Hola, me interesa el Ciclo Regular de Paradise Ascend (3 meses). ¿Cuándo empieza el próximo ciclo?'},
+      {id:'intensivo',badge:'Urgente',bBg:'#FFF3CD',bC:'#856404',name:'Ciclo intensivo',sub:'4 semanas · Examen próximo',price:'S/420',period:'/ciclo',tagline:'El examen se acerca. 4 semanas a máxima intensidad cubriendo todo el temario.',rows:[['Duración','4 semanas'],['Frecuencia','5–6x semana'],['Grupo','Máx. 20 alumnos'],['Ideal para','Examen en menos de 2 meses']],includes:['Temario comprimido por orden de peso','Simulacros diarios con corrección inmediata','Estrategia de examen y manejo del tiempo','Disponible en enero, julio y octubre'],wa:'Hola, quiero inscribirme al Ciclo Intensivo de Paradise Ascend (4 semanas). ¿Cuándo arranca el próximo?'},
+      {id:'fds',badge:'Flexible',bBg:'#F0FDF4',bC:'#166534',name:'Solo fines de semana',sub:'Sáb + Dom · Para semana ocupada',price:'S/340',period:'/mes',tagline:'Para quienes estudian o trabajan en la semana. El mismo contenido, distribuido en sábados y domingos.',rows:[['Frecuencia','Sábado + Domingo'],['Duración','3 meses'],['Grupo','Máx. 20 alumnos'],['Horario','8am–1pm']],includes:['Mismo temario que el ciclo regular','Material de refuerzo para la semana','Simulacros los domingos','Sin ausencias forzadas por colegio'],wa:'Hola, me interesa el ciclo Solo Fines de Semana de Paradise Ascend. Tengo ocupada la semana entre semana.'},
+      {id:'modulo',badge:'Puntual',bBg:'#FBF0E4',bC:'#6B2B06',name:'Módulo por materia',sub:'Refuerza donde lo necesitas',price:'S/160–200',period:'/módulo',tagline:'Cuando solo te falla una materia específica. Refuerzo quirúrgico donde más lo necesitas.',rows:[['Duración','4–6 semanas'],['Frecuencia','2–3x semana'],['Grupo','Máx. 15 alumnos'],['Formato','Por materia individual']],includes:['Disponible: Mat, RV, RM, Física, Química, Bio, Historia','Se puede combinar con otra academia','Diagnóstico inicial incluido','Enfoque en tipos de preguntas del examen'],wa:'Hola, me interesa el Módulo por Materia de Paradise Ascend. ¿Qué materias tienen y cuándo empieza?'},
+      {id:'completo',badge:'6 meses',bBg:'#FDF6E8',bC:'#8a6520',name:'Ciclo completo',sub:'La preparación más profunda',price:'S/850',period:'/ciclo',tagline:'Para quienes tienen tiempo y quieren la preparación más sólida posible.',rows:[['Duración','6 meses'],['Frecuencia','4x semana'],['Grupo','Máx. 20 alumnos'],['Incluye','2 simulacros oficiales']],includes:['Todo el temario 2 veces — básico y avanzado','2 simulacros oficiales incluidos','Seguimiento semanal individual','Clases de recuperación sin costo'],wa:'Hola, me interesa el Ciclo Completo de 6 meses de Paradise Ascend. ¿Cuándo empieza y qué universidades cubre?'},
+      {id:'intl',badge:'Solo en Ascend',bBg:'#FBF0E4',bC:'#6B2B06',name:'Prep internacional',sub:'España · EE.UU. · Canadá · Europa',price:'A consultar',period:'',tagline:'El único programa en Lima que prepara formalmente para universidades internacionales.',rows:[['Destinos','España, EE.UU., CA, EU'],['Incluye','SAT + Essays + Proceso'],['Formato','Individual o grupo'],['Duración','Según objetivo']],includes:['Selección de universidades por perfil','Preparación SAT o selectividad española','Redacción y edición de essays','Guía completa de fechas y documentos'],wa:'Hola, me interesa la Preparación Internacional de Paradise Ascend. Quiero postular a una universidad en el extranjero.'}
+    ]
+  }
+};
+
+var currentBrand='atlas';
+var currentProg=null;
+
+function switchBrand(b){
+  currentBrand=b;currentProg=null;
+  var bMap = {atlas: 'Paradise Atlas', studio: 'Paradise Studio', ascend: 'Paradise Ascend'};
+  var bl = document.getElementById('topnav-back-link');
+  if(bl){ bl.href = 'paradise-'+b+'.html'; }
+  var bn = document.getElementById('topnav-brand-name');
+  if(bn){ bn.innerText = bMap[b]; }
+  
+  ['atlas','studio','ascend'].forEach(function(x){
+    document.getElementById('bp-'+x).classList.toggle('on',x===b);
+    document.getElementById('chip-'+x).className='brand-chip chip-'+x+(x===b?' active':'');
+    document.getElementById('sb-'+x).className='sidebar-brand-btn'+(x===b?' active-'+x:'');
+    updateSidebarProgList(x);
+  });
+  document.getElementById('detail-'+b).classList.remove('on');
+  document.getElementById('detail-'+b).innerHTML='';
+  closeSidebar();
+}
+
+function updateSidebarProgList(brand){
+  var container=document.getElementById('spl-'+brand);
+  if(currentBrand!==brand){container.innerHTML='';return;}
+  var d=DATA[brand];
+  container.innerHTML=d.programs.map(function(p){
+    var active=currentProg===p.id;
+    return '<button class="sidebar-prog-btn'+(active?' active active-'+brand+'"':'"')+' onclick="selectProg(\''+brand+'\',\''+p.id+'\')"><div class="sidebar-prog-bullet"></div>'+p.name+'</button>';
+  }).join('');
+}
+
+function selectProg(brand,pid){
+  if(brand!==currentBrand)switchBrand(brand);
+  currentProg=pid;
+  var d=DATA[brand];
+  var p=d.programs.find(function(x){return x.id===pid;});
+  if(!p)return;
+  document.querySelectorAll('#grid-'+brand+' .prog-card').forEach(function(c){c.classList.remove('selected','sel-atlas','sel-studio','sel-ascend');});
+  var card=document.getElementById('pc-'+brand+'-'+pid);
+  if(card)card.classList.add('selected',d.selClass);
+  updateSidebarProgList(brand);
+  var inc=p.includes.map(function(i){return '<div class="inc"><div class="inc-dot" style="background:'+d.color+'"></div>'+i+'</div>';}).join('');
+  var rows=p.rows.map(function(r){return '<div class="dp-row"><span class="dp-row-k">'+r[0]+'</span><span class="dp-row-v">'+r[1]+'</span></div>';}).join('');
+  var waUrl=WA_BASE+encodeURIComponent(p.wa);
+  var det=document.getElementById('detail-'+brand);
+  det.innerHTML='<div class="detail-panel">'+
+    '<div class="dp-top">'+
+      '<div class="dp-header">'+
+        '<div class="dp-name">'+p.name+'</div>'+
+        '<div class="dp-price-block">'+
+          '<div class="dp-price" style="color:'+d.color+'">'+p.price+'<span style="font-size:14px;color:var(--muted);font-weight:400">'+p.period+'</span></div>'+
+          (p.id!=='intl'?'<div class="dp-price-note">Pago mensual · sin contrato</div>':'<div class="dp-price-note">Se cotiza según el programa</div>')+
+        '</div>'+
+      '</div>'+
+      '<div class="dp-tagline">'+p.tagline+'</div>'+
+    '</div>'+
+    '<div class="dp-body">'+
+      '<div class="dp-col"><div class="dp-col-label">Detalles</div><div class="dp-rows">'+rows+'</div></div>'+
+      '<div class="dp-col"><div class="dp-col-label">Qué incluye</div><div class="dp-includes">'+inc+'</div></div>'+
+    '</div>'+
+    '<div class="dp-cta">'+
+      '<div class="dp-cta-left">'+
+        '<div class="dp-cta-title">¿Te interesa este programa?</div>'+
+        '<div class="dp-cta-sub">Escríbenos — respondemos en menos de una hora.</div>'+
+      '</div>'+
+      '<div class="dp-cta-btns">'+
+        '<button class="btn-info" onclick="showSection(\'contacto\')">Ver más opciones</button>'+
+        '<a class="btn-wa" href="'+waUrl+'" target="_blank">'+
+          '<svg class="btn-wa-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>'+
+          'Escribir al WhatsApp →'+
+        '</a>'+
+      '</div>'+
+    '</div>'+
+  '</div>';
+  det.classList.add('on');
+  setTimeout(function(){det.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+  closeSidebar();
+}
+
+function renderGrids(){
+  ['atlas','studio','ascend'].forEach(function(brand){
+    var d=DATA[brand];
+    var grid=document.getElementById('grid-'+brand);
+    grid.innerHTML='';
+    d.programs.forEach(function(p){
+      var el=document.createElement('div');
+      el.className='prog-card';
+      el.id='pc-'+brand+'-'+p.id;
+      el.onclick=function(){selectProg(brand,p.id);};
+      el.innerHTML='<div class="prog-badge" style="background:'+p.bBg+';color:'+p.bC+'">'+p.badge+'</div>'+
+        '<div class="prog-name">'+p.name+'</div>'+
+        '<div class="prog-sub">'+p.sub+'</div>'+
+        '<div class="prog-price" style="color:'+d.color+'">'+p.price+'<span style="font-size:11px;font-weight:400;color:var(--muted)">'+p.period+'</span></div>'+
+        '<div class="prog-check" style="background:'+d.color+'">✓</div>';
+      grid.appendChild(el);
+    });
+  });
+  ['atlas','studio','ascend'].forEach(function(b){updateSidebarProgList(b);});
+}
+
+function showSection(s){
+  document.getElementById('section-programas').style.display=s==='programas'?'block':'none';
+  document.getElementById('section-contacto').classList.toggle('on',s==='contacto');
+  document.getElementById('nav-programas').classList.toggle('active',s==='programas');
+  document.getElementById('nav-contacto').classList.toggle('active',s==='contacto');
+}
+
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebar-overlay').classList.toggle('on');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebar-overlay').classList.remove('on');
+}
+
+renderGrids();
+switchBrand('atlas');
+
+var params=new URLSearchParams(window.location.search);
+if(params.get('brand'))switchBrand(params.get('brand'));
+if(params.get('prog'))selectProg(params.get('brand')||'atlas',params.get('prog'));
+if(params.get('section'))showSection(params.get('section'));
+
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -20px 0px" });
+
+  document.querySelectorAll('.prog-card, .detail-panel, .contact-card').forEach((el, index) => {
+    el.classList.add('animate');
+    if(el.classList.contains('prog-card')) {
+       el.style.transitionDelay = (index % 4) * 0.08 + 's';
+    }
+    observer.observe(el);
+  });
+});
+</script>
+</body>
+</html>

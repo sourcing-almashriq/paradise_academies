@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise Ascend — Preuniversitario Lima</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --ter:#A0420A;--ter-d:#6B2B06;--ter-m:#C25010;--ter-l:#FBF0E4;--ter-xl:#FEF8F3;
+  --gold:#C8993A;--gold-l:#FDF6E3;
+  --ink:#0A0806;--paper:#F8F4EE;--white:#ffffff;
+  --muted:#786458;--border:#E8DDD4;--mid:#F2EDE7;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
+.nav.s{background:rgba(248,244,238,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-brand{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:.06em;color:var(--white);transition:color .3s}
+.nav-brand span{color:rgba(255,255,255,.5);font-size:14px;font-family:'DM Sans',sans-serif;font-weight:300;letter-spacing:.1em;text-transform:uppercase;margin-left:.5rem}
+.nav.s .nav-brand{color:var(--ink)}
+.nav.s .nav-brand span{color:var(--ter)}
+.nav-cta{padding:.55rem 1.35rem;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:none;background:var(--gold);color:var(--ink)}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,153,58,.35)}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden;background:var(--ink)}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 50%,rgba(160,66,10,.35) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;opacity:.03;background-image:linear-gradient(var(--white) 1px,transparent 1px),linear-gradient(90deg,var(--white) 1px,transparent 1px);background-size:40px 40px}
+.hero-text{position:absolute;top:0;right:0;bottom:0;display:flex;align-items:center;padding-right:2rem;pointer-events:none;overflow:hidden}
+.hero-vertical{font-family:'Bebas Neue',sans-serif;font-size:clamp(120px,18vw,220px);letter-spacing:.03em;color:rgba(255,255,255,.03);line-height:1;user-select:none;white-space:nowrap}
+.hero-inner{max-width:1100px;margin:0 auto;padding:6rem 2rem 4rem;position:relative;z-index:1;width:100%}
+.hero-bar{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem}
+.hero-bar-line{width:40px;height:2px;background:var(--gold)}
+.hero-bar-text{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.hero-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(60px,10vw,120px);letter-spacing:.02em;color:var(--white);line-height:.88;margin-bottom:1.75rem;text-transform:uppercase}
+.hero-title span{display:block}
+.hero-title .accent{color:var(--ter-m)}
+.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,.5);max-width:480px;line-height:1.7;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn-gold{padding:.9rem 2rem;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;border:none;background:var(--gold);color:var(--ink);transition:all .2s;text-transform:uppercase;letter-spacing:.05em}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,153,58,.4)}
+.btn-outline-white{padding:.9rem 2rem;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);transition:all .2s}
+.btn-outline-white:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
+.hero-unis{display:flex;flex-wrap:wrap;gap:8px}
+.uni-tag{font-size:11px;font-weight:600;padding:.35rem .9rem;border-radius:100px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.55);letter-spacing:.04em}
+.uni-tag.intl{border-color:rgba(200,153,58,.3);color:var(--gold);background:rgba(200,153,58,.07)}
+.hero-stats-row{display:flex;gap:2.5rem;flex-wrap:wrap;margin-top:3rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.08)}
+.hero-stat-n{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:.03em;color:var(--white);line-height:1}
+.hero-stat-l{font-size:12px;color:rgba(255,255,255,.4);margin-top:.15rem}
+
+/* SECTIONS */
+.section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
+.si{max-width:1100px;margin:0 auto}
+.s-bar{display:flex;align-items:center;gap:.6rem;margin-bottom:.7rem}
+.s-bar-line{width:24px;height:2px;background:var(--ter)}
+.s-bar-text{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ter)}
+.s-title{font-family:'Libre Baskerville',serif;font-size:clamp(30px,4.5vw,48px);font-weight:400;line-height:1.1;margin-bottom:1rem}
+.s-title em{font-style:italic;color:var(--muted)}
+.s-desc{font-size:16px;color:var(--muted);max-width:500px;line-height:1.7;font-weight:300}
+
+/* KEY STATS BANNER */
+.stats-banner{background:var(--ter);padding:2rem clamp(1.5rem,3vw,2rem)}
+.stats-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.15)}
+@media(max-width:640px){.stats-inner{grid-template-columns:1fr 1fr}}
+.stat-item{background:var(--ter);padding:1.75rem 1.5rem}
+.stat-n{font-family:'Bebas Neue',sans-serif;font-size:44px;letter-spacing:.03em;color:var(--white);line-height:1;margin-bottom:.2rem}
+.stat-l{font-size:12px;color:rgba(255,255,255,.6);line-height:1.4}
+
+/* VALUES */
+.vals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
+@media(max-width:640px){.vals-grid{grid-template-columns:1fr}}
+.val-card{border-radius:14px;padding:2rem;border:1.5px solid var(--border);background:var(--white);transition:all .25s;position:relative;overflow:hidden}
+.val-card:hover{border-color:var(--ter);transform:translateY(-3px);box-shadow:0 12px 36px rgba(160,66,10,.1)}
+.val-card.dark{background:var(--ter-d);border-color:var(--ter-d);color:var(--white)}
+.val-card.featured{border-color:var(--gold);background:var(--gold-l)}
+.val-icon{font-size:28px;margin-bottom:1rem;display:block}
+.val-title{font-family:'Libre Baskerville',serif;font-size:19px;font-weight:700;margin-bottom:.5rem}
+.val-card.dark .val-title{color:var(--white)}
+.val-desc{font-size:13px;line-height:1.65;font-weight:300}
+.val-card.dark .val-desc{color:rgba(255,255,255,.55)}
+.val-card.featured .val-title{color:var(--ter-d)}
+.val-card.featured .val-desc{color:#6B5420}
+.val-deco-num{position:absolute;bottom:-15px;right:12px;font-family:'Bebas Neue',sans-serif;font-size:88px;letter-spacing:.03em;opacity:.05;line-height:1;color:var(--ter);pointer-events:none}
+.val-card.dark .val-deco-num{color:var(--white)}
+
+/* PROGRAMS */
+.cycles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
+@media(max-width:768px){.cycles-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cycles-grid{grid-template-columns:1fr}}
+.cycle{border-radius:14px;border:1.5px solid var(--border);background:var(--white);overflow:hidden;transition:all .25s}
+.cycle:hover{border-color:var(--ter-m);box-shadow:0 8px 28px rgba(160,66,10,.1)}
+.cycle-top{padding:1.25rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
+.cycle-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.2rem .7rem;border-radius:100px;margin-bottom:.75rem}
+.cycle-name{font-family:'Libre Baskerville',serif;font-size:18px;font-weight:700;margin-bottom:.25rem}
+.cycle-sub{font-size:12px;color:var(--muted)}
+.cycle-body{padding:1rem 1.5rem 1.5rem}
+.cycle-row{display:flex;justify-content:space-between;font-size:13px;padding:.4rem 0;border-bottom:1px solid var(--mid)}
+.cycle-row:last-child{border-bottom:none}
+.cycle-row-lbl{color:var(--muted)}
+.cycle-row-val{font-weight:600;color:var(--ink)}
+.cycle-price{color:var(--ter);font-weight:700}
+.cycle.intl{background:var(--ter-d);border-color:var(--ter-d)}
+.cycle.intl .cycle-top{border-color:rgba(255,255,255,.1)}
+.cycle.intl .cycle-name{color:var(--white)}
+.cycle.intl .cycle-sub{color:rgba(255,255,255,.5)}
+.cycle.intl .cycle-row{border-color:rgba(255,255,255,.07)}
+.cycle.intl .cycle-row-lbl{color:rgba(255,255,255,.45)}
+.cycle.intl .cycle-row-val{color:rgba(255,255,255,.9)}
+.cycle.intl .cycle-price{color:var(--gold)}
+
+/* HOW IT WORKS */
+.hiw-dark{background:var(--ink);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
+.hiw-steps-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;margin-top:3rem;background:rgba(255,255,255,.05);border-radius:14px;overflow:hidden}
+@media(max-width:768px){.hiw-steps-row{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.hiw-steps-row{grid-template-columns:1fr}}
+.hiw-step{background:var(--ink);padding:1.75rem 1.5rem;border-right:1px solid rgba(255,255,255,.05);transition:background .2s}
+.hiw-step:hover{background:rgba(255,255,255,.03)}
+.hiw-step:last-child{border-right:none}
+.step-n{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:.05em;color:rgba(255,255,255,.08);line-height:1;margin-bottom:.85rem}
+.step-ico{font-size:20px;margin-bottom:.6rem;display:block}
+.step-t{font-size:14px;font-weight:600;color:var(--white);margin-bottom:.35rem}
+.step-d{font-size:12px;color:rgba(255,255,255,.4);line-height:1.55}
+
+/* COMPARISON */
+.comp-section{background:var(--white);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
+.comp-wrap{overflow-x:auto;margin-top:3rem;border-radius:14px;border:1px solid var(--border)}
+table.ct{width:100%;border-collapse:collapse;min-width:600px}
+.ct thead th{padding:1rem 1.25rem;font-size:12px;font-weight:600;border-bottom:1px solid var(--border);text-align:center}
+.ct thead th:first-child{text-align:left}
+.ct thead th.us{background:var(--ter);color:var(--white)}
+.ct tbody tr{border-bottom:1px solid var(--mid)}
+.ct tbody tr:last-child{border-bottom:none}
+.ct tbody tr:hover{background:var(--mid)}
+.ct tbody td{padding:.8rem 1.25rem;font-size:13px;text-align:center;color:var(--muted)}
+.ct tbody td:first-child{text-align:left;font-weight:500;color:var(--ink)}
+.ct tbody td.us{background:var(--ter-xl);font-weight:500;color:var(--ink)}
+.cy{color:var(--ter);font-size:15px}
+.cn{color:#D1D5DB;font-size:15px}
+.cp{color:var(--gold);font-size:12px;font-weight:600}
+
+/* SUBJECTS */
+.subjects-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:2.5rem}
+@media(max-width:640px){.subjects-grid{grid-template-columns:repeat(3,1fr)}}
+.subj{border-radius:10px;padding:.85rem 1rem;border:1px solid var(--border);background:var(--white);text-align:center;transition:all .2s;cursor:default}
+.subj:hover{border-color:var(--ter-m);background:var(--ter-l)}
+.subj-icon{font-size:20px;margin-bottom:.35rem;display:block}
+.subj-name{font-size:12px;font-weight:500;color:var(--ink)}
+
+/* TESTIMONIALS */
+.testi-s{background:var(--ter-d);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
+.testi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
+@media(max-width:768px){.testi-row{grid-template-columns:1fr}}
+.testi-c{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:1.75rem;transition:all .2s}
+.testi-c:hover{background:rgba(255,255,255,.08)}
+.testi-result{display:inline-flex;align-items:center;gap:.35rem;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;background:rgba(200,153,58,.15);border:1px solid rgba(200,153,58,.3);color:var(--gold);margin-bottom:1rem}
+.testi-q{font-family:'Libre Baskerville',serif;font-size:17px;font-style:italic;font-weight:400;color:rgba(255,255,255,.8);line-height:1.5;margin-bottom:1.25rem}
+.testi-name{font-size:13px;font-weight:600;color:var(--white)}
+.testi-role{font-size:12px;color:rgba(255,255,255,.4)}
+
+/* FAQ */
+.faq-s{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem);background:var(--paper)}
+.faq-list{margin-top:2.5rem;max-width:720px;display:flex;flex-direction:column;gap:8px}
+.fi{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white)}
+.fq{padding:1.1rem 1.25rem;font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .15s;user-select:none}
+.fq:hover,.fq.o{background:var(--mid)}
+.fi-ico{font-size:16px;color:var(--ter);flex-shrink:0;transition:transform .2s}
+.fq.o .fi-ico{transform:rotate(45deg)}
+.fa{display:none;padding:.75rem 1.25rem 1.1rem;font-size:14px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border)}
+.fa.o{display:block}
+
+/* CTA */
+.cta-s{background:var(--ink);padding:clamp(5rem,9vw,8rem) clamp(1.5rem,3vw,2rem);text-align:center;position:relative;overflow:hidden}
+.cta-bg-word{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Bebas Neue',sans-serif;font-size:clamp(100px,20vw,240px);letter-spacing:.05em;color:rgba(255,255,255,.03);white-space:nowrap;user-select:none;pointer-events:none}
+.cta-inner{position:relative;z-index:1;max-width:580px;margin:0 auto}
+.cta-badge{display:inline-flex;align-items:center;gap:.4rem;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);background:rgba(200,153,58,.1);border:1px solid rgba(200,153,58,.25);padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem}
+.cta-h{font-family:'Libre Baskerville',serif;font-size:clamp(34px,5vw,54px);font-weight:400;color:var(--white);line-height:1.1;margin-bottom:1rem}
+.cta-h em{font-style:italic;color:rgba(255,255,255,.35)}
+.cta-p{font-size:16px;color:rgba(255,255,255,.45);margin-bottom:2.5rem;font-weight:300}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-t{padding:.9rem 2.25rem;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;background:var(--ter);color:var(--white);border:none;transition:all .2s;text-transform:uppercase;letter-spacing:.05em}
+.btn-t:hover{background:var(--ter-m);transform:translateY(-2px);box-shadow:0 8px 24px rgba(160,66,10,.4)}
+.btn-g-out{padding:.9rem 2.25rem;border-radius:8px;font-size:14px;font-weight:500;cursor:pointer;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65);transition:all .2s}
+.btn-g-out:hover{border-color:rgba(255,255,255,.5)}
+
+.footer{background:rgba(0,0,0,.8);padding:2rem;text-align:center;font-size:12px;color:rgba(255,255,255,.3)}
+.footer strong{color:rgba(255,255,255,.55)}
+.footer-links{display:flex;gap:16px;justify-content:center;margin-top:.75rem;flex-wrap:wrap}
+.fl{font-size:11px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s}
+.fl:hover{color:rgba(255,255,255,.6)}
+  .btn-gold:active, .btn-t:active, .btn-outline-white:active, .btn-g-out:active, .nav-cta:active, .btn-wa:active { transform: translateY(0) scale(0.97) !important; box-shadow: none !important; }
+  .nav.s { backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; background: rgba(248, 244, 238, 0.85) !important; }
+  .val-card, .cycle, .testi-c { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important; }
+  .val-card:hover, .cycle:hover, .testi-c:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.06) !important; }
+  
+  /* APPLE-TIER UX OVERRIDES */
+  .section { padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 4vw, 3rem) !important; }
+  .hero { min-height: 100svh !important; }
+  .hero-title { letter-spacing: -0.03em !important; }
+  .cycle-badge, .uni-tag { letter-spacing: 0.16em !important; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: inherit; }
+  .animate { animation: none !important; opacity: 0; transform: translateY(40px); transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .animate.is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-brand">Paradise Ascend <span>Preuniversitario</span></div>
+  <div style="display:flex;align-items:center;gap:.5rem">
+    <a href="paradise-programs.html?brand=ascend" style="font-size:12px;padding:.4rem .85rem;border-radius:6px;text-decoration:none;color:rgba(255,255,255,.6)" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Programas</a>
+    <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Ascend" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;font-size:12px;font-weight:600;padding:.45rem 1rem;border-radius:7px;background:#25D366;color:#fff;text-decoration:none" onmouseover="this.style.background='#1DA851'" onmouseout="this.style.background='#25D366'">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-text"><div class="hero-vertical">ASCEND</div></div>
+  <div class="hero-inner">
+    <div class="hero-bar"><div class="hero-bar-line"></div><div class="hero-bar-text">Paradise Academy · Lima, Perú</div></div>
+    <h1 class="hero-title">
+      <span>La diferencia</span>
+      <span>no es <span class="accent">inteligencia.</span></span>
+      <span>Es preparación.</span>
+    </h1>
+    <p class="hero-sub">Preparación preuniversitaria en Lima para universidades peruanas e internacionales. El único programa que prepara las dos rutas — en el mismo lugar.</p>
+    <div class="hero-actions">
+      <button class="btn-gold" onclick="window.location.href='#cta'">Simula tu examen gratis →</button>
+      <button class="btn-outline-white" onclick="window.location.href='#ciclos'">Ver ciclos</button>
+    </div>
+    <div class="hero-unis">
+      <span class="uni-tag">PUCP</span>
+      <span class="uni-tag">UNMSM</span>
+      <span class="uni-tag">UNI</span>
+      <span class="uni-tag">UPC</span>
+      <span class="uni-tag intl">🌎 España</span>
+      <span class="uni-tag intl">🌎 EE.UU.</span>
+      <span class="uni-tag intl">🌎 Canadá</span>
+      <span class="uni-tag intl">🌎 Europa</span>
+    </div>
+    <div class="hero-stats-row">
+      <div><div class="hero-stat-n">20</div><div class="hero-stat-l">alumnos máx. por grupo</div></div>
+      <div><div class="hero-stat-n">2</div><div class="hero-stat-l">rutas: Perú e internacional</div></div>
+      <div><div class="hero-stat-n">Gratis</div><div class="hero-stat-l">simulacro diagnóstico</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BANNER -->
+<div class="stats-banner">
+  <div class="stats-inner">
+    <div class="stat-item"><div class="stat-n">68%</div><div class="stat-l">de ingresantes a unis públicas pasaron por academia (MINEDU)</div></div>
+    <div class="stat-item"><div class="stat-n">S/1,600</div><div class="stat-l">diferencial salarial mensual con título universitario vs. sin él</div></div>
+    <div class="stat-item"><div class="stat-n">4</div><div class="stat-l">tipos de ciclo disponibles — uno para cada situación</div></div>
+    <div class="stat-item"><div class="stat-n">Único</div><div class="stat-l">programa en Lima con prep local + internacional integrados</div></div>
+  </div>
+</div>
+
+<!-- VALUES -->
+<section class="section" id="valores">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line"></div><div class="s-bar-text">Por qué Ascend</div></div>
+    <h2 class="s-title">Preparación real.<br><em>Sin prometer milagros.</em></h2>
+    <p class="s-desc">Sabemos exactamente qué entra en cada examen. Y sabemos cómo prepararte para pasarlo. Eso es todo lo que prometemos.</p>
+    <div class="vals-grid">
+      <div class="val-card dark">
+        <span class="val-icon">🌎</span>
+        <div class="val-title">El único con ruta internacional</div>
+        <div class="val-desc">Ningún preuniversitario en Lima prepara formalmente para universidades extranjeras. Ascend integra SAT, essays y proceso de admisión para España, EE.UU., Canadá y Europa.</div>
+        <div class="val-deco-num">I</div>
+      </div>
+      <div class="val-card">
+        <span class="val-icon">🔬</span>
+        <div class="val-title">Diagnóstico antes de empezar</div>
+        <div class="val-desc">El simulacro gratuito muestra exactamente dónde estás y cuánto tiempo necesitas. Sin adivinanzas — con datos reales de tu nivel de partida.</div>
+        <div class="val-deco-num">D</div>
+      </div>
+      <div class="val-card featured">
+        <span class="val-icon">👨‍🎓</span>
+        <div class="val-title">Grupos pequeños con seguimiento</div>
+        <div class="val-desc">Máximo 20 alumnos por materia. El profesor sabe quién eres, cuáles son tus errores frecuentes y qué necesitas reforzar. Tutorías semanales individuales disponibles.</div>
+      </div>
+      <div class="val-card dark">
+        <span class="val-icon">📱</span>
+        <div class="val-title">La marca más moderna del preuni</div>
+        <div class="val-desc">Pamer y Trilce tienen branding de los años 90. Ascend es el primer preuniversitario con identidad moderna, comunicación en TikTok y lenguaje que conecta con tu generación.</div>
+        <div class="val-deco-num">M</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND 1 -->
+<div style="background:var(--ter);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+  <div><div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">¿Ya sabes qué ciclo necesitas?</div><div style="font-size:13px;color:rgba(255,255,255,.65)">Selecciona tu ciclo, ve los detalles completos y escríbenos por WhatsApp en un solo paso.</div></div>
+  <a href="paradise-programs.html?brand=ascend" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona tu programa →</a>
+</div>
+
+<!-- MATERIAS -->
+<section class="section" id="materias" style="background:var(--white)">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line"></div><div class="s-bar-text">Materias disponibles</div></div>
+    <h2 class="s-title">Todas las materias<br><em>que necesitas.</em></h2>
+    <div class="subjects-grid">
+      <div class="subj"><span class="subj-icon">🔢</span><div class="subj-name">Matemática</div></div>
+      <div class="subj"><span class="subj-icon">🧮</span><div class="subj-name">Razonamiento Matemático</div></div>
+      <div class="subj"><span class="subj-icon">📖</span><div class="subj-name">Razonamiento Verbal</div></div>
+      <div class="subj"><span class="subj-icon">🌿</span><div class="subj-name">Biología</div></div>
+      <div class="subj"><span class="subj-icon">⚗️</span><div class="subj-name">Química</div></div>
+      <div class="subj"><span class="subj-icon">⚡</span><div class="subj-name">Física</div></div>
+      <div class="subj"><span class="subj-icon">🗺️</span><div class="subj-name">Historia del Perú</div></div>
+      <div class="subj"><span class="subj-icon">🌍</span><div class="subj-name">Geografía</div></div>
+      <div class="subj"><span class="subj-icon">📚</span><div class="subj-name">Literatura</div></div>
+      <div class="subj"><span class="subj-icon">🌎</span><div class="subj-name">SAT / Prep Internacional</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CYCLES -->
+<section class="section" id="ciclos">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line"></div><div class="s-bar-text">Ciclos disponibles</div></div>
+    <h2 class="s-title">Elige el ciclo<br><em>según tu situación.</em></h2>
+    <p class="s-desc">No todos los postulantes están en el mismo momento. Tenemos un ciclo para cada realidad.</p>
+    <div class="cycles-grid">
+      <div class="cycle">
+        <div class="cycle-top">
+          <div class="cycle-badge" style="background:var(--ter-l);color:var(--ter)">Más completo</div>
+          <div class="cycle-name">Ciclo regular</div>
+          <div class="cycle-sub">3 meses · Profundidad total</div>
+        </div>
+        <div class="cycle-body">
+          <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">3 meses</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">3–4x semana</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Primer intento</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/500/mes</span></div>
+        </div>
+      </div>
+      <div class="cycle">
+        <div class="cycle-top">
+          <div class="cycle-badge" style="background:#FFF3CD;color:#856404">Urgente</div>
+          <div class="cycle-name">Ciclo intensivo</div>
+          <div class="cycle-sub">4 semanas · Todo a fondo</div>
+        </div>
+        <div class="cycle-body">
+          <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">4 semanas</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">5–6x semana</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Examen próximo</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/420/ciclo</span></div>
+        </div>
+      </div>
+      <div class="cycle">
+        <div class="cycle-top">
+          <div class="cycle-badge" style="background:#F0FDF4;color:#166534">Flexible</div>
+          <div class="cycle-name">Solo fines de semana</div>
+          <div class="cycle-sub">Para quien trabaja o estudia</div>
+        </div>
+        <div class="cycle-body">
+          <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">3 meses</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">Sáb + Dom</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Semana ocupada</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/340/mes</span></div>
+        </div>
+      </div>
+      <div class="cycle">
+        <div class="cycle-top">
+          <div class="cycle-badge" style="background:var(--ter-l);color:var(--ter)">Puntual</div>
+          <div class="cycle-name">Módulo por materia</div>
+          <div class="cycle-sub">Refuerza donde lo necesitas</div>
+        </div>
+        <div class="cycle-body">
+          <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">4–6 semanas</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">2–3x semana</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Materias específicas</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/160–200/mod</span></div>
+        </div>
+      </div>
+      <div class="cycle">
+        <div class="cycle-top">
+          <div class="cycle-badge" style="background:var(--gold-l);color:#8a6520">6 meses</div>
+          <div class="cycle-name">Ciclo completo</div>
+          <div class="cycle-sub">La preparación más profunda</div>
+        </div>
+        <div class="cycle-body">
+          <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">6 meses</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">4x semana</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Máxima preparación</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/850/ciclo</span></div>
+        </div>
+      </div>
+      <div class="cycle intl">
+        <div class="cycle-top">
+          <div class="cycle-badge" style="background:rgba(200,153,58,.15);color:var(--gold)">🌎 Diferenciador</div>
+          <div class="cycle-name">Prep internacional</div>
+          <div class="cycle-sub">Solo disponible en Ascend</div>
+        </div>
+        <div class="cycle-body">
+          <div class="cycle-row"><span class="cycle-row-lbl">Incluye</span><span class="cycle-row-val">SAT · Essays · Proceso</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Destinos</span><span class="cycle-row-val">EE.UU., España, CA, EU</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Estudiar fuera</span></div>
+          <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">Consultar</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="hiw-dark" id="como-funciona">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line" style="background:var(--gold)"></div><div class="s-bar-text" style="color:var(--gold)">Cómo funciona</div></div>
+    <h2 class="s-title" style="color:var(--white)">Del primer contacto<br><em style="color:rgba(255,255,255,.3)">al ingreso.</em></h2>
+    <div class="hiw-steps-row">
+      <div class="hiw-step"><div class="step-n">01</div><span class="step-ico">📞</span><div class="step-t">Nos contactas</div><div class="step-d">WhatsApp o formulario. Cuéntanos a qué universidad apuntas y cuándo es el examen.</div></div>
+      <div class="hiw-step"><div class="step-n">02</div><span class="step-ico">📝</span><div class="step-t">Simulacro gratis</div><div class="step-d">Resuelves un simulacro tipo examen. Vemos exactamente dónde estás — sin costo.</div></div>
+      <div class="hiw-step"><div class="step-n">03</div><span class="step-ico">🎯</span><div class="step-t">Plan personalizado</div><div class="step-d">Te recomendamos el ciclo correcto, las materias prioritarias y el cronograma ideal.</div></div>
+      <div class="hiw-step"><div class="step-n">04</div><span class="step-ico">📚</span><div class="step-t">Preparación real</div><div class="step-d">Clases, simulacros semanales y seguimiento individual. Sabemos cuándo reforzar y cuándo acelerar.</div></div>
+      <div class="hiw-step" style="background:var(--ter-d)"><div class="step-n" style="color:rgba(255,255,255,.12)">05</div><span class="step-ico">🎓</span><div class="step-t">Ingresas</div><div class="step-d" style="color:rgba(255,255,255,.55)">Tu nombre en la lista de ingresantes. Eso es lo que construimos juntos.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="comp-section" id="comparacion">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line"></div><div class="s-bar-text">Comparación</div></div>
+    <h2 class="s-title">Ascend vs.<br><em>la competencia.</em></h2>
+    <div class="comp-wrap">
+      <table class="ct">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="us">Paradise Ascend</th>
+            <th>Pamer / Trilce</th>
+            <th>ADUNI / C.Vallejo</th>
+            <th>Academia virtual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Grupos reducidos (&lt;20)</td><td class="us"><span class="cy">✓</span></td><td><span class="cn">✗</span> 25–40</td><td><span class="cn">✗</span> 30–50</td><td><span class="cn">✗</span></td></tr>
+          <tr><td>Simulacro diagnóstico gratis</td><td class="us"><span class="cy">✓</span></td><td><span class="cn">✗</span></td><td><span class="cn">✗</span></td><td><span class="cp">A veces</span></td></tr>
+          <tr><td>Prep universidades internacionales</td><td class="us"><span class="cy">✓</span> Exclusivo</td><td><span class="cn">✗</span></td><td><span class="cn">✗</span></td><td><span class="cn">✗</span></td></tr>
+          <tr><td>Seguimiento semanal individual</td><td class="us"><span class="cy">✓</span></td><td><span class="cn">✗</span></td><td><span class="cn">✗</span></td><td><span class="cn">✗</span></td></tr>
+          <tr><td>Marca moderna / TikTok nativo</td><td class="us"><span class="cy">✓</span></td><td><span class="cn">✗</span></td><td><span class="cn">✗</span></td><td><span class="cp">Algunos</span></td></tr>
+          <tr><td>Precio mensual</td><td class="us"><span class="cy">S/340–500</span></td><td>S/450–550</td><td>S/450–600</td><td>S/30–200</td></div></td></tr>
+          <tr><td>Confianza de institución educativa</td><td class="us"><span class="cy">✓</span> Colegio</td><td><span class="cp">Propia historia</span></td><td><span class="cp">Propia historia</span></td><td><span class="cn">✗</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND 2 -->
+<div style="background:var(--ter-d);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+  <div><div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">Elige tu ciclo y empieza a prepararte hoy.</div><div style="font-size:13px;color:rgba(255,255,255,.5)">Simulacro gratuito disponible para todos los ciclos.</div></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <a href="paradise-programs.html?brand=ascend" style="display:inline-flex;align-items:center;padding:.8rem 1.75rem;border-radius:10px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona tu programa →</a>
+    <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Ascend.%20%C2%BFPuedo%20hacer%20el%20simulacro%20gratuito%3F" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:10px;background:#25D366;color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testi-s" id="testimonios">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line" style="background:var(--gold)"></div><div class="s-bar-text" style="color:var(--gold)">Resultados</div></div>
+    <h2 class="s-title" style="color:var(--white)">Ingresantes reales.<br><em style="color:rgba(255,255,255,.3)">Historias reales.</em></h2>
+    <div class="testi-row">
+      <div class="testi-c">
+        <div class="testi-result">✓ PUCP 2025</div>
+        <div class="testi-q">"El año pasado no ingresé. Este año con Ascend sí. La diferencia fue el seguimiento semanal — finalmente alguien me dijo dónde realmente estaba fallando."</div>
+        <div class="testi-name">Valeria C., 18 años</div>
+        <div class="testi-role">Ciclo regular · Comunicaciones</div>
+      </div>
+      <div class="testi-c">
+        <div class="testi-result">✓ UNMSM 2025</div>
+        <div class="testi-q">"El ciclo intensivo en enero fue exactamente lo que necesitaba. 4 semanas, todo el temario, simulacros diarios. Entré en primer intento."</div>
+        <div class="testi-name">Miguel R., 17 años</div>
+        <div class="testi-role">Ciclo intensivo · Medicina</div>
+      </div>
+      <div class="testi-c">
+        <div class="testi-result">✓ Universidad en España</div>
+        <div class="testi-q">"Quería estudiar fuera pero no sabía cómo. Ascend fue el único lugar en Lima que me orientó en todo el proceso. En septiembre empiezo en Madrid."</div>
+        <div class="testi-name">Andrea P., 19 años</div>
+        <div class="testi-role">Prep internacional · Arquitectura</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-s" id="faq">
+  <div class="si">
+    <div class="s-bar"><div class="s-bar-line"></div><div class="s-bar-text">Preguntas frecuentes</div></div>
+    <h2 class="s-title">Todo lo que<br><em>necesitas saber.</em></h2>
+    <div class="faq-list">
+      <div class="fi"><div class="fq o" onclick="tg(this)">¿Qué tan difícil es entrar a la PUCP / UNMSM comparado con otras? <span class="fi-ico">+</span></div><div class="fa o">La PUCP evalúa razonamiento lógico, aptitud verbal y matemática — no memorización. La UNMSM y UNI tienen exámenes de contenido más denso. El ciclo regular de 3 meses es el mínimo recomendado para ambas. El simulacro gratuito te muestra exactamente cuánto falta para alcanzar el puntaje de ingreso.</div></div>
+      <div class="fi"><div class="fq" onclick="tg(this)">¿Qué es el simulacro diagnóstico y cómo se hace? <span class="fi-ico">+</span></div><div class="fa">Es un examen tipo prueba de admisión, de 1.5–2 horas, que replica el formato real de la universidad objetivo. Lo resuelves presencialmente o en casa (modalidad supervisada). Recibes los resultados con análisis por área dentro de 48 horas.</div></div>
+      <div class="fi"><div class="fq" onclick="tg(this)">¿Puedo preparar para varias universidades al mismo tiempo? <span class="fi-ico">+</span></div><div class="fa">Sí. El temario del ciclo regular cubre los temas comunes a las principales universidades. Para universidades con formatos muy específicos (CEPREPUCP o CEPREUNI), hay módulos adicionales de ajuste que se agregan al ciclo principal.</div></div>
+      <div class="fi"><div class="fq" onclick="tg(this)">¿Qué incluye exactamente la preparación internacional? <span class="fi-ico">+</span></div><div class="fa">Orientación en selección de universidades por país y carrera, preparación para SAT (para EE.UU. y algunas universidades europeas), guía para el proceso de essays y carta de motivación, asesoría sobre fechas límite y documentos requeridos por universidad. Esta modalidad se coordina individualmente — escríbenos para cotizar según tu destino.</div></div>
+      <div class="fi"><div class="fq" onclick="tg(this)">¿Cuántos ciclos promedio se necesitan para ingresar? <span class="fi-ico">+</span></div><div class="fa">Depende del nivel inicial del alumno (por eso el simulacro es tan importante) y de la universidad objetivo. En promedio, alumnos que empiezan 3 meses antes de un examen de ciclo regular tienen alta probabilidad si son constantes. Para UNI y carreras muy competitivas como Medicina en San Marcos, se recomienda 6 meses de preparación mínima.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-s" id="cta">
+  <div class="cta-bg-word">INGRESA</div>
+  <div class="cta-inner">
+    <div class="cta-badge">🎯 Primer paso gratuito</div>
+    <h2 class="cta-h">Empieza con un<br>simulacro. <em>Es gratis.</em></h2>
+    <p class="cta-p">Sin compromiso. Sin costo. Solo información útil para que sepas exactamente dónde estás y cuánto tiempo necesitas.</p>
+    <div class="cta-btns">
+      <button class="btn-t">Reservar simulacro gratis →</button>
+      <button class="btn-g-out">Hablar con un asesor</button>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <strong>Paradise Academy</strong> · Lima, Perú · 2025
+  <div class="footer-links">
+    <a class="fl" href="paradise-atlas-landing.html">Paradise Atlas →</a>
+    <a class="fl" href="paradise-studio-landing.html">Paradise Studio →</a>
+  </div>
+</footer>
+
+<script>
+var nav = document.getElementById('nav');
+window.addEventListener('scroll', function(){ nav.classList.toggle('s', window.scrollY > 80); });
+function tg(el){
+  var a=el.nextElementSibling;
+  var open=el.classList.contains('o');
+  el.classList.toggle('o',!open);
+  a.classList.toggle('o',!open);
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+  document.querySelectorAll('.section, .val-card, .cycle, .testi-c').forEach((el, index) => {
+    el.classList.add('animate');
+    if(el.classList.contains('val-card') || el.classList.contains('cycle') || el.classList.contains('testi-c')) {
+       el.style.transitionDelay = (index % 3) * 0.1 + 's';
+    }
+    observer.observe(el);
+  });
+});
+</script>
+</body>
+</html>

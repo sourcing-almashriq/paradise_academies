@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paradise Academy — Brand Kit</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#0F0E0C;--paper:#F9F7F2;--mid:#EDEAE3;--muted:#9C9890;--border:#E0DDD6;
+  --eng:#1B5FA8;--eng-l:#E8F0FB;--eng-d:#0D3B6E;
+  --art:#0F7A55;--art-l:#E2F5EE;--art-d:#074D35;
+  --uni:#A0420A;--uni-l:#FBF0E4;--uni-d:#6B2B06;
+  --gold:#C8993A;
+}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6}
+
+/* COVER */
+.cover{min-height:100vh;background:var(--ink);display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem,5vw,4rem) clamp(1.5rem,4vw,3rem);position:relative;overflow:hidden}
+.cover::before{content:'';position:absolute;top:-40%;right:-20%;width:700px;height:700px;border-radius:50%;border:1px solid rgba(255,255,255,.05);pointer-events:none}
+.cover-label{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.cover-title{font-family:'Fraunces',serif;font-size:clamp(48px,9vw,100px);font-weight:300;color:#fff;line-height:.92;margin-bottom:2rem}
+.cover-title em{font-style:italic;color:rgba(255,255,255,.38)}
+.cover-desc{font-size:15px;color:rgba(255,255,255,.38);max-width:440px;line-height:1.7;margin-bottom:2.5rem}
+.cover-brands{display:flex;gap:10px;flex-wrap:wrap}
+.pill{padding:.5rem 1.25rem;border-radius:100px;font-size:12px;font-weight:500}
+
+/* NAV */
+.nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;display:flex;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.ni{padding:.9rem 1.3rem;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;flex-shrink:0;transition:color .15s,border-color .15s;min-height:48px;display:flex;align-items:center}
+.ni:hover{color:var(--ink)}
+.ni.ae.on{color:var(--eng);border-color:var(--eng)}
+.ni.aa.on{color:var(--art);border-color:var(--art)}
+.ni.au.on{color:var(--uni);border-color:var(--uni)}
+.ni.ap.on{color:var(--gold);border-color:var(--gold)}
+
+/* LAYOUT */
+.sec{display:none;max-width:860px;margin:0 auto;padding:2.5rem 1.5rem 5rem}
+.sec.on{display:block}
+
+/* HERO */
+.hero{border-radius:18px;padding:clamp(1.75rem,4vw,3rem);margin-bottom:2rem;position:relative;overflow:hidden}
+.hero-pre{font-size:10px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.65rem;opacity:.55}
+.hero-name{font-family:'Fraunces',serif;font-size:clamp(40px,7vw,70px);font-weight:300;line-height:.95;margin-bottom:.5rem}
+.hero-tag{font-size:clamp(14px,2.5vw,19px);font-weight:300;opacity:.65;margin-bottom:1.25rem}
+.hero-desc{font-size:13px;opacity:.6;max-width:500px;line-height:1.7}
+.hero-deco{position:absolute;right:-50px;top:-50px;width:240px;height:240px;border-radius:50%;opacity:.1}
+
+/* GRID */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:1.75rem}
+@media(max-width:560px){.g2{grid-template-columns:1fr}}
+
+/* CARDS */
+.card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.25rem 1.35rem}
+.card-lbl{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.9rem}
+
+/* PALETTE */
+.pal{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:.5rem}
+.sw{border-radius:9px;height:52px;flex:1;min-width:52px;display:flex;align-items:flex-end;padding:5px 7px}
+.sw span{font-size:9px;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+
+/* SEC LABEL */
+.slbl{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.85rem;margin-top:1.75rem;display:flex;align-items:center;gap:.5rem}
+.slbl::after{content:'';flex:1;height:1px;background:var(--border)}
+
+/* VOICE */
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+@media(max-width:500px){.vgrid{grid-template-columns:1fr}}
+.vyes{background:var(--art-l);color:#074D35;border-radius:8px;padding:.6rem .85rem;font-size:12px}
+.vno{background:#FFF0F0;color:#8B2020;border-radius:8px;padding:.6rem .85rem;font-size:12px}
+.vyes::before{content:'✓  ';font-weight:700}
+.vno::before{content:'✗  ';font-weight:700}
+
+/* HANDLES */
+.handle{display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:7px}
+.hico{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.htxt{flex:1}
+.hname{font-size:14px;font-weight:600}
+.hhint{font-size:11px;color:var(--muted)}
+.hbtn{font-size:11px;padding:5px 11px;border-radius:7px;border:1px solid var(--border);background:transparent;cursor:pointer;color:var(--muted);transition:all .15s;white-space:nowrap}
+.hbtn:hover{background:var(--mid);color:var(--ink)}
+
+/* BIO */
+.bio{border-radius:0 11px 11px 0;padding:1.1rem 1.25rem;margin-bottom:8px;font-size:13px;line-height:1.7;border-left-width:3px;border-left-style:solid}
+.bio strong{display:block;font-size:11px;font-weight:600;margin-bottom:.45rem;letter-spacing:.05em}
+.bio-char{font-size:10px;color:var(--muted);margin-top:.45rem}
+
+/* HIGHLIGHTS */
+.hls{display:flex;gap:10px;flex-wrap:wrap}
+.hl{width:68px;text-align:center}
+.hlc{width:68px;height:68px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;margin-bottom:5px;border:2px solid rgba(255,255,255,.25)}
+.hlt{font-size:10px;color:var(--muted);line-height:1.3}
+
+/* POSTS */
+.posts{display:flex;flex-direction:column;gap:9px;margin-bottom:.5rem}
+.post{background:#fff;border:1px solid var(--border);border-radius:12px;padding:1rem 1.15rem;display:flex;gap:.85rem}
+.pnum{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--muted);width:26px;flex-shrink:0;padding-top:1px}
+.pcon{flex:1;min-width:0}
+.ptyp{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.35rem}
+.ptxt{font-size:13px;line-height:1.7;color:#333;white-space:pre-line}
+.phook{font-size:11px;color:var(--muted);margin-top:.35rem;font-style:italic}
+
+/* CALENDAR */
+.cal-week{margin-bottom:1.35rem}
+.cal-wlbl{font-size:11px;font-weight:600;color:var(--muted);margin-bottom:.55rem;text-transform:uppercase;letter-spacing:.07em}
+.cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+@media(max-width:560px){.cal-days{grid-template-columns:repeat(3,1fr)}}
+.cd{border-radius:8px;padding:.5rem .45rem;min-height:62px;border:1px solid var(--border);background:#fff}
+.cd-n{font-weight:600;font-size:10px;color:var(--muted);margin-bottom:.2rem}
+.cd-c{font-size:10px;line-height:1.4;color:#444}
+.cd.act{border-width:2px}
+.cd.rst{background:var(--mid);border-color:transparent}
+.cd.rst .cd-c{color:var(--muted)}
+
+/* UMBRELLA */
+.subcards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:2rem}
+@media(max-width:560px){.subcards{grid-template-columns:1fr}}
+.subcard{border-radius:13px;padding:1.25rem;color:#fff}
+.subcard-name{font-family:'Fraunces',serif;font-size:21px;font-weight:300;margin-bottom:.2rem}
+.subcard-tag{font-size:12px;opacity:.7}
+
+/* STRATEGY */
+.strat-row{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 1rem;border:1px solid var(--border);border-radius:10px;background:#fff;margin-bottom:7px}
+.strat-num{font-family:'Fraunces',serif;font-size:20px;font-weight:300;color:var(--muted);flex-shrink:0;width:24px}
+.strat-txt{flex:1;font-size:13px;line-height:1.6}
+.strat-txt strong{color:var(--ink);font-weight:500}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(255,255,255,.3);text-align:center;padding:1.75rem;font-size:11px;line-height:1.6}
+.footer strong{color:rgba(255,255,255,.55)}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div>
+    <div class="cover-label">Paradise Academy · Brand Kit 2025</div>
+    <h1 class="cover-title">Tres marcas.<br><em>Un mismo</em><br>mundo.</h1>
+    <p class="cover-desc">Identidad, voz, redes sociales y contenido de lanzamiento para los tres programas de Paradise Academy. En español. Listos para publicar.</p>
+  </div>
+  <div class="cover-brands">
+    <div class="pill" style="background:var(--eng);color:#fff">Paradise Atlas</div>
+    <div class="pill" style="background:var(--art);color:#fff">Paradise Studio</div>
+    <div class="pill" style="background:var(--uni);color:#fff">Paradise Ascend</div>
+    <div class="pill" style="background:var(--gold);color:var(--ink)">Paradise Academy ↑</div>
+  </div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="ni ae on" onclick="show('eng',this)">Paradise Atlas</div>
+  <div class="ni aa" onclick="show('art',this)">Paradise Studio</div>
+  <div class="ni au" onclick="show('uni',this)">Paradise Ascend</div>
+  <div class="ni ap" onclick="show('pa',this)">Paraguas · PA</div>
+</div>
+
+<!-- ══════════════════════════════
+     PARADISE ATLAS — INGLÉS
+══════════════════════════════ -->
+<div class="sec on" id="sec-eng">
+
+  <div class="hero" style="background:var(--eng);color:#fff">
+    <div class="hero-deco" style="background:#fff"></div>
+    <div class="hero-pre">Programa de Inglés</div>
+    <div class="hero-name">Paradise<br>Atlas</div>
+    <div class="hero-tag">Tu idioma, tu mapa al mundo.</div>
+    <div class="hero-desc">Clases de inglés para niños, jóvenes y adultos en Lima. Porque el inglés no es un idioma — es un pasaporte.</div>
+  </div>
+
+  <div class="slbl">Identidad visual</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-lbl">Paleta de color</div>
+      <div class="pal">
+        <div class="sw" style="background:#1B5FA8"><span style="color:#fff">Azul Atlas</span></div>
+        <div class="sw" style="background:#0D3B6E"><span style="color:#fff">Profundo</span></div>
+        <div class="sw" style="background:#E8F0FB"><span style="color:#1B5FA8">Suave</span></div>
+        <div class="sw" style="background:#C8993A"><span style="color:#fff">Dorado</span></div>
+        <div class="sw" style="background:#F9F7F2"><span style="color:#9C9890">Crema</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Dirección tipográfica</div>
+      <div style="font-family:'Fraunces',serif;font-size:26px;font-weight:300;color:var(--eng);margin-bottom:.3rem">Fraunces</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:.9rem">Titulares — editorial, cálido, aspiracional</div>
+      <div style="font-size:17px;font-weight:500;margin-bottom:.2rem">DM Sans</div>
+      <div style="font-size:11px;color:var(--muted)">Cuerpo — limpio, moderno, legible</div>
+    </div>
+  </div>
+
+  <div class="slbl">Voz de marca</div>
+  <div class="card" style="margin-bottom:1.75rem">
+    <div class="card-lbl">Personalidad</div>
+    <p style="font-size:13px;color:#444;line-height:1.7;margin-bottom:.9rem">Paradise Atlas habla como un <strong>amigo que ya domina el inglés y quiere que tú también lo domines</strong>. Cercano, motivador, nunca académico ni frío. Celebra el progreso.</p>
+    <div class="vgrid">
+      <div class="vyes">Motivador y directo</div><div class="vno">Formal o técnico</div>
+      <div class="vyes">Celebra cada logro</div><div class="vno">Presiona o intimida</div>
+      <div class="vyes">Habla de posibilidades</div><div class="vno">Jerga académica</div>
+      <div class="vyes">Humor ligero</div><div class="vno">Habla de obligaciones</div>
+    </div>
+  </div>
+
+  <div class="slbl">Redes sociales</div>
+  <div class="handle" style="border-color:var(--eng)">
+    <div class="hico" style="background:var(--eng-l)">📸</div>
+    <div class="htxt"><div class="hname">@paradiseatlas.lima</div><div class="hhint">Instagram · alt: @paradise.atlas / @atlas.english.pe</div></div>
+    <button class="hbtn" onclick="cp('@paradiseatlas.lima',this)">Copiar</button>
+  </div>
+  <div class="handle" style="border-color:var(--eng)">
+    <div class="hico" style="background:var(--eng-l)">🎵</div>
+    <div class="htxt"><div class="hname">@paradiseatlas</div><div class="hhint">TikTok · alt: @atlas.paradise / @paradise.atlas.pe</div></div>
+    <button class="hbtn" onclick="cp('@paradiseatlas',this)">Copiar</button>
+  </div>
+
+  <div class="slbl">Bios de perfil</div>
+  <div class="bio" style="border-color:var(--eng);background:var(--eng-l)">
+    <strong>Instagram · 150 caracteres</strong>
+    🗺️ Aprende inglés y mapea tu camino al mundo<br>
+    📍 Lima, Perú · Grupos pequeños · Intensivos · Solo sábados<br>
+    👇 Tu primera clase es gratis
+    <div class="bio-char">~134 caracteres ✓</div>
+  </div>
+  <div class="bio" style="border-color:var(--eng);background:var(--eng-l)">
+    <strong>TikTok · 80 caracteres</strong>
+    El inglés que sí se habla 🗺️ Lima · Primera clase gratis 👇
+    <div class="bio-char">~61 caracteres ✓</div>
+  </div>
+
+  <div class="slbl">Portadas de highlights</div>
+  <div class="hls">
+    <div class="hl"><div class="hlc" style="background:var(--eng)">📚</div><div class="hlt">Niveles</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--eng)">🗓️</div><div class="hlt">Horarios</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--eng)">⭐</div><div class="hlt">Reseñas</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--eng)">🎓</div><div class="hlt">Egresados</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--eng)">💰</div><div class="hlt">Precios</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--eng)">📝</div><div class="hlt">Inscríbete</div></div>
+  </div>
+
+  <div class="slbl">10 posts de lanzamiento</div>
+  <div class="posts">
+    <div class="post"><div class="pnum">01</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Anuncio · Carrusel</div>
+      <div class="ptxt">¿Cuántas veces dijiste "este año sí aprendo inglés"? 🙋
+
+Nosotros te tomamos la palabra.
+
+Paradise Atlas llega a Lima con clases diseñadas para que realmente hables — no para que pases un examen.
+
+Grupos pequeños. Profesores que te entienden. Horarios para cada estilo de vida: mañana, tarde, intensivo o solo sábados.
+
+👉 Link en bio para tu primera clase gratis.</div>
+      <div class="phook">Hashtags: #AprendeInglés #InglésLima #ParadiseAtlas #InglésPerú #ClasesDeInglés</div>
+    </div></div>
+    <div class="post"><div class="pnum">02</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Reel · Tendencia</div>
+      <div class="ptxt">POV: llevas 3 años "aprendiendo inglés" pero todavía no puedes pedir un café en Starbucks sin ponerte rojo 😅
+
+No es tu culpa. El método importa.
+
+En Paradise Atlas aprendes a hablar desde el primer día. Ven a tu clase gratis y compruébalo. 🗺️</div>
+      <div class="phook">Texto en pantalla + audio trending · 15–20 seg</div>
+    </div></div>
+    <div class="post"><div class="pnum">03</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Post informativo · ¿Por qué nosotros?</div>
+      <div class="ptxt">5 razones por las que nuestros alumnos sí aprenden inglés:
+
+1️⃣ Grupos máximo 12 personas
+2️⃣ Conversación real desde el día 1
+3️⃣ Intensivos de 5 veces por semana disponibles
+4️⃣ Programa de solo sábados para quienes trabajan
+5️⃣ Certificación Cambridge al alcance
+
+¿Cuál te convenció? Cuéntanos 👇</div>
+      <div class="phook">Carrusel o imagen con puntos numerados</div>
+    </div></div>
+    <div class="post"><div class="pnum">04</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Reel educativo · Errores virales</div>
+      <div class="ptxt">3 errores que cometes en inglés sin saberlo 🧠
+
+❌ "I am agree" → ✅ "I agree"
+❌ "He is more taller" → ✅ "He is taller"
+❌ "I am boring" → ✅ "I am bored" (¡muy importante!)
+
+¿Cuántos cometías? 😂 Guarda este video.</div>
+      <div class="phook">Texto rápido en pantalla · altísimo porcentaje de guardado</div>
+    </div></div>
+    <div class="post"><div class="pnum">05</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Post para padres</div>
+      <div class="ptxt">Para los papás y mamás de Lima 💙
+
+El inglés ya no es opcional — es la habilidad que más abre puertas a nivel mundial.
+
+En Paradise Atlas sus hijos aprenden con método, en grupos pequeños, con seguimiento real.
+
+Clases para niños desde 6 años. Escríbenos y te contamos todo 📲</div>
+      <div class="phook">Imagen cálida de niños en clase · tono parental</div>
+    </div></div>
+    <div class="post"><div class="pnum">06</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Reel · Programa intensivo</div>
+      <div class="ptxt">¿Y si en 4 semanas pudieras tener una conversación completa en inglés? 🤯
+
+Nuestro programa intensivo (5 veces por semana) está diseñado para eso.
+
+Ideal para vacaciones, entre trabajos o simplemente para avanzar rápido.
+
+Plazas limitadas. Escríbenos hoy. 📲</div>
+      <div class="phook">Reel con transición rápida mostrando progreso</div>
+    </div></div>
+    <div class="post"><div class="pnum">07</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Testimonio</div>
+      <div class="ptxt">"Nunca pensé que iba a poder tener una reunión de trabajo en inglés. Ahora lo hago cada semana." — Luis, 31 años ⭐⭐⭐⭐⭐
+
+Cuando el método es correcto, los resultados llegan solos.
+
+Tu historia puede ser la próxima. 🗺️
+Primera clase gratis → link en bio.</div>
+      <div class="phook">Fondo azul con cita en tipografía grande</div>
+    </div></div>
+    <div class="post"><div class="pnum">08</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Reel · Solo sábados</div>
+      <div class="ptxt">¿Trabajas toda la semana y no tienes tiempo para clases? 📅
+
+Nuestro programa de solo sábados es para ti.
+
+2 horas cada sábado. Grupo reducido. El mismo método que el resto de la semana.
+
+El inglés no tiene excusa para esperar. 🗺️ Escríbenos.</div>
+      <div class="phook">Muy efectivo para adultos 25–45 en Instagram</div>
+    </div></div>
+    <div class="post"><div class="pnum">09</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Post de precios</div>
+      <div class="ptxt">¿Cuánto cuesta aprender inglés en Paradise Atlas? 💰
+
+Clases grupales desde S/200 al mes.
+Programa intensivo disponible (5 veces/semana).
+Solo sábados para quienes trabajan.
+
+Compáralo con lo que ganas siendo bilingüe 😉
+
+👉 Escríbenos y te ayudamos a elegir el mejor horario.</div>
+      <div class="phook">Diseño limpio con las opciones en tarjetas</div>
+    </div></div>
+    <div class="post"><div class="pnum">10</div><div class="pcon">
+      <div class="ptyp" style="color:var(--eng)">Cierre · CTA</div>
+      <div class="ptxt">Si llegaste hasta aquí, ya sabes que quieres aprender inglés. 😊
+
+La única pregunta es: ¿cuándo empiezas?
+
+Plazas disponibles para el siguiente ciclo.
+Primera clase: GRATIS. Sin compromiso.
+
+¿Te apuntas? 👇 Escríbenos al WhatsApp en el perfil.</div>
+      <div class="phook">Fondo simple, texto grande — alto impacto</div>
+    </div></div>
+  </div>
+
+  <div class="slbl">Calendario de contenido — primeras 4 semanas</div>
+  <div id="cal-eng"></div>
+
+</div><!-- end atlas -->
+
+
+<!-- ══════════════════════════════
+     PARADISE STUDIO — ARTE
+══════════════════════════════ -->
+<div class="sec" id="sec-art">
+
+  <div class="hero" style="background:var(--art);color:#fff">
+    <div class="hero-deco" style="background:#fff"></div>
+    <div class="hero-pre">Academia de Arte</div>
+    <div class="hero-name">Paradise<br>Studio</div>
+    <div class="hero-tag">Tu estudio. Tu obra. Tu mundo.</div>
+    <div class="hero-desc">Talleres de dibujo, pintura y arte para niños, adolescentes y adultos en Lima. Porque crear no es un hobby — es una necesidad.</div>
+  </div>
+
+  <div class="slbl">Identidad visual</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-lbl">Paleta de color</div>
+      <div class="pal">
+        <div class="sw" style="background:#0F7A55"><span style="color:#fff">Verde Studio</span></div>
+        <div class="sw" style="background:#074D35"><span style="color:#fff">Bosque</span></div>
+        <div class="sw" style="background:#E2F5EE"><span style="color:#0F7A55">Suave</span></div>
+        <div class="sw" style="background:#E8A838"><span style="color:#fff">Ámbar</span></div>
+        <div class="sw" style="background:#F9F7F2"><span style="color:#9C9890">Crema</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Dirección tipográfica</div>
+      <div style="font-family:'Fraunces',serif;font-size:26px;font-weight:300;color:var(--art);font-style:italic;margin-bottom:.3rem">Fraunces Italic</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:.9rem">Titulares — expresivo, artístico, con carácter</div>
+      <div style="font-size:17px;font-weight:300;margin-bottom:.2rem">DM Sans Light</div>
+      <div style="font-size:11px;color:var(--muted)">Cuerpo — liviano, orgánico, no agresivo</div>
+    </div>
+  </div>
+
+  <div class="slbl">Voz de marca</div>
+  <div class="card" style="margin-bottom:1.75rem">
+    <div class="card-lbl">Personalidad</div>
+    <p style="font-size:13px;color:#444;line-height:1.7;margin-bottom:.9rem">Paradise Studio habla como <strong>un artista que también es maestro</strong>. Inspira sin presionar. Celebra el proceso, no solo el resultado. Habla a la parte sensible de las personas.</p>
+    <div class="vgrid">
+      <div class="vyes">Inspirador y sensible</div><div class="vno">Competitivo o rígido</div>
+      <div class="vyes">Celebra el proceso</div><div class="vno">Enfocado solo en técnica</div>
+      <div class="vyes">Invita, no presiona</div><div class="vno">Lenguaje corporativo</div>
+      <div class="vyes">Visual y poético</div><div class="vno">Frío o distante</div>
+    </div>
+  </div>
+
+  <div class="slbl">Redes sociales</div>
+  <div class="handle" style="border-color:var(--art)">
+    <div class="hico" style="background:var(--art-l)">📸</div>
+    <div class="htxt"><div class="hname">@paradisestudio.lima</div><div class="hhint">Instagram · alt: @paradise.studio / @studio.paradise.pe</div></div>
+    <button class="hbtn" onclick="cp('@paradisestudio.lima',this)">Copiar</button>
+  </div>
+  <div class="handle" style="border-color:var(--art)">
+    <div class="hico" style="background:var(--art-l)">🎵</div>
+    <div class="htxt"><div class="hname">@paradisestudio</div><div class="hhint">TikTok · alt: @studio.paradise / @paradise.studio.pe</div></div>
+    <button class="hbtn" onclick="cp('@paradisestudio',this)">Copiar</button>
+  </div>
+
+  <div class="slbl">Bios de perfil</div>
+  <div class="bio" style="border-color:var(--art);background:var(--art-l)">
+    <strong>Instagram · 150 caracteres</strong>
+    🎨 Talleres de arte para niños, jóvenes y adultos en Lima<br>
+    ✏️ Dibujo · Pintura · Portafolios · Arte para todos<br>
+    📍 Exposición al final de cada ciclo<br>
+    👇 Reserva tu clase de prueba
+    <div class="bio-char">~145 caracteres ✓</div>
+  </div>
+  <div class="bio" style="border-color:var(--art);background:var(--art-l)">
+    <strong>TikTok · 80 caracteres</strong>
+    Aprende a crear 🎨 Talleres de arte en Lima · ¡Primera clase gratis!
+    <div class="bio-char">~69 caracteres ✓</div>
+  </div>
+
+  <div class="slbl">Portadas de highlights</div>
+  <div class="hls">
+    <div class="hl"><div class="hlc" style="background:var(--art)">🎨</div><div class="hlt">Talleres</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--art)">👦</div><div class="hlt">Niños</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--art)">🖼️</div><div class="hlt">Portafolio</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--art)">🎉</div><div class="hlt">Exposición</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--art)">💰</div><div class="hlt">Precios</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--art)">📅</div><div class="hlt">Horarios</div></div>
+  </div>
+
+  <div class="slbl">10 posts de lanzamiento</div>
+  <div class="posts">
+    <div class="post"><div class="pnum">01</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Anuncio · Carrusel</div>
+      <div class="ptxt">Hay algo que pasa cuando un niño toma un lápiz por primera vez y dibuja lo que ve en su cabeza. 🌱
+
+Lo mismo pasa con adultos que nunca "tuvieron tiempo" para el arte.
+
+Paradise Studio abre sus puertas en Lima con talleres para todas las edades — porque crear no tiene edad ni requisitos.
+
+Clases de prueba disponibles. Link en bio. 🎨</div>
+      <div class="phook">Hashtags: #ArteEnLima #TalleresDeArte #ParadiseStudio #AprendeADibujar #ArteLima</div>
+    </div></div>
+    <div class="post"><div class="pnum">02</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Reel · Time-lapse de obra</div>
+      <div class="ptxt">De hoja en blanco a obra terminada en 90 minutos ✨
+
+Esto es lo que pasa en una clase de Paradise Studio.
+
+No necesitas haber dibujado antes. Solo necesitas querer empezar. 🎨
+
+¿Te animas? Primera clase gratis 👇</div>
+      <div class="phook">Video de alumno dibujando de principio a fin — muy viral</div>
+    </div></div>
+    <div class="post"><div class="pnum">03</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Post para papás</div>
+      <div class="ptxt">¿Sabes qué desarrollan los niños cuando aprenden arte? 🎨
+
+✅ Concentración y paciencia
+✅ Expresión emocional sana
+✅ Creatividad y pensamiento lateral
+✅ Autoconfianza a través del logro
+✅ Un portafolio que los diferencia
+
+En Paradise Studio, los niños crean desde los 6 años. Tardes y sábados disponibles. 📲</div>
+      <div class="phook">Carrusel con íconos — diseño limpio para padres</div>
+    </div></div>
+    <div class="post"><div class="pnum">04</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Reel · Antes y después</div>
+      <div class="ptxt">Lo que dibujas en tu primera clase vs. lo que dibujas en tu décima clase 😮
+
+[foto "antes"] → [foto "después"]
+
+No es talento. Es práctica con el método correcto. 🎨
+
+Ven a tu primera clase y empieza tu transformación.</div>
+      <div class="phook">Antes/después — altísimo engagement · muy guardado</div>
+    </div></div>
+    <div class="post"><div class="pnum">05</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Post adultos · Fin de semana</div>
+      <div class="ptxt">Para los adultos que siempre dijeron "yo no tengo talento para el arte" 👋
+
+El talento no existe. Existe el método y la práctica.
+
+Nuestro taller de fines de semana está diseñado para ti — sin presión, sin juicio, solo crear.
+
+Porque necesitas un espacio que sea solo tuyo. 🎨</div>
+      <div class="phook">Imagen de ambiente cálido con luz natural</div>
+    </div></div>
+    <div class="post"><div class="pnum">06</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Post educativo · Arte y cerebro</div>
+      <div class="ptxt">3 cosas que le pasan a tu cerebro cuando dibujas 🧠🎨
+
+1. Reduce el cortisol (hormona del estrés) hasta un 75%
+2. Activa el estado de "flow" — igual que meditar
+3. Mejora la conexión entre hemisferios cerebrales
+
+Y encima terminas con algo bonito en la mano. 😄
+¿Cuándo fue la última vez que dibujaste?</div>
+      <div class="phook">Muy compartible — datos curiosos + arte</div>
+    </div></div>
+    <div class="post"><div class="pnum">07</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Post · Exposición de fin de ciclo</div>
+      <div class="ptxt">Al final de cada ciclo, nuestros alumnos no entregan un examen. 🖼️
+
+Hacen una exposición.
+
+Sus familias vienen. Sus amigos vienen. Y ven con sus propios ojos lo que se puede crear en unos meses.
+
+Ese momento lo cambia todo.
+
+¿Quieres ser parte del próximo ciclo? 🎨</div>
+      <div class="phook">Foto de la exposición o preparativos — muy emotivo</div>
+    </div></div>
+    <div class="post"><div class="pnum">08</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Reel · Portafolio teens</div>
+      <div class="ptxt">¿Tu hijo quiere estudiar diseño, arquitectura o arte? 🎓
+
+El portafolio es la diferencia entre entrar o no a la carrera que quiere.
+
+Nuestro track de portafolio para adolescentes construye pieza por pieza una colección que impresiona en cualquier postulación.
+
+Pregunta por disponibilidad. 📲</div>
+      <div class="phook">Slides mostrando trabajos de alumnos teen</div>
+    </div></div>
+    <div class="post"><div class="pnum">09</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Post · Fiesta de arte</div>
+      <div class="ptxt">¿El cumpleaños de tu hijo se acerca? 🎂🎨
+
+Organiza una fiesta de arte en Paradise Studio.
+
+Los niños crean, se divierten y se van con su obra como recuerdo.
+
+Una experiencia diferente. Sin pantallas. Con mucho color.
+
+Consulta disponibilidad de fechas 📅</div>
+      <div class="phook">Foto colorida de niños pintando — muy compartible entre mamás</div>
+    </div></div>
+    <div class="post"><div class="pnum">10</div><div class="pcon">
+      <div class="ptyp" style="color:var(--art)">Cierre · CTA</div>
+      <div class="ptxt">Hay personas que llevan años queriendo aprender a dibujar o pintar. 🎨
+
+Y siguen esperando "el momento perfecto".
+
+El momento perfecto es este.
+
+Clase de prueba gratis. Sin materiales. Sin requisitos.
+Solo ven y crea.
+
+📲 Escríbenos o reserva en el link del perfil.</div>
+      <div class="phook">Fondo verde con texto en blanco — simple y poderoso</div>
+    </div></div>
+  </div>
+
+  <div class="slbl">Calendario de contenido — primeras 4 semanas</div>
+  <div id="cal-art"></div>
+
+</div><!-- end studio -->
+
+
+<!-- ══════════════════════════════
+     PARADISE ASCEND — PREUNI
+══════════════════════════════ -->
+<div class="sec" id="sec-uni">
+
+  <div class="hero" style="background:var(--uni);color:#fff">
+    <div class="hero-deco" style="background:#fff"></div>
+    <div class="hero-pre">Preuniversitario · Internacional</div>
+    <div class="hero-name">Paradise<br>Ascend</div>
+    <div class="hero-tag">Tu universidad, en cualquier parte del mundo.</div>
+    <div class="hero-desc">Preparación preuniversitaria en Lima para ingresar a las mejores universidades del Perú y del mundo. Método probado, resultados reales.</div>
+  </div>
+
+  <div class="slbl">Identidad visual</div>
+  <div class="g2">
+    <div class="card">
+      <div class="card-lbl">Paleta de color</div>
+      <div class="pal">
+        <div class="sw" style="background:#A0420A"><span style="color:#fff">Terracota</span></div>
+        <div class="sw" style="background:#6B2B06"><span style="color:#fff">Oscuro</span></div>
+        <div class="sw" style="background:#FBF0E4"><span style="color:#A0420A">Cálido</span></div>
+        <div class="sw" style="background:#C8993A"><span style="color:#fff">Dorado</span></div>
+        <div class="sw" style="background:#0F0E0C"><span style="color:#fff">Negro</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">Dirección tipográfica</div>
+      <div style="font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:var(--uni);margin-bottom:.3rem">Fraunces Bold</div>
+      <div style="font-size:11px;color:var(--muted);margin-bottom:.9rem">Titulares — poderoso, serio, ambicioso</div>
+      <div style="font-size:17px;font-weight:600;margin-bottom:.2rem">DM Sans Semibold</div>
+      <div style="font-size:11px;color:var(--muted)">Cuerpo — claro, firme, confiable</div>
+    </div>
+  </div>
+
+  <div class="slbl">Voz de marca</div>
+  <div class="card" style="margin-bottom:1.75rem">
+    <div class="card-lbl">Personalidad</div>
+    <p style="font-size:13px;color:#444;line-height:1.7;margin-bottom:.9rem">Paradise Ascend habla como <strong>el hermano mayor que ya ingresó y sabe exactamente cómo hacerlo</strong>. No promete milagros — promete preparación real. Directo, sin rodeos, orientado a resultados.</p>
+    <div class="vgrid">
+      <div class="vyes">Directo y orientado a resultados</div><div class="vno">Promesas exageradas</div>
+      <div class="vyes">Habla de logros reales</div><div class="vno">Lenguaje de miedo</div>
+      <div class="vyes">Urgente pero respetuoso</div><div class="vno">Condescendiente</div>
+      <div class="vyes">Usa datos y resultados</div><div class="vno">Vago o ambiguo</div>
+    </div>
+  </div>
+
+  <div class="slbl">Redes sociales</div>
+  <div class="handle" style="border-color:var(--uni)">
+    <div class="hico" style="background:var(--uni-l)">📸</div>
+    <div class="htxt"><div class="hname">@paradiseascend.lima</div><div class="hhint">Instagram · alt: @paradise.ascend / @ascend.paradise.pe</div></div>
+    <button class="hbtn" onclick="cp('@paradiseascend.lima',this)">Copiar</button>
+  </div>
+  <div class="handle" style="border-color:var(--uni)">
+    <div class="hico" style="background:var(--uni-l)">🎵</div>
+    <div class="htxt"><div class="hname">@paradiseascend</div><div class="hhint">TikTok · alt: @ascend.paradise / @paradise.ascend.pe</div></div>
+    <button class="hbtn" onclick="cp('@paradiseascend',this)">Copiar</button>
+  </div>
+
+  <div class="slbl">Bios de perfil</div>
+  <div class="bio" style="border-color:var(--uni);background:var(--uni-l)">
+    <strong>Instagram · 150 caracteres</strong>
+    🚀 Preparación preuniversitaria en Lima<br>
+    📚 Universidades peruanas e internacionales<br>
+    ✅ Grupos reducidos · Simulacros · Resultados reales<br>
+    👇 Simula tu examen gratis
+    <div class="bio-char">~140 caracteres ✓</div>
+  </div>
+  <div class="bio" style="border-color:var(--uni);background:var(--uni-l)">
+    <strong>TikTok · 80 caracteres</strong>
+    Ingresa a la universidad que sueñas 🚀 Lima · Examen gratis 👇
+    <div class="bio-char">~62 caracteres ✓</div>
+  </div>
+
+  <div class="slbl">Portadas de highlights</div>
+  <div class="hls">
+    <div class="hl"><div class="hlc" style="background:var(--uni)">🎓</div><div class="hlt">Ingresantes</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--uni)">📚</div><div class="hlt">Cursos</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--uni)">🌎</div><div class="hlt">Internacional</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--uni)">💰</div><div class="hlt">Precios</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--uni)">📝</div><div class="hlt">Simulacros</div></div>
+    <div class="hl"><div class="hlc" style="background:var(--uni)">⭐</div><div class="hlt">Testimonios</div></div>
+  </div>
+
+  <div class="slbl">10 posts de lanzamiento</div>
+  <div class="posts">
+    <div class="post"><div class="pnum">01</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Anuncio · Lanzamiento</div>
+      <div class="ptxt">La diferencia entre ingresar y no ingresar no es inteligencia. Es preparación. 🚀
+
+Paradise Ascend llega a Lima con un método claro: profesores que conocen los exámenes de adentro, grupos pequeños y preparación tanto para universidades peruanas como internacionales.
+
+¿A qué universidad apuntas? Cuéntanos 👇</div>
+      <div class="phook">Hashtags: #Preuniversitario #IngesarALaUni #ParadiseAscend #PreuLima #UniversidadPerú</div>
+    </div></div>
+    <div class="post"><div class="pnum">02</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Reel TikTok · Hook fuerte</div>
+      <div class="ptxt">El error #1 que hace que los postulantes no ingresen a la PUCP 🎓
+
+Estudian los temas correctos pero en el orden equivocado.
+
+En Paradise Ascend estructuramos tu prep exactamente como está el examen — semana a semana.
+
+Simula tu examen gratis y descubre dónde estás. Link en bio.</div>
+      <div class="phook">Texto rápido en pantalla — muy efectivo 16–18 años en TikTok</div>
+    </div></div>
+    <div class="post"><div class="pnum">03</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Post diferenciador · Internacional</div>
+      <div class="ptxt">¿Sabías que puedes postular a universidades en España, EE.UU., Canadá o Europa desde Lima? 🌎
+
+En Paradise Ascend preparamos para ambas rutas:
+
+🇵🇪 PUCP · UNMSM · UNI · UPC y más
+🌎 Universidades internacionales: requisitos, essays, SAT y más
+
+Una sola academia. Dos mundos de posibilidades. 🚀</div>
+      <div class="phook">Carrusel — diferenciador clave vs. la competencia</div>
+    </div></div>
+    <div class="post"><div class="pnum">04</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Post prueba social</div>
+      <div class="ptxt">Nuestros alumnos del primer ciclo: 🎓
+
+✅ [N] ingresantes a PUCP
+✅ [N] ingresantes a UNMSM
+✅ [N] con admisión internacional
+
+No por suerte. Por método.
+
+El siguiente ciclo empieza pronto. ¿Tu nombre está en la lista? 📲</div>
+      <div class="phook">Completar con datos reales — el post más poderoso del año</div>
+    </div></div>
+    <div class="post"><div class="pnum">05</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Reel · Ciclo intensivo</div>
+      <div class="ptxt">¿El examen es en 4 semanas y recién estás empezando? 😰
+
+Nuestro ciclo intensivo existe exactamente para eso.
+
+4 semanas. Todos los temas. Simulacros reales. Seguimiento diario.
+
+No es tarde. Pero sí hay que empezar hoy. 📲 Escríbenos.</div>
+      <div class="phook">Urgencia real — especialmente efectivo en enero y julio</div>
+    </div></div>
+    <div class="post"><div class="pnum">06</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Post motivacional</div>
+      <div class="ptxt">"El año pasado no ingresé. Este año sí."
+
+Esta frase la escuchamos cada ciclo en Paradise Ascend. 🚀
+
+No es frase de motivación. Es resultado de preparación.
+
+Si el año pasado no fue tu año, este ciclo puede cambiar eso.
+¿Empezamos? 👇</div>
+      <div class="phook">Fondo oscuro con cita grande — alto impacto emocional</div>
+    </div></div>
+    <div class="post"><div class="pnum">07</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Post informativo · Ciclos</div>
+      <div class="ptxt">¿Cuál ciclo de preparación es para ti? 📚
+
+🟠 Ciclo Regular (3 meses): profundidad y calma
+🟠 Intensivo (4 semanas): para el examen que se acerca
+🟠 Solo fines de semana: para quienes estudian en la semana
+🟠 Módulo por materia: refuerzo en el tema que te falla
+🌎 Prep internacional: SAT, essays y más
+
+¿Cuál necesitas? Escríbenos 📲</div>
+      <div class="phook">Carrusel con una slide por opción</div>
+    </div></div>
+    <div class="post"><div class="pnum">08</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Reel · Dato viral</div>
+      <div class="ptxt">¿Sabes cuánto gana alguien con título universitario vs. sin título en Perú? 📊
+
+Con título: promedio S/2,800 al mes
+Sin título: promedio S/1,200 al mes
+
+La diferencia es S/1,600 cada mes. S/19,200 al año. Para toda la vida.
+
+¿Vale la pena prepararse bien? Tú decides. 🚀</div>
+      <div class="phook">Muy compartido por padres y alumnos</div>
+    </div></div>
+    <div class="post"><div class="pnum">09</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Post · Simulacro gratuito</div>
+      <div class="ptxt">¿Sabes en qué nivel estás realmente? 🎯
+
+La mayoría de postulantes cree que está mejor (o peor) de lo que realmente está.
+
+En Paradise Ascend ofrecemos un simulacro gratuito para que sepas exactamente dónde estás y cuánto tiempo necesitas.
+
+Sin costo. Sin compromiso.
+👇 Reserva tu simulacro.</div>
+      <div class="phook">Lead magnet más poderoso del preuniversitario</div>
+    </div></div>
+    <div class="post"><div class="pnum">10</div><div class="pcon">
+      <div class="ptyp" style="color:var(--uni)">Post para papás</div>
+      <div class="ptxt">Para los papás que ven a su hijo prepararse para entrar a la universidad 🎓
+
+En Paradise Ascend no solo preparamos para un examen. Preparamos para el paso más importante de su vida académica — aquí en Perú o en cualquier parte del mundo.
+
+Grupos reducidos. Profesores especializados. Seguimiento semanal.
+
+Escríbenos y te contamos todo. 📲</div>
+      <div class="phook">Muy efectivo en Instagram dirigido a padres 35–50</div>
+    </div></div>
+  </div>
+
+  <div class="slbl">Calendario de contenido — primeras 4 semanas</div>
+  <div id="cal-uni"></div>
+
+</div><!-- end ascend -->
+
+
+<!-- ══════════════════════════════
+     PARAGUAS — PARADISE ACADEMY
+══════════════════════════════ -->
+<div class="sec" id="sec-pa">
+
+  <div class="hero" style="background:var(--ink);color:#fff">
+    <div class="hero-deco" style="background:var(--gold)"></div>
+    <div class="hero-pre">Marca paraguas</div>
+    <div class="hero-name">Paradise<br>Academy</div>
+    <div class="hero-tag">Aprende. Crea. Asciende.</div>
+    <div class="hero-desc">La institución que une los tres programas bajo una misma visión: educación de calidad que transforma vidas en Lima.</div>
+  </div>
+
+  <div class="slbl">Las tres marcas</div>
+  <div class="subcards">
+    <div class="subcard" style="background:var(--eng)">
+      <div class="subcard-name">Paradise Atlas</div>
+      <div class="subcard-tag">Inglés · Tu idioma, tu mapa al mundo</div>
+    </div>
+    <div class="subcard" style="background:var(--art)">
+      <div class="subcard-name">Paradise Studio</div>
+      <div class="subcard-tag">Arte · Tu estudio. Tu obra. Tu mundo.</div>
+    </div>
+    <div class="subcard" style="background:var(--uni)">
+      <div class="subcard-name">Paradise Ascend</div>
+      <div class="subcard-tag">Preuni · Tu universidad, en cualquier parte</div>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-lbl">Instagram paraguas</div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.3rem">@paradiseacademy.lima</div>
+      <div style="font-size:12px;color:var(--muted)">Hitos, logros y contenido institucional de los tres programas</div>
+    </div>
+    <div class="card">
+      <div class="card-lbl">TikTok paraguas</div>
+      <div style="font-size:15px;font-weight:600;margin-bottom:.3rem">@paradiseacademy</div>
+      <div style="font-size:12px;color:var(--muted)">Contenido institucional y repost de los tres programas</div>
+    </div>
+  </div>
+
+  <div class="slbl">Bio paraguas</div>
+  <div class="bio" style="border-color:var(--gold);background:#FDF6E8">
+    <strong>Instagram · 150 caracteres</strong>
+    🎓 Inglés · Arte · Preuniversitario<br>
+    📍 Lima, Perú · Educación que transforma<br>
+    🗺️ Atlas · 🎨 Studio · 🚀 Ascend<br>
+    👇 Conoce nuestros programas
+    <div class="bio-char">~112 caracteres ✓</div>
+  </div>
+
+  <div class="slbl">Post de lanzamiento oficial</div>
+  <div class="posts">
+    <div class="post">
+      <div class="pnum" style="color:var(--gold)">★</div>
+      <div class="pcon">
+        <div class="ptyp" style="color:var(--gold)">Post fijado · Paradise Academy</div>
+        <div class="ptxt">Lima, esto es para ti. 🏙️
+
+Paradise Academy llega con tres programas diseñados para abrir puertas:
+
+🗺️ Paradise Atlas — El inglés que sí se habla
+🎨 Paradise Studio — Arte para todas las edades
+🚀 Paradise Ascend — Tu universidad, aquí o en el mundo
+
+Una sola institución. Tres caminos. El tuyo está aquí.
+
+👇 Visita nuestro link y conoce todos los programas.</div>
+        <div class="phook">Post fijado en el perfil paraguas · fondo oscuro con los tres colores</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="slbl">Estrategia de cuentas y crossposting</div>
+  <div class="strat-row">
+    <div class="strat-num">1</div>
+    <div class="strat-txt"><strong>Cada programa tiene su propia cuenta</strong> — @paradiseatlas.lima, @paradisestudio.lima, @paradiseascend.lima. Contenido 100% enfocado en su programa. La comunidad sabe exactamente qué esperar.</div>
+  </div>
+  <div class="strat-row">
+    <div class="strat-num">2</div>
+    <div class="strat-txt"><strong>Paradise Academy como cuenta paraguas</strong> — @paradiseacademy.lima publica hitos, ingresantes, logros y repostea lo mejor de las tres cuentas 1–2 veces por semana.</div>
+  </div>
+  <div class="strat-row">
+    <div class="strat-num">3</div>
+    <div class="strat-txt"><strong>WhatsApp como canal de cierre</strong> — el 80% de inscripciones en academias de Lima se cierran por WhatsApp. Las redes abren la puerta; WhatsApp la cierra. Cada bio debe tener el link directo al chat.</div>
+  </div>
+  <div class="strat-row">
+    <div class="strat-num">4</div>
+    <div class="strat-txt"><strong>Frecuencia recomendada</strong> — Instagram feed: 4–5 posts/semana por programa. Stories: diario. TikTok: 3–4 reels/semana por programa. Calidad sobre cantidad.</div>
+  </div>
+  <div class="strat-row">
+    <div class="strat-num">5</div>
+    <div class="strat-txt"><strong>El upsell natural</strong> — una familia en Atlas (inglés) + Studio (arte, sábados) + Ascend (preuni a los 16) genera S/400–700/mes sin adquirir un nuevo cliente. Menciona siempre los otros programas en stories y bios.</div>
+  </div>
+
+</div><!-- end pa -->
+
+<div class="footer">
+  <p><strong>Paradise Academy</strong> · Brand Kit · Paradise Atlas · Paradise Studio · Paradise Ascend<br>Confidencial · Lima 2025</p>
+</div>
+
+<script>
+function show(id,el){
+  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
+  document.querySelectorAll('.ni').forEach(function(n){n.classList.remove('on');});
+  document.getElementById('sec-'+id).classList.add('on');
+  el.classList.add('on');
+  window.scrollTo({top:document.querySelector('.nav').offsetTop-4,behavior:'smooth'});
+}
+function cp(t,btn){
+  navigator.clipboard.writeText(t).then(function(){
+    btn.textContent='✓ Copiado';
+    setTimeout(function(){btn.textContent='Copiar';},1800);
+  });
+}
+function buildCal(id,color){
+  var days=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'];
+  var weeks=[
+    {l:'Semana 1 — Lanzamiento',c:['Anuncio oficial (post fijado)','Reel de presentación','Story: ¿Qué aprenderás?','Post educativo top','Story: encuesta horarios','Post precios y modalidades','Descanso']},
+    {l:'Semana 2 — Confianza',c:['Reel educativo viral','Post beneficios del programa','Story: detrás de escenas','Post testimonio real','Story: Q&A en vivo','Post objeciones comunes','Repost en @paradiseacademy']},
+    {l:'Semana 3 — Prueba social y urgencia',c:['Post egresados / ingresantes','Reel TikTok comparación','Story: cuenta regresiva plazas','Post horarios disponibles','Story: mini-clase gratis','Post CTA directo','Descanso']},
+    {l:'Semana 4 — Cierre de inscripciones',c:['Post: "últimas plazas"','Reel motivación final','Story: testimonios en video','Post preguntas frecuentes','Story: link WhatsApp directo','Post bienvenida nuevos alumnos','Celebración en stories']}
+  ];
+  var html='';
+  weeks.forEach(function(w){
+    html+='<div class="cal-week"><div class="cal-wlbl">'+w.l+'</div><div class="cal-days">';
+    for(var i=0;i<7;i++){
+      var rest=i===6;
+      html+='<div class="cd'+(rest?' rst':' act')+'"'+(rest?'':' style="border-color:'+color+'"')+'>'+
+        '<div class="cd-n">'+days[i]+'</div>'+
+        '<div class="cd-c">'+(rest?'Descanso':w.c[i])+'</div></div>';
+    }
+    html+='</div></div>';
+  });
+  document.getElementById(id).innerHTML=html;
+}
+buildCal('cal-eng','#1B5FA8');
+buildCal('cal-art','#0F7A55');
+buildCal('cal-uni','#A0420A');
+</script>
+</body>
+</html>
