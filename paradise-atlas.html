@@ -132,7 +132,7 @@
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      background: var(--blue-d);
+      background: linear-gradient(rgba(13, 63, 110, 0.4), rgba(13, 63, 110, 0.4)), url('atlas-hero.png') center/cover no-repeat;
       position: relative;
       display: flex;
       align-items: center;
@@ -1336,6 +1336,7 @@
           <div class="hiw-step-title">Clase de prueba gratis</div>
           <div class="hiw-step-desc">Asistes a una clase completa sin costo. Conoces al profesor, al grupo, y sientes el
             método. Sin compromiso.</div>
+          <img src="atlas-class.png" alt="Clase Atlas" style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-top:1rem; opacity:.8">
         </div>
         <div class="hiw-step">
           <div class="hiw-step-n">03</div>
@@ -1579,7 +1580,7 @@
           <div class="testi-quote">"Llevaba años queriendo hablar inglés. En Atlas empecé a conversar desde la primera
             semana. El profesor realmente nos hace hablar."</div>
           <div class="testi-author">
-            <div class="testi-avatar">LR</div>
+            <img src="atlas-testi-luis.png" alt="Luis R." class="testi-avatar" style="width:48px; height:48px; border-radius:50%; object-fit:cover">
             <div>
               <div class="testi-name">Luis R.</div>
               <div class="testi-role">Profesional, 31 años · Programa adultos</div>
@@ -1591,9 +1592,9 @@
           <div class="testi-quote">"Mi hija lleva dos ciclos y el cambio es increíble. Ya puede ver series en inglés sin
             subtítulos. El grupo pequeño hace toda la diferencia."</div>
           <div class="testi-author">
-            <div class="testi-avatar">MV</div>
+            <img src="atlas-testi-carla.png" alt="Carla M." class="testi-avatar" style="width:48px; height:48px; border-radius:50%; object-fit:cover">
             <div>
-              <div class="testi-name">María V.</div>
+              <div class="testi-name">Carla M.</div>
               <div class="testi-role">Mamá de alumna, 10 años · Grupo kids</div>
             </div>
           </div>
@@ -1603,9 +1604,9 @@
           <div class="testi-quote">"El intensivo de 4 semanas fue exactamente lo que necesitaba antes de mi viaje.
             Llegué a España y me pude comunicar sin problema."</div>
           <div class="testi-author">
-            <div class="testi-avatar">CG</div>
+            <img src="atlas-testi-maria.png" alt="Maria S." class="testi-avatar" style="width:48px; height:48px; border-radius:50%; object-fit:cover">
             <div>
-              <div class="testi-name">Carlos G.</div>
+              <div class="testi-name">Maria S.</div>
               <div class="testi-role">Universitario, 22 años · Programa intensivo</div>
             </div>
           </div>
@@ -1654,7 +1655,7 @@
   </section>
 
   <!-- CTA FINAL -->
-  <section class="cta-final" id="cta">
+  <section class="cta-final" id="cta" style="background: linear-gradient(rgba(13,63,110,0.8), rgba(13,63,110,0.8)), url('atlas-cta-bg.png') center/cover no-repeat;">
     <div class="cta-final-deco"></div>
     <div class="cta-final-inner">
       <h2 class="cta-final-title">Tu primera<br>clase es <em>gratis.</em></h2>

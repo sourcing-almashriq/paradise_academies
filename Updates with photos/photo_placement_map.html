@@ -1,0 +1,422 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:.75rem 0 1.5rem;font-family:var(--font-sans)}
+.tabs{display:flex;gap:5px;margin-bottom:1.25rem;flex-wrap:wrap}
+.tab{padding:6px 13px;border-radius:100px;font-size:12px;font-weight:500;cursor:pointer;border:0.5px solid var(--color-border-secondary);color:var(--color-text-secondary);background:transparent;transition:all .15s}
+.tab.on-h{background:#1B5FA8;color:#fff;border-color:#1B5FA8}
+.tab.on-s{background:#0F7A55;color:#fff;border-color:#0F7A55}
+.tab.on-a{background:#A0420A;color:#fff;border-color:#A0420A}
+.tab.on-g{background:#2C2C2A;color:#fff;border-color:#2C2C2A}
+
+.pane{display:none}.pane.on{display:block}
+
+.photo-item{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem 1.1rem;margin-bottom:8px;background:var(--color-background-primary);display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:flex-start}
+.photo-num{font-size:22px;font-weight:500;color:var(--color-text-tertiary);font-family:var(--font-serif);line-height:1.1;width:28px;text-align:right;flex-shrink:0;padding-top:1px}
+.photo-body{}
+.photo-location{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.1em;margin-bottom:.2rem}
+.photo-title{font-size:14px;font-weight:500;color:var(--color-text-primary);margin-bottom:.25rem;line-height:1.3}
+.photo-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.55;margin-bottom:.5rem}
+.photo-specs{display:flex;gap:5px;flex-wrap:wrap}
+.spec-tag{font-size:10px;padding:2px 7px;border-radius:4px;background:var(--color-background-secondary);color:var(--color-text-tertiary);font-weight:500;border:0.5px solid var(--color-border-tertiary)}
+.spec-tag.ratio{background:#EAF3DE;color:#27500A;border-color:#C0DD97}
+.spec-tag.mood{background:#FAEEDA;color:#633806;border-color:#FAC775}
+.spec-tag.tone{background:#E6F1FB;color:#0C447C;border-color:#85B7EB}
+
+.section-divider{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-text-tertiary);margin:1.25rem 0 .65rem;display:flex;align-items:center;gap:.5rem}
+.section-divider::after{content:'';flex:1;height:0.5px;background:var(--color-border-tertiary)}
+
+.total-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:11px;font-weight:500;padding:3px 10px;border-radius:100px;margin-bottom:1rem}
+</style>
+
+<div class="wrap">
+<div class="tabs">
+  <div class="tab on-h" id="t-atlas" onclick="sw('atlas')">Paradise Atlas</div>
+  <div class="tab" id="t-studio" onclick="sw('studio')">Paradise Studio</div>
+  <div class="tab" id="t-ascend" onclick="sw('ascend')">Paradise Ascend</div>
+  <div class="tab" id="t-global" onclick="sw('global')">Home + Global</div>
+</div>
+
+<!-- ATLAS -->
+<div class="pane on" id="p-atlas">
+<div class="total-badge" style="background:#E8F0FB;color:#0D3B6E;border:0.5px solid #85B7EB">6 fotos · Paradise Atlas</div>
+
+<div class="section-divider">Hero y secciones superiores</div>
+
+<div class="photo-item">
+  <div class="photo-num">1</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#1B5FA8">Hero · fondo con overlay</div>
+    <div class="photo-title">Adulto latinoamericano en conversación en inglés</div>
+    <div class="photo-desc">Persona joven (25–35) hablando con confianza, en ambiente de clase pequeña o café. Expresión natural, no posada. Esta foto va de fondo del hero con un overlay azul oscuro al 40%.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">16:9 o panorámico</span>
+      <span class="spec-tag mood">Confiado · Natural</span>
+      <span class="spec-tag tone">Luz cálida</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">2</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#1B5FA8">Sección "How it works" · paso 2</div>
+    <div class="photo-title">Primera clase — grupo pequeño activo</div>
+    <div class="photo-desc">6–8 personas en clase, todas participando. Profesor al frente, alumnos hablando. Ambiente dinámico. Captura el contraste con la academia grande y masiva.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 o 4:3</span>
+      <span class="spec-tag mood">Dinámico · Participativo</span>
+      <span class="spec-tag tone">Luz natural</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">Testimonios</div>
+
+<div class="photo-item">
+  <div class="photo-num">3</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#1B5FA8">Testimonio 1 · avatar circular</div>
+    <div class="photo-title">Hombre latinoamericano profesional, 28–35 años</div>
+    <div class="photo-desc">Retrato amistoso, sonrisa natural, fondo neutro o desfocado. Aspecto de profesional urbano de Lima. Para el avatar del testimonio de Luis R.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 recortado en círculo</span>
+      <span class="spec-tag mood">Confiado · Amistoso</span>
+      <span class="spec-tag tone">Fondo claro</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">4</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#1B5FA8">Testimonio 2 · avatar circular</div>
+    <div class="photo-title">Mamá latinoamericana, 38–45 años</div>
+    <div class="photo-desc">Mujer con expresión cálida y de orgullo. Podría estar con un niño difuminado en el fondo. Aspecto de clase media limeña.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 recortado en círculo</span>
+      <span class="spec-tag mood">Cálido · Orgulloso</span>
+      <span class="spec-tag tone">Tonos neutros</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">5</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#1B5FA8">Testimonio 3 · avatar circular</div>
+    <div class="photo-title">Joven universitario peruano, 20–24 años</div>
+    <div class="photo-desc">Estudiante con mochila o en ambiente de campus. Expresión casual y segura. Representa al target de jóvenes que quieren diferenciarse laboralmente.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 recortado en círculo</span>
+      <span class="spec-tag mood">Casual · Seguro</span>
+      <span class="spec-tag tone">Exterior o campus</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">CTA final</div>
+
+<div class="photo-item">
+  <div class="photo-num">6</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#1B5FA8">Sección CTA final · fondo decorativo</div>
+    <div class="photo-title">Manos escribiendo en un cuaderno de inglés</div>
+    <div class="photo-desc">Close-up de manos tomando apuntes, texto en inglés visible. Atmosférico, con overlay azul profundo. No necesita caras — solo el gesto del aprendizaje.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">16:9</span>
+      <span class="spec-tag mood">Enfocado · Detalle</span>
+      <span class="spec-tag tone">Close-up · Cálido</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- STUDIO -->
+<div class="pane" id="p-studio">
+<div class="total-badge" style="background:#E2F5EE;color:#074D35;border:0.5px solid #5DCAA5">7 fotos · Paradise Studio</div>
+
+<div class="section-divider">Hero</div>
+<div class="photo-item">
+  <div class="photo-num">1</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Hero · panel derecho decorativo</div>
+    <div class="photo-title">Manos de artista pintando con acuarela</div>
+    <div class="photo-desc">Close-up de manos sosteniendo pincel sobre papel. Salpicaduras de pintura verde y ámbar. Fondo neutro o difuminado. Entra como elemento visual en el lado derecho del hero split.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">3:4 o 1:1</span>
+      <span class="spec-tag mood">Creativo · Orgánico</span>
+      <span class="spec-tag tone">Luz natural lateral</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">Talleres por segmento</div>
+<div class="photo-item">
+  <div class="photo-num">2</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Sección talleres · niños</div>
+    <div class="photo-title">Niño latinoamericano pintando concentrado</div>
+    <div class="photo-desc">Niño (7–10 años) mirando su obra con concentración y alegría. Pintura en la cara o manos aceptable — transmite autenticidad. Mesa con materiales visibles.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">4:3 o 1:1</span>
+      <span class="spec-tag mood">Alegre · Concentrado</span>
+      <span class="spec-tag tone">Luz cálida interior</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">3</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Sección talleres · adultos</div>
+    <div class="photo-title">Adulto en taller de fin de semana, relajado</div>
+    <div class="photo-desc">Persona adulta (30–45) dibujando o pintando sola en ambiente de estudio. Expresión de flujo y bienestar, no de esfuerzo. Captura el mood de desconexión.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">4:3</span>
+      <span class="spec-tag mood">Relajado · Flujo</span>
+      <span class="spec-tag tone">Luz suave natural</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">4</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Sección portafolio teens</div>
+    <div class="photo-title">Adolescente trabajando en dibujo técnico</div>
+    <div class="photo-desc">Teen (15–18) con lápiz técnico sobre papel de dibujo, mirando su obra. Ambiente serio pero apasionado. Regla, compás u otras herramientas visibles.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1</span>
+      <span class="spec-tag mood">Apasionado · Serio</span>
+      <span class="spec-tag tone">Contraste marcado</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">Exposición y testimonio</div>
+<div class="photo-item">
+  <div class="photo-num">5</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Sección exposición fin de ciclo</div>
+    <div class="photo-title">Obras de arte en pared de galería, luz cálida</div>
+    <div class="photo-desc">Cuadros y dibujos de distintos estilos colgados en pared blanca o de ladrillo. Sin personas — el protagonismo es de las obras. Luz de galería lateral y cálida.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">16:9</span>
+      <span class="spec-tag mood">Elegante · Íntimo</span>
+      <span class="spec-tag tone">Luz cálida de galería</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">6</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Testimonio mamá · avatar circular</div>
+    <div class="photo-title">Madre e hija mirando obra juntas</div>
+    <div class="photo-desc">Mamá y niña pequeña mirando un dibujo, expresión de orgullo y ternura. Fondo neutro. Captura el momento emocional del resultado visible del aprendizaje.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 recortado</span>
+      <span class="spec-tag mood">Emotivo · Orgulloso</span>
+      <span class="spec-tag tone">Tonos cálidos</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">7</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#0F7A55">Fiesta de arte · tarjeta</div>
+    <div class="photo-title">Grupo de niños pintando en evento festivo</div>
+    <div class="photo-desc">3–5 niños pintando juntos en una mesa, expresiones de diversión y celebración. Colores vibrantes. Transmite energía del evento de cumpleaños.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">4:3</span>
+      <span class="spec-tag mood">Festivo · Colorido</span>
+      <span class="spec-tag tone">Colores saturados</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ASCEND -->
+<div class="pane" id="p-ascend">
+<div class="total-badge" style="background:#FBF0E4;color:#6B2B06;border:0.5px solid #EF9F27">6 fotos · Paradise Ascend</div>
+
+<div class="section-divider">Hero y valores</div>
+<div class="photo-item">
+  <div class="photo-num">1</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#A0420A">Hero · fondo con overlay</div>
+    <div class="photo-title">Joven latinoamericano estudiando con determinación</div>
+    <div class="photo-desc">Estudiante (17–18) en mesa de estudio con libros y apuntes, expresión de concentración total. No desesperado — determinado. Fondo con overlay oscuro terracota 40%.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">16:9 o panorámico</span>
+      <span class="spec-tag mood">Determinado · Ambicioso</span>
+      <span class="spec-tag tone">Tonos cálidos oscuros</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">2</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#A0420A">Sección internacional · fondo</div>
+    <div class="photo-title">Campus universitario imponente, exterior</div>
+    <div class="photo-desc">Fachada arquitectónica de universidad, cielo azul, aspecto aspiracional. No debe ser reconocible como una uni específica. Énfasis en la escala y el logro.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">16:9</span>
+      <span class="spec-tag mood">Aspiracional · Imponente</span>
+      <span class="spec-tag tone">Cielo azul · Contraste</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">Simulacro y proceso</div>
+<div class="photo-item">
+  <div class="photo-num">3</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#A0420A">Sección simulacro · visual</div>
+    <div class="photo-title">Joven resolviendo examen en papel</div>
+    <div class="photo-desc">Mano sosteniendo lápiz sobre hoja de examen, preguntas visibles pero no legibles. Captura el momento de la prueba real. Sin cara necesaria.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">4:3 o 1:1</span>
+      <span class="spec-tag mood">Enfocado · Real</span>
+      <span class="spec-tag tone">Close-up neutro</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">Testimonios ingresantes</div>
+<div class="photo-item">
+  <div class="photo-num">4</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#A0420A">Testimonio 1 · ingresante PUCP</div>
+    <div class="photo-title">Joven mujer latinoamericana celebrando logro</div>
+    <div class="photo-desc">Chica (17–19) con expresión de celebración y orgullo genuino. Puede tener carta de admisión o simplemente sonreír. Fondo neutro oscuro.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 recortado en círculo</span>
+      <span class="spec-tag mood">Triunfante · Real</span>
+      <span class="spec-tag tone">Contraste alto</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">5</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#A0420A">Testimonio 2 · ingresante UNMSM</div>
+    <div class="photo-title">Joven hombre latinoamericano, expresión serena y segura</div>
+    <div class="photo-desc">Estudiante masculino con expresión de calma y logro. Puede estar en campus o exterior. Aspecto de alguien que sabe lo que quiere.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 recortado en círculo</span>
+      <span class="spec-tag mood">Sereno · Seguro</span>
+      <span class="spec-tag tone">Luz natural exterior</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">6</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#A0420A">Sección padres · testimonio</div>
+    <div class="photo-title">Padre e hijo en momento de orgullo familiar</div>
+    <div class="photo-desc">Padre (45–55) con su hijo universitario, ambos con expresión de orgullo y emoción. Captura el ROI emocional de la inversión en educación. Ambiente cálido.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">4:3 o 1:1</span>
+      <span class="spec-tag mood">Emotivo · Familiar</span>
+      <span class="spec-tag tone">Tonos cálidos dorados</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- GLOBAL -->
+<div class="pane" id="p-global">
+<div class="total-badge" style="background:var(--color-background-secondary);color:var(--color-text-primary);border:0.5px solid var(--color-border-secondary)">5 fotos · Home + Global</div>
+
+<div class="section-divider">Homepage</div>
+<div class="photo-item">
+  <div class="photo-num">1</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#2C2C2A">Home · panel Atlas (desktop hover)</div>
+    <div class="photo-title">Grupo pequeño en clase de inglés, dinámica</div>
+    <div class="photo-desc">Se ve al hacer hover sobre el panel de Atlas en desktop. 6–8 personas en conversación activa. Fondo azul profundo con overlay. Captura la energía del método conversacional.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">9:16 vertical</span>
+      <span class="spec-tag mood">Dinámico · Conversacional</span>
+      <span class="spec-tag tone">Overlay azul oscuro</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">2</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#2C2C2A">Home · panel Studio (desktop hover)</div>
+    <div class="photo-title">Taller de arte — vista general del espacio</div>
+    <div class="photo-desc">Vista general de un espacio de taller artístico con personas creando. Cabaletes, mesas, obras en proceso. Transmite ambiente de comunidad creativa. Overlay verde oscuro.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">9:16 vertical</span>
+      <span class="spec-tag mood">Creativo · Comunitario</span>
+      <span class="spec-tag tone">Overlay verde oscuro</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">3</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#2C2C2A">Home · panel Ascend (desktop hover)</div>
+    <div class="photo-title">Estudiante mirando hacia adelante, campus de fondo</div>
+    <div class="photo-desc">Joven mirando hacia el horizonte o hacia arriba, campus universitario difuminado detrás. Composición aspiracional. Overlay terracota oscuro.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">9:16 vertical</span>
+      <span class="spec-tag mood">Aspiracional · Decisión</span>
+      <span class="spec-tag tone">Overlay terracota oscuro</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-divider">Página de programas y contacto</div>
+<div class="photo-item">
+  <div class="photo-num">4</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#2C2C2A">Programs page · banner superior</div>
+    <div class="photo-title">Tres estudiantes de distintas edades juntos</div>
+    <div class="photo-desc">Niño, teen y adulto joven juntos en un espacio educativo, expresiones positivas. Representa los tres programas y la diversidad de alumnos. Horizontal panorámico.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">21:9 panorámico</span>
+      <span class="spec-tag mood">Diverso · Inclusivo</span>
+      <span class="spec-tag tone">Luz uniforme cálida</span>
+    </div>
+  </div>
+</div>
+
+<div class="photo-item">
+  <div class="photo-num">5</div>
+  <div class="photo-body">
+    <div class="photo-location" style="color:#2C2C2A">Todas las páginas · Open Graph / favicon social</div>
+    <div class="photo-title">Logo visual de Paradise Academy para redes</div>
+    <div class="photo-desc">Composición cuadrada con los colores de las tres marcas (azul, verde, terracota) y el texto "Paradise Academy Lima". Para preview en WhatsApp y redes sociales al compartir los links.</div>
+    <div class="photo-specs">
+      <span class="spec-tag ratio">1:1 exacto (1200×1200)</span>
+      <span class="spec-tag mood">Marca · Identidad</span>
+      <span class="spec-tag tone">Fondo oscuro</span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+function sw(t){
+  ['atlas','studio','ascend','global'].forEach(function(x){
+    document.getElementById('t-'+x).className='tab'+(x===t?' on-'+(x==='global'?'g':x[0]==='a'&&x!=='ascend'?'h':x==='studio'?'s':'a'):'');
+    document.getElementById('p-'+x).classList.toggle('on',x===t);
+  });
+}
+document.getElementById('t-atlas').className='tab on-h';
+document.getElementById('t-studio').className='tab';
+document.getElementById('t-ascend').className='tab';
+document.getElementById('t-global').className='tab';
+</script>
