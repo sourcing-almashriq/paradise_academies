@@ -494,17 +494,34 @@
     }
 
     .prog {
-      border-radius: 16px;
-      padding: 1.75rem;
-      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      border: 1px solid var(--border);
       background: var(--white);
-      transition: all .25s;
-      position: relative
+      transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 480px;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      padding: 0
     }
 
     .prog:hover {
+      transform: translateY(-8px);
       border-color: var(--grn);
-      box-shadow: 0 8px 32px rgba(15, 122, 85, .1)
+      box-shadow: 0 20px 40px rgba(15, 122, 85, 0.15)
+    }
+
+    .prog-body {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      width: 100%
     }
 
     .prog-header {
@@ -569,10 +586,10 @@
       flex-shrink: 0
     }
 
-    .prog-special {
-      background: var(--grn-d);
+    .prog-special .prog-body {
+      background: rgba(15, 61, 46, 0.85);
       color: var(--white);
-      border-color: var(--grn-d)
+      border-top-color: rgba(255, 255, 255, 0.1)
     }
 
     .prog-special .prog-name {
@@ -1149,69 +1166,69 @@
       <div class="tag-line" style="color:var(--grn)">Talleres disponibles</div>
       <h2 class="section-h">Un taller para<br><em>cada momento de vida.</em></h2>
       <div class="prog-flow">
-        <div class="prog" style="cursor:pointer"
+        <div class="prog" style="cursor:pointer; background-image: url('studio-ninos.png')"
           onclick="location.href='paradise-programs.html?brand=studio&prog=ninos'">
-          <img src="studio-ninos.png" alt="Niños" style="width:100%; height:160px; object-fit:cover; border-radius:12px; margin-bottom:1.25rem">
-          <div class="prog-header">
-            <span class="prog-icon">🧒</span>
-            <div class="prog-price">S/165<span>por mes</span></div>
-          </div>
-          <div class="prog-name">Taller de niños</div>
-          <div class="prog-tag">Dibujo y pintura · Desde 6 años</div>
-          <div class="prog-details">
-            <div class="prog-det">Grupos de hasta 10 alumnos</div>
-            <div class="prog-det">Tardes después del colegio</div>
-            <div class="prog-det">Sábados disponibles</div>
-            <div class="prog-det">Materiales básicos incluidos</div>
+          <div class="prog-body">
+            <div class="prog-header">
+              <span class="prog-icon">🧒</span>
+              <div class="prog-price">S/165<span>por mes</span></div>
+            </div>
+            <div class="prog-name">Taller de niños</div>
+            <div class="prog-tag">Dibujo y pintura · Desde 6 años</div>
+            <div class="prog-details">
+              <div class="prog-det">Grupos de hasta 10 alumnos</div>
+              <div class="prog-det">Tardes después del colegio</div>
+              <div class="prog-det">Sábados disponibles</div>
+            </div>
           </div>
         </div>
-        <div class="prog" style="cursor:pointer"
+        <div class="prog" style="cursor:pointer; background-image: url('studio-ninos.png')"
           onclick="location.href='paradise-programs.html?brand=studio&prog=intensivo'">
-          <img src="studio-ninos.png" alt="Intensivo Niños" style="width:100%; height:160px; object-fit:cover; border-radius:12px; margin-bottom:1.25rem; filter: saturate(1.2)">
-          <div class="prog-header">
-            <span class="prog-icon">🔥</span>
-            <div class="prog-price">S/240<span>por mes</span></div>
-          </div>
-          <div class="prog-name">Intensivo niños</div>
-          <div class="prog-tag">2 veces por semana · Avanza más rápido</div>
-          <div class="prog-details">
-            <div class="prog-det">Mismos grupos reducidos</div>
-            <div class="prog-det">Mayor progresión técnica</div>
-            <div class="prog-det">Ideal si hay exposición próxima</div>
-            <div class="prog-det">Materiales incluidos</div>
+          <div class="prog-body">
+            <div class="prog-header">
+              <span class="prog-icon">🔥</span>
+              <div class="prog-price">S/240<span>por mes</span></div>
+            </div>
+            <div class="prog-name">Intensivo niños</div>
+            <div class="prog-tag">2 veces por semana · Avanza más rápido</div>
+            <div class="prog-details">
+              <div class="prog-det">Mismos grupos reducidos</div>
+              <div class="prog-det">Mayor progresión técnica</div>
+              <div class="prog-det">Ideal si hay exposición próxima</div>
+            </div>
           </div>
         </div>
-        <div class="prog prog-special" style="cursor:pointer"
+        <div class="prog prog-special" style="cursor:pointer; background-image: url('studio-teens.png')"
           onclick="location.href='paradise-programs.html?brand=studio&prog=portfolio'">
-          <img src="studio-teens.png" alt="Teens" style="width:100%; height:160px; object-fit:cover; border-radius:12px; margin-bottom:1.25rem; opacity:.8">
-          <div class="prog-header">
-            <span class="prog-icon">📐</span>
-            <div class="prog-price" style="color:var(--amb)">S/280<span style="color:rgba(255,255,255,.4)">por
-                mes</span></div>
-          </div>
-          <div class="prog-name">Track de portafolio</div>
-          <div class="prog-tag" style="color:rgba(255,255,255,.45)">Teens 14–18 · Carrera artística</div>
-          <div class="prog-details">
-            <div class="prog-det">Dibujo técnico + composición</div>
-            <div class="prog-det">Construcción de portafolio real</div>
-            <div class="prog-det">Para PUCP, ULIMA, Bellas Artes</div>
-            <div class="prog-det">Seguimiento individual</div>
+          <div class="prog-body">
+            <div class="prog-header">
+              <span class="prog-icon">📐</span>
+              <div class="prog-price" style="color:var(--amb)">S/280<span style="color:rgba(255,255,255,.4)">por
+                  mes</span></div>
+            </div>
+            <div class="prog-name">Track de portafolio</div>
+            <div class="prog-tag" style="color:rgba(255,255,255,.45)">Teens 14–18 · Carrera artística</div>
+            <div class="prog-details">
+              <div class="prog-det">Dibujo técnico + composición</div>
+              <div class="prog-det">Construcción de portafolio real</div>
+              <div class="prog-det">Para PUCP, ULIMA, Bellas Artes</div>
+            </div>
           </div>
         </div>
-        <div class="prog" style="cursor:pointer"
+        <div class="prog" style="cursor:pointer; background-image: url('studio-adultos.png')"
           onclick="location.href='paradise-programs.html?brand=studio&prog=adultos'">
-          <img src="studio-adultos.png" alt="Adultos" style="width:100%; height:160px; object-fit:cover; border-radius:12px; margin-bottom:1.25rem">
-          <div class="prog-header">
-            <span class="prog-icon">🌿</span>
-            <div class="prog-price">S/210<span>por mes</span></div>
-          </div>
-          <div class="prog-name">Taller de adultos</div>
-          <div class="prog-tag">Fines de semana · Sin experiencia</div>
-          <div class="prog-details">
-            <div class="prog-det">Sábados y domingos</div>
-            <div class="prog-det">Ambiente sin presión</div>
-            <div class="prog-det">Dibujo, acuarela y acrílico</div>
-            <div class="prog-det">Tu espacio de desconexión</div>
+          <div class="prog-body">
+            <div class="prog-header">
+              <span class="prog-icon">🌿</span>
+              <div class="prog-price">S/210<span>por mes</span></div>
+            </div>
+            <div class="prog-name">Taller de adultos</div>
+            <div class="prog-tag">Fines de semana · Sin experiencia</div>
+            <div class="prog-details">
+              <div class="prog-det">Sábados y domingos</div>
+              <div class="prog-det">Ambiente sin presión</div>
+              <div class="prog-det">Dibujo, acuarela y acrílico</div>
+            </div>
           </div>
         </div>
       </div>

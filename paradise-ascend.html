@@ -420,13 +420,19 @@
     }
 
     .val-card {
-      border-radius: 14px;
-      padding: 2rem;
-      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      border: 1px solid var(--border);
       background: var(--white);
-      transition: all .25s;
+      transition: all .3s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
-      overflow: hidden
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 320px;
+      background-size: cover;
+      background-position: center;
+      padding: 0
     }
 
     .val-card:hover {
@@ -494,8 +500,23 @@
       pointer-events: none
     }
 
-    .val-card.dark .val-deco-num {
-      color: var(--white)
+    .val-content {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.75rem;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.2)
+    }
+
+    .val-card.dark .val-content {
+      background: rgba(43, 24, 15, 0.85);
+      color: var(--white);
+      border-top-color: rgba(255, 255, 255, 0.1)
+    }
+
+    .val-card.featured .val-content {
+      background: rgba(246, 236, 218, 0.9)
     }
 
     /* PROGRAMS */
@@ -519,16 +540,40 @@
     }
 
     .cycle {
-      border-radius: 14px;
-      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      border: 1px solid var(--border);
       background: var(--white);
       overflow: hidden;
-      transition: all .25s
+      transition: all .35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 420px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      padding: 0
     }
 
     .cycle:hover {
+      transform: translateY(-8px);
       border-color: var(--ter-m);
-      box-shadow: 0 8px 28px rgba(160, 66, 10, .1)
+      box-shadow: 0 20px 40px rgba(160, 66, 10, 0.15)
+    }
+
+    .cycle-glass {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 1.5rem;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.3)
+    }
+
+    .cycle.intl .cycle-glass {
+      background: rgba(43, 24, 15, 0.88);
+      color: white;
+      border-top-color: rgba(255, 255, 255, 0.1)
     }
 
     .cycle-top {
@@ -1261,33 +1306,38 @@
       <p class="s-desc">Sabemos exactamente qué entra en cada examen. Y sabemos cómo prepararte para pasarlo. Eso es
         todo lo que prometemos.</p>
       <div class="vals-grid">
-        <div class="val-card dark">
-          <span class="val-icon">🌎</span>
-          <div class="val-title">El único con ruta internacional</div>
-          <div class="val-desc">Ningún preuniversitario en Lima prepara formalmente para universidades extranjeras.
-            Ascend integra SAT, essays y proceso de admisión para España, EE.UU., Canadá y Europa.</div>
-          <img src="ascend-intl.png" alt="Internacional" style="width:100%; height:80px; object-fit:cover; border-radius:8px; margin-top:1rem; opacity:.4">
+        <div class="val-card dark" style="background-image: url('ascend-intl.png')">
+          <div class="val-content">
+            <span class="val-icon">🌎</span>
+            <div class="val-title">El único con ruta internacional</div>
+            <div class="val-desc">Ningún preuniversitario en Lima prepara formalmente para universidades extranjeras.
+              Ascend integra SAT, essays y proceso de admisión para España, EE.UU., Canadá y Europa.</div>
+          </div>
           <div class="val-deco-num">I</div>
         </div>
-        <div class="val-card">
-          <span class="val-icon">🔬</span>
-          <div class="val-title">Diagnóstico antes de empezar</div>
-          <div class="val-desc">El simulacro gratuito muestra exactamente dónde estás y cuánto tiempo necesitas. Sin
-            adivinanzas — con datos reales de tu nivel de partida.</div>
-          <img src="ascend-simulacro.jpg" alt="Simulacro" style="width:100%; height:80px; object-fit:cover; border-radius:8px; margin-top:1rem; opacity:.6">
+        <div class="val-card" style="background-image: url('ascend-simulacro.jpg')">
+          <div class="val-content">
+            <span class="val-icon">🔬</span>
+            <div class="val-title">Diagnóstico antes de empezar</div>
+            <div class="val-desc">El simulacro gratuito muestra exactamente dónde estás y cuánto tiempo necesitas. Sin
+              adivinanzas — con datos reales de tu nivel de partida.</div>
+          </div>
           <div class="val-deco-num">D</div>
         </div>
         <div class="val-card featured">
-          <span class="val-icon">👨‍🎓</span>
-          <div class="val-title">Grupos pequeños con seguimiento</div>
-          <div class="val-desc">Máximo 20 alumnos por materia. El profesor sabe quién eres, cuáles son tus errores
-            frecuentes y qué necesitas reforzar. Tutorías semanales individuales disponibles.</div>
+          <div class="val-content">
+            <span class="val-icon">👨‍🎓</span>
+            <div class="val-title">Grupos pequeños con seguimiento</div>
+            <div class="val-desc">Máximo 20 alumnos por materia. El profesor sabe quién eres, cuáles son tus errores
+              frecuentes y qué necesitas reforzar.</div>
+          </div>
         </div>
         <div class="val-card dark">
-          <span class="val-icon">📱</span>
-          <div class="val-title">La marca más moderna del preuni</div>
-          <div class="val-desc">Pamer y Trilce tienen branding de los años 90. Ascend es el primer preuniversitario con
-            identidad moderna, comunicación en TikTok y lenguaje que conecta con tu generación.</div>
+          <div class="val-content">
+            <span class="val-icon">📱</span>
+            <div class="val-title">La marca más moderna del preuni</div>
+            <div class="val-desc">branding moderno y lenguaje que conecta con tu generación.</div>
+          </div>
           <div class="val-deco-num">M</div>
         </div>
       </div>
@@ -1360,40 +1410,46 @@
       <h2 class="s-title">Elige el ciclo<br><em>según tu situación.</em></h2>
       <p class="s-desc">No todos los postulantes están en el mismo momento. Tenemos un ciclo para cada realidad.</p>
       <div class="cycles-grid">
-        <div class="cycle" style="cursor:pointer"
+        <div class="cycle" style="cursor:pointer; background-image: url('ascend-hero.png')"
           onclick="location.href='paradise-programs.html?brand=ascend&prog=regular'">
-          <div class="cycle-top">
-            <div class="cycle-badge" style="background:var(--ter-l);color:var(--ter)">Más completo</div>
-            <div class="cycle-name">Ciclo regular</div>
-            <div class="cycle-sub">3 meses · Profundidad total</div>
-          </div>
-          <div class="cycle-body">
-            <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">3 meses</span>
+          <div class="cycle-glass">
+            <div class="cycle-top" style="padding:0; border:none; background:transparent">
+              <div class="cycle-badge" style="background:var(--ter-l);color:var(--ter)">Más completo</div>
+              <div class="cycle-name">Ciclo regular</div>
+              <div class="cycle-sub" style="color:rgba(0,0,0,.6)">3 meses · Profundidad total</div>
             </div>
-            <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">3–4x
-                semana</span></div>
-            <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Primer
-                intento</span></div>
-            <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span
-                class="cycle-row-val cycle-price">S/500/mes</span></div>
+            <div class="cycle-body" style="padding:1rem 0 0">
+              <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Primer intento</span></div>
+              <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/500/mes</span></div>
+            </div>
           </div>
         </div>
-        <div class="cycle" style="cursor:pointer"
+        <div class="cycle" style="cursor:pointer; background-position: center; background-image: url('ascend-hero.png')"
           onclick="location.href='paradise-programs.html?brand=ascend&prog=intensivo'">
-          <div class="cycle-top">
-            <div class="cycle-badge" style="background:#FFF3CD;color:#856404">Urgente</div>
-            <div class="cycle-name">Ciclo intensivo</div>
-            <div class="cycle-sub">4 semanas · Todo a fondo</div>
+          <div class="cycle-glass">
+            <div class="cycle-top" style="padding:0; border:none; background:transparent">
+              <div class="cycle-badge" style="background:#FFF3CD;color:#856404">Urgente</div>
+              <div class="cycle-name">Ciclo intensivo</div>
+              <div class="cycle-sub" style="color:rgba(0,0,0,.6)">4 semanas · Todo a fondo</div>
+            </div>
+            <div class="cycle-body" style="padding:1rem 0 0">
+              <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">Diaria</span></div>
+              <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span class="cycle-row-val cycle-price">S/420/ciclo</span></div>
+            </div>
           </div>
-          <div class="cycle-body">
-            <div class="cycle-row"><span class="cycle-row-lbl">Duración</span><span class="cycle-row-val">4
-                semanas</span></div>
-            <div class="cycle-row"><span class="cycle-row-lbl">Frecuencia</span><span class="cycle-row-val">5–6x
-                semana</span></div>
-            <div class="cycle-row"><span class="cycle-row-lbl">Ideal para</span><span class="cycle-row-val">Examen
-                próximo</span></div>
-            <div class="cycle-row"><span class="cycle-row-lbl">Precio</span><span
-                class="cycle-row-val cycle-price">S/420/ciclo</span></div>
+        </div>
+        <div class="cycle intl" style="cursor:pointer; background-image: url('ascend-intl.png')"
+          onclick="location.href='paradise-programs.html?brand=ascend&prog=fds'">
+          <div class="cycle-glass">
+            <div class="cycle-top" style="padding:0; border:none; background:transparent">
+              <div class="cycle-badge" style="background:var(--gold);color:var(--ter-d)">Premium</div>
+              <div class="cycle-name">Prep Internacional</div>
+              <div class="cycle-sub" style="color:rgba(255,255,255,.6)">SAT · Admissions · Essays</div>
+            </div>
+            <div class="cycle-body" style="padding:1rem 0 0">
+              <div class="cycle-row"><span class="cycle-row-lbl" style="color:rgba(255,255,255,.5)">Frecuencia</span><span class="cycle-row-val" style="color:#fff">Sábados intensivos</span></div>
+              <div class="cycle-row"><span class="cycle-row-lbl" style="color:rgba(255,255,255,.5)">Precio</span><span class="cycle-row-val cycle-price" style="color:var(--gold)">S/600/mes</span></div>
+            </div>
           </div>
         </div>
         <div class="cycle" style="cursor:pointer"
