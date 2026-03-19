@@ -1,558 +1,1531 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paradise Studio — Academia de Arte en Lima</title>
-<meta name="description" content="Paradise Studio — Tu estudio. Tu obra. Tu mundo. Talleres de Arte en Lima, Perú.">
-<meta property="og:title" content="Paradise Studio | Lima">
-<meta property="og:description" content="Descubre Studio. Talleres de arte y dibujo presenciales sin conocimientos previos requeridos.">
-<meta property="og:image" content="assets/og-image.jpg">
-<meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<!-- Google Analytics Placeholder -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
-<!-- Meta Pixel Placeholder -->
-<!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', 'XXXXXXXXXXXXXXXX');fbq('track', 'PageView');</script> -->
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-:root{
-  --grn:#0F7A55;--grn-d:#074D35;--grn-m:#1A9B6A;--grn-l:#E2F5EE;--grn-xl:#F0FAF5;
-  --amb:#E8A838;--amb-l:#FDF6E3;
-  --ink:#0C1208;--paper:#F7F5F0;--white:#ffffff;
-  --muted:#6B7C74;--border:#DDE8E1;--mid:#EEF4F0;
-}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradise Studio — Academia de Arte en Lima</title>
+  <meta name="description" content="Paradise Studio — Tu estudio. Tu obra. Tu mundo. Talleres de Arte en Lima, Perú.">
+  <meta property="og:title" content="Paradise Studio | Lima">
+  <meta property="og:description"
+    content="Descubre Studio. Talleres de arte y dibujo presenciales sin conocimientos previos requeridos.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <!-- Google Analytics Placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+  <!-- Meta Pixel Placeholder -->
+  <!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', 'XXXXXXXXXXXXXXXX');fbq('track', 'PageView');</script> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent
+    }
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
-.nav.scrolled{background:rgba(247,245,240,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white);transition:color .3s;letter-spacing:.02em}
-.nav-brand span{font-style:italic;opacity:.7}
-.nav.scrolled .nav-brand{color:var(--ink)}
-.nav-cta{padding:.55rem 1.25rem;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;border:1px solid rgba(255,255,255,.3);background:transparent;color:var(--white)}
-.nav.scrolled .nav-cta{background:var(--grn);color:var(--white);border-color:var(--grn)}
-.nav-cta:hover{transform:translateY(-1px)}
+    :root {
+      --grn: #0F7A55;
+      --grn-d: #074D35;
+      --grn-m: #1A9B6A;
+      --grn-l: #E2F5EE;
+      --grn-xl: #F0FAF5;
+      --amb: #E8A838;
+      --amb-l: #FDF6E3;
+      --ink: #0C1208;
+      --paper: #F7F5F0;
+      --white: #ffffff;
+      --muted: #6B7C74;
+      --border: #DDE8E1;
+      --mid: #EEF4F0;
+    }
 
-/* HERO */
-.hero{min-height:100vh;background:var(--grn-d);position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;padding:6rem 2rem 4rem}
-@media(max-width:768px){.hero{grid-template-columns:1fr;padding:6rem 1.5rem 4rem}}
-.hero-left{position:relative;z-index:1;max-width:540px}
-.hero-right{position:relative;z-index:1;display:flex;justify-content:flex-end;align-items:center}
-@media(max-width:768px){.hero-right{display:none}}
-.hero-canvas{width:380px;height:460px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.hero-canvas-art{font-size:80px;opacity:.15;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
-/* Abstract art shapes */
-.art-circle{position:absolute;border-radius:50%;opacity:.18}
-.art-c1{width:180px;height:180px;background:var(--amb);top:10%;left:10%}
-.art-c2{width:100px;height:100px;background:var(--grn-m);top:60%;right:8%}
-.art-c3{width:60px;height:60px;background:#fff;bottom:15%;left:30%}
-.art-line{position:absolute;height:2px;background:rgba(255,255,255,.15);transform-origin:left}
-.hero-eyebrow{font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--amb);margin-bottom:1.25rem;display:flex;align-items:center;gap:.5rem}
-.hero-eyebrow::before{content:'';display:block;width:24px;height:1px;background:var(--amb)}
-.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,86px);font-weight:300;color:var(--white);line-height:.9;margin-bottom:1.5rem;letter-spacing:-.01em}
-.hero-title em{font-style:italic;color:rgba(255,255,255,.38)}
-.hero-sub{font-size:clamp(15px,1.8vw,18px);color:rgba(255,255,255,.5);max-width:440px;line-height:1.7;margin-bottom:2.5rem;font-weight:300}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3rem}
-.btn-amber{padding:.85rem 2rem;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;border:none;background:var(--amb);color:var(--ink);transition:all .2s}
-.btn-amber:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,168,56,.4)}
-.btn-outline{padding:.85rem 2rem;border-radius:10px;font-size:14px;font-weight:400;cursor:pointer;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);transition:all .2s}
-.btn-outline:hover{border-color:rgba(255,255,255,.5)}
-.hero-tags{display:flex;flex-wrap:wrap;gap:8px}
-.hero-tag{font-size:12px;padding:.3rem .85rem;border-radius:100px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.55)}
-.hero-bg-texture{position:absolute;inset:0;opacity:.03;background-image:radial-gradient(circle at 1px 1px,var(--white) 1px,transparent 0);background-size:30px 30px}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* SECTIONS */
-.section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
-.section-inner{max-width:1060px;margin:0 auto}
-.tag-line{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-bottom:.75rem}
-.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4.5vw,52px);font-weight:300;line-height:1.05;margin-bottom:1rem;letter-spacing:-.01em}
-.section-h em{font-style:italic;color:var(--muted)}
-.section-p{font-size:16px;color:var(--muted);max-width:500px;line-height:1.7;font-weight:300}
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden
+    }
 
-/* VALUES — organic asymmetric layout */
-.values-container{margin-top:3.5rem}
-.values-row{display:grid;gap:1.25rem;margin-bottom:1.25rem}
-.values-row.row-1{grid-template-columns:1.4fr 1fr 1fr}
-.values-row.row-2{grid-template-columns:1fr 1.4fr 1fr}
-@media(max-width:768px){.values-row.row-1,.values-row.row-2{grid-template-columns:1fr}}
-.val{border-radius:14px;padding:1.75rem;position:relative;overflow:hidden;transition:transform .25s}
-.val:hover{transform:translateY(-3px)}
-.val-dark{background:var(--grn-d);color:var(--white)}
-.val-light{background:var(--white);border:1px solid var(--border)}
-.val-green{background:var(--grn);color:var(--white)}
-.val-amber{background:var(--amb-l);border:1px solid rgba(232,168,56,.2)}
-.val-mid{background:var(--mid)}
-.val-icon{font-size:26px;margin-bottom:.9rem;display:block}
-.val-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;margin-bottom:.45rem;line-height:1.2}
-.val-dark .val-title,.val-green .val-title{color:var(--white)}
-.val-desc{font-size:13px;line-height:1.65;font-weight:300}
-.val-dark .val-desc{color:rgba(255,255,255,.55)}
-.val-green .val-desc{color:rgba(255,255,255,.65)}
-.val-light .val-desc,.val-mid .val-desc{color:var(--muted)}
-.val-amber .val-desc{color:#6B5420}
-.val-deco{position:absolute;font-family:'Cormorant Garamond',serif;font-size:100px;font-weight:300;right:-10px;bottom:-20px;opacity:.07;line-height:1;user-select:none}
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1.1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .3s
+    }
 
-/* PROGRAMS — organic cards */
-.prog-flow{display:grid;grid-template-columns:repeat(2,1fr);gap:1.25rem;margin-top:3rem}
-@media(max-width:640px){.prog-flow{grid-template-columns:1fr}}
-.prog{border-radius:16px;padding:1.75rem;border:1.5px solid var(--border);background:var(--white);transition:all .25s;position:relative}
-.prog:hover{border-color:var(--grn);box-shadow:0 8px 32px rgba(15,122,85,.1)}
-.prog-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.25rem}
-.prog-icon{font-size:24px}
-.prog-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--grn);line-height:1}
-.prog-price span{font-size:13px;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--muted);display:block;margin-top:.1rem}
-.prog-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin-bottom:.3rem}
-.prog-tag{font-size:12px;color:var(--muted);margin-bottom:1rem}
-.prog-details{display:flex;flex-direction:column;gap:.4rem}
-.prog-det{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:.4rem}
-.prog-det::before{content:'—';color:var(--grn);font-weight:600;flex-shrink:0}
-.prog-special{background:var(--grn-d);color:var(--white);border-color:var(--grn-d)}
-.prog-special .prog-name{color:var(--white)}
-.prog-special .prog-tag{color:rgba(255,255,255,.5)}
-.prog-special .prog-price{color:var(--amb)}
-.prog-special .prog-det{color:rgba(255,255,255,.6)}
-.prog-special .prog-det::before{color:var(--amb)}
+    .nav.scrolled {
+      background: rgba(247, 245, 240, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border)
+    }
 
-/* COMPARISON */
-.comp-section{background:var(--white);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
-.comp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:3rem;background:var(--border);border-radius:16px;overflow:hidden}
-@media(max-width:768px){.comp-grid{grid-template-columns:1fr 1fr}}
-.comp-col{background:var(--white);padding:1.5rem}
-.comp-col.ours{background:var(--grn-xl)}
-.comp-col-header{margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
-.comp-col-badge{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--grn);background:var(--grn-l);padding:.2rem .6rem;border-radius:4px;display:inline-block;margin-bottom:.5rem}
-.comp-col-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500}
-.comp-col-sub{font-size:12px;color:var(--muted);margin-top:.2rem}
-.comp-feat{padding:.5rem 0;border-bottom:1px solid var(--mid);font-size:12px}
-.comp-feat-lbl{color:var(--muted);margin-bottom:.15rem;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
-.comp-feat-val{color:var(--ink);font-weight:500}
-.comp-feat-val.yes{color:var(--grn)}
-.comp-feat-val.no{color:#D1D5DB}
-.comp-feat-val.partial{color:var(--amb)}
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--white);
+      transition: color .3s;
+      letter-spacing: .02em
+    }
 
-/* TESTIMONIALS */
-.testi-section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem);background:var(--grn-d)}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
-@media(max-width:768px){.testi-grid{grid-template-columns:1fr}}
-.testi{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:1.75rem;transition:all .25s}
-.testi:hover{background:rgba(255,255,255,.08)}
-.testi-stars{color:var(--amb);font-size:13px;letter-spacing:.1em;margin-bottom:1rem}
-.testi-q{font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;font-weight:300;color:rgba(255,255,255,.85);line-height:1.5;margin-bottom:1.25rem}
-.testi-author-name{font-size:13px;font-weight:500;color:var(--white)}
-.testi-author-role{font-size:12px;color:rgba(255,255,255,.4)}
+    .nav-brand span {
+      font-style: italic;
+      opacity: .7
+    }
 
-/* FAQ */
-.faq-s{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem);background:var(--paper)}
-.faq-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:8px;max-width:720px}
-.faq-i{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--white)}
-.faq-q{padding:1.1rem 1.25rem;font-size:14px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .15s;user-select:none}
-.faq-q:hover,.faq-q.o{background:var(--mid)}
-.faq-ico{font-size:16px;color:var(--grn);flex-shrink:0;transition:transform .2s}
-.faq-q.o .faq-ico{transform:rotate(45deg)}
-.faq-a{display:none;padding:.75rem 1.25rem 1.1rem;font-size:14px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border)}
-.faq-a.o{display:block}
+    .nav.scrolled .nav-brand {
+      color: var(--ink)
+    }
 
-/* CTA */
-.cta-s{background:var(--amb-l);padding:clamp(4rem,8vw,6rem) clamp(1.5rem,3vw,2rem);text-align:center;border-top:1px solid rgba(232,168,56,.2)}
-.cta-inner{max-width:580px;margin:0 auto}
-.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,56px);font-weight:300;color:var(--ink);line-height:1.05;margin-bottom:1rem}
-.cta-h em{font-style:italic;color:var(--grn)}
-.cta-p{font-size:16px;color:var(--muted);margin-bottom:2.5rem;font-weight:300}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-grn{padding:.9rem 2.25rem;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;background:var(--grn);color:var(--white);border:none;transition:all .2s}
-.btn-grn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,122,85,.35)}
-.btn-grn-out{padding:.9rem 2.25rem;border-radius:10px;font-size:15px;font-weight:400;cursor:pointer;background:transparent;border:1.5px solid var(--grn);color:var(--grn);transition:all .2s}
-.btn-grn-out:hover{background:var(--grn-l)}
+    .nav-cta {
+      padding: .55rem 1.25rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+      border: 1px solid rgba(255, 255, 255, .3);
+      background: transparent;
+      color: var(--white)
+    }
 
-.footer{background:var(--ink);padding:2rem;text-align:center;font-size:12px;color:rgba(255,255,255,.3)}
-.footer strong{color:rgba(255,255,255,.55)}
-.footer-links{display:flex;gap:16px;justify-content:center;margin-top:.75rem;flex-wrap:wrap}
-.footer-link{font-size:11px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s}
-.footer-link:hover{color:rgba(255,255,255,.6)}
-  .btn-grn:active, .btn-w:active, .btn-grn-out:active, .nav-cta:active { transform: translateY(0) scale(0.97) !important; box-shadow: none !important; }
-  .nav.s { backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; background: rgba(249, 247, 242, 0.85) !important; }
-  .val-card, .cycle, .testi-c { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important; }
-  .val-card:hover, .cycle:hover, .testi-c:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.06) !important; }
-  
-  /* APPLE-TIER UX OVERRIDES */
-  .section { padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 4vw, 3rem) !important; }
-  .hero { min-height: 100svh !important; }
-  .hero-title { letter-spacing: -0.03em !important; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--grn); outline-offset: 4px; border-radius: inherit; }
-  .animate { animation: none !important; opacity: 0; transform: translateY(40px); transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .animate.is-visible { opacity: 1; transform: translateY(0); }
-</style>
+    .nav.scrolled .nav-cta {
+      background: var(--grn);
+      color: var(--white);
+      border-color: var(--grn)
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px)
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: var(--grn-d);
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem
+    }
+
+    @media(max-width:768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 6rem 1.5rem 4rem
+      }
+    }
+
+    .hero-left {
+      position: relative;
+      z-index: 1;
+      max-width: 540px
+    }
+
+    .hero-right {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center
+    }
+
+    @media(max-width:768px) {
+      .hero-right {
+        display: none
+      }
+    }
+
+    .hero-canvas {
+      width: 380px;
+      height: 460px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .hero-canvas-art {
+      font-size: 80px;
+      opacity: .15;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    /* Abstract art shapes */
+    .art-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .18
+    }
+
+    .art-c1 {
+      width: 180px;
+      height: 180px;
+      background: var(--amb);
+      top: 10%;
+      left: 10%
+    }
+
+    .art-c2 {
+      width: 100px;
+      height: 100px;
+      background: var(--grn-m);
+      top: 60%;
+      right: 8%
+    }
+
+    .art-c3 {
+      width: 60px;
+      height: 60px;
+      background: #fff;
+      bottom: 15%;
+      left: 30%
+    }
+
+    .art-line {
+      position: absolute;
+      height: 2px;
+      background: rgba(255, 255, 255, .15);
+      transform-origin: left
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--amb);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--amb)
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7vw, 86px);
+      font-weight: 300;
+      color: var(--white);
+      line-height: .9;
+      margin-bottom: 1.5rem;
+      letter-spacing: -.01em
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .38)
+    }
+
+    .hero-sub {
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: rgba(255, 255, 255, .5);
+      max-width: 440px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 3rem
+    }
+
+    .btn-amber {
+      padding: .85rem 2rem;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: var(--amb);
+      color: var(--ink);
+      transition: all .2s
+    }
+
+    .btn-amber:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(232, 168, 56, .4)
+    }
+
+    .btn-outline {
+      padding: .85rem 2rem;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, .7);
+      transition: all .2s
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(255, 255, 255, .5)
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .hero-tag {
+      font-size: 12px;
+      padding: .3rem .85rem;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .hero-bg-texture {
+      position: absolute;
+      inset: 0;
+      opacity: .03;
+      background-image: radial-gradient(circle at 1px 1px, var(--white) 1px, transparent 0);
+      background-size: 30px 30px
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem)
+    }
+
+    .section-inner {
+      max-width: 1060px;
+      margin: 0 auto
+    }
+
+    .tag-line {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: .75rem
+    }
+
+    .section-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 300;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+      letter-spacing: -.01em
+    }
+
+    .section-h em {
+      font-style: italic;
+      color: var(--muted)
+    }
+
+    .section-p {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 500px;
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    /* VALUES — organic asymmetric layout */
+    .values-container {
+      margin-top: 3.5rem
+    }
+
+    .values-row {
+      display: grid;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem
+    }
+
+    .values-row.row-1 {
+      grid-template-columns: 1.4fr 1fr 1fr
+    }
+
+    .values-row.row-2 {
+      grid-template-columns: 1fr 1.4fr 1fr
+    }
+
+    @media(max-width:768px) {
+
+      .values-row.row-1,
+      .values-row.row-2 {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .val {
+      border-radius: 14px;
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s
+    }
+
+    .val:hover {
+      transform: translateY(-3px)
+    }
+
+    .val-dark {
+      background: var(--grn-d);
+      color: var(--white)
+    }
+
+    .val-light {
+      background: var(--white);
+      border: 1px solid var(--border)
+    }
+
+    .val-green {
+      background: var(--grn);
+      color: var(--white)
+    }
+
+    .val-amber {
+      background: var(--amb-l);
+      border: 1px solid rgba(232, 168, 56, .2)
+    }
+
+    .val-mid {
+      background: var(--mid)
+    }
+
+    .val-icon {
+      font-size: 26px;
+      margin-bottom: .9rem;
+      display: block
+    }
+
+    .val-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: .45rem;
+      line-height: 1.2
+    }
+
+    .val-dark .val-title,
+    .val-green .val-title {
+      color: var(--white)
+    }
+
+    .val-desc {
+      font-size: 13px;
+      line-height: 1.65;
+      font-weight: 300
+    }
+
+    .val-dark .val-desc {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .val-green .val-desc {
+      color: rgba(255, 255, 255, .65)
+    }
+
+    .val-light .val-desc,
+    .val-mid .val-desc {
+      color: var(--muted)
+    }
+
+    .val-amber .val-desc {
+      color: #6B5420
+    }
+
+    .val-deco {
+      position: absolute;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 100px;
+      font-weight: 300;
+      right: -10px;
+      bottom: -20px;
+      opacity: .07;
+      line-height: 1;
+      user-select: none
+    }
+
+    /* PROGRAMS — organic cards */
+    .prog-flow {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem
+    }
+
+    @media(max-width:640px) {
+      .prog-flow {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .prog {
+      border-radius: 16px;
+      padding: 1.75rem;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      transition: all .25s;
+      position: relative
+    }
+
+    .prog:hover {
+      border-color: var(--grn);
+      box-shadow: 0 8px 32px rgba(15, 122, 85, .1)
+    }
+
+    .prog-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 1.25rem
+    }
+
+    .prog-icon {
+      font-size: 24px
+    }
+
+    .prog-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--grn);
+      line-height: 1
+    }
+
+    .prog-price span {
+      font-size: 13px;
+      font-weight: 400;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--muted);
+      display: block;
+      margin-top: .1rem
+    }
+
+    .prog-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: .3rem
+    }
+
+    .prog-tag {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 1rem
+    }
+
+    .prog-details {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem
+    }
+
+    .prog-det {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: .4rem
+    }
+
+    .prog-det::before {
+      content: '—';
+      color: var(--grn);
+      font-weight: 600;
+      flex-shrink: 0
+    }
+
+    .prog-special {
+      background: var(--grn-d);
+      color: var(--white);
+      border-color: var(--grn-d)
+    }
+
+    .prog-special .prog-name {
+      color: var(--white)
+    }
+
+    .prog-special .prog-tag {
+      color: rgba(255, 255, 255, .5)
+    }
+
+    .prog-special .prog-price {
+      color: var(--amb)
+    }
+
+    .prog-special .prog-det {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .prog-special .prog-det::before {
+      color: var(--amb)
+    }
+
+    /* COMPARISON */
+    .comp-section {
+      background: var(--white);
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem)
+    }
+
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      margin-top: 3rem;
+      background: var(--border);
+      border-radius: 16px;
+      overflow: hidden
+    }
+
+    @media(max-width:768px) {
+      .comp-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .comp-col {
+      background: var(--white);
+      padding: 1.5rem
+    }
+
+    .comp-col.ours {
+      background: var(--grn-xl)
+    }
+
+    .comp-col-header {
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .comp-col-badge {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--grn);
+      background: var(--grn-l);
+      padding: .2rem .6rem;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: .5rem
+    }
+
+    .comp-col-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 500
+    }
+
+    .comp-col-sub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: .2rem
+    }
+
+    .comp-feat {
+      padding: .5rem 0;
+      border-bottom: 1px solid var(--mid);
+      font-size: 12px
+    }
+
+    .comp-feat-lbl {
+      color: var(--muted);
+      margin-bottom: .15rem;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em
+    }
+
+    .comp-feat-val {
+      color: var(--ink);
+      font-weight: 500
+    }
+
+    .comp-feat-val.yes {
+      color: var(--grn)
+    }
+
+    .comp-feat-val.no {
+      color: #D1D5DB
+    }
+
+    .comp-feat-val.partial {
+      color: var(--amb)
+    }
+
+    /* TESTIMONIALS */
+    .testi-section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem);
+      background: var(--grn-d)
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem
+    }
+
+    @media(max-width:768px) {
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .testi {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all .25s
+    }
+
+    .testi:hover {
+      background: rgba(255, 255, 255, .08)
+    }
+
+    .testi-stars {
+      color: var(--amb);
+      font-size: 13px;
+      letter-spacing: .1em;
+      margin-bottom: 1rem
+    }
+
+    .testi-q {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-style: italic;
+      font-weight: 300;
+      color: rgba(255, 255, 255, .85);
+      line-height: 1.5;
+      margin-bottom: 1.25rem
+    }
+
+    .testi-author-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--white)
+    }
+
+    .testi-author-role {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    /* FAQ */
+    .faq-s {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem);
+      background: var(--paper)
+    }
+
+    .faq-list {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 720px
+    }
+
+    .faq-i {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      background: var(--white)
+    }
+
+    .faq-q {
+      padding: 1.1rem 1.25rem;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: background .15s;
+      user-select: none
+    }
+
+    .faq-q:hover,
+    .faq-q.o {
+      background: var(--mid)
+    }
+
+    .faq-ico {
+      font-size: 16px;
+      color: var(--grn);
+      flex-shrink: 0;
+      transition: transform .2s
+    }
+
+    .faq-q.o .faq-ico {
+      transform: rotate(45deg)
+    }
+
+    .faq-a {
+      display: none;
+      padding: .75rem 1.25rem 1.1rem;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border)
+    }
+
+    .faq-a.o {
+      display: block
+    }
+
+    /* CTA */
+    .cta-s {
+      background: var(--amb-l);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      border-top: 1px solid rgba(232, 168, 56, .2)
+    }
+
+    .cta-inner {
+      max-width: 580px;
+      margin: 0 auto
+    }
+
+    .cta-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 300;
+      color: var(--ink);
+      line-height: 1.05;
+      margin-bottom: 1rem
+    }
+
+    .cta-h em {
+      font-style: italic;
+      color: var(--grn)
+    }
+
+    .cta-p {
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+      font-weight: 300
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .btn-grn {
+      padding: .9rem 2.25rem;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--grn);
+      color: var(--white);
+      border: none;
+      transition: all .2s
+    }
+
+    .btn-grn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 122, 85, .35)
+    }
+
+    .btn-grn-out {
+      padding: .9rem 2.25rem;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 400;
+      cursor: pointer;
+      background: transparent;
+      border: 1.5px solid var(--grn);
+      color: var(--grn);
+      transition: all .2s
+    }
+
+    .btn-grn-out:hover {
+      background: var(--grn-l)
+    }
+
+    .footer {
+      background: var(--ink);
+      padding: 2rem;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .3)
+    }
+
+    .footer strong {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: .75rem;
+      flex-wrap: wrap
+    }
+
+    .footer-link {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .3);
+      text-decoration: none;
+      transition: color .15s
+    }
+
+    .footer-link:hover {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .btn-grn:active,
+    .btn-w:active,
+    .btn-grn-out:active,
+    .nav-cta:active {
+      transform: translateY(0) scale(0.97) !important;
+      box-shadow: none !important;
+    }
+
+    .nav.s {
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      background: rgba(249, 247, 242, 0.85) !important;
+    }
+
+    .val-card,
+    .cycle,
+    .testi-c {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .val-card:hover,
+    .cycle:hover,
+    .testi-c:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    /* APPLE-TIER UX OVERRIDES */
+    .section {
+      padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 4vw, 3rem) !important;
+    }
+
+    .hero {
+      min-height: 100svh !important;
+    }
+
+    .hero-title {
+      letter-spacing: -0.03em !important;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--grn);
+      outline-offset: 4px;
+      border-radius: inherit;
+    }
+
+    .animate {
+      animation: none !important;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
+
 <body>
 
-<nav class="nav" id="nav">
-  <div class="nav-brand">Paradise <span>Studio</span></div>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <a href="paradise-programs.html?brand=studio" style="font-size:12px;padding:.4rem .85rem;border-radius:6px;text-decoration:none;color:rgba(255,255,255,.6);transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Programas</a>
-    <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Studio" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;font-size:12px;font-weight:600;padding:.45rem 1rem;border-radius:7px;background:#25D366;color:#fff;text-decoration:none" onmouseover="this.style.background='#1DA851'" onmouseout="this.style.background='#25D366'">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
-  </div>
-</nav>
+  <nav class="nav" id="nav">
+    <div class="nav-brand">Paradise <span>Studio</span></div>
+    <div style="display:flex;align-items:center;gap:.5rem">
+      <a href="paradise-programs.html?brand=studio"
+        style="font-size:12px;padding:.4rem .85rem;border-radius:6px;text-decoration:none;color:rgba(255,255,255,.6);transition:color .15s"
+        onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Programas</a>
+      <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Studio" target="_blank"
+        style="display:inline-flex;align-items:center;gap:.35rem;font-size:12px;font-weight:600;padding:.45rem 1rem;border-radius:7px;background:#25D366;color:#fff;text-decoration:none"
+        onmouseover="this.style.background='#1DA851'" onmouseout="this.style.background='#25D366'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        WhatsApp
+      </a>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-texture"></div>
-  <div class="hero-left">
-    <div class="hero-eyebrow">Paradise Academy · Lima, Perú</div>
-    <h1 class="hero-title">Tu estudio.<br>Tu obra.<br><em>Tu mundo.</em></h1>
-    <p class="hero-sub">Talleres de arte para niños, jóvenes y adultos. Dibujo, pintura y creatividad sin presión — porque crear es una necesidad, no un lujo.</p>
-    <div class="hero-actions">
-      <button class="btn-amber" onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Studio.', '_blank')">Reservar clase de prueba →</button>
-      <button class="btn-outline" onclick="window.location.href='#talleres'">Ver talleres</button>
-    </div>
-    <div class="hero-tags">
-      <span class="hero-tag">Niños desde 6 años</span>
-      <span class="hero-tag">Teens con portafolio</span>
-      <span class="hero-tag">Adultos sin experiencia</span>
-      <span class="hero-tag">Exposición al final del ciclo</span>
-    </div>
-  </div>
-  <div class="hero-right">
-    <div class="hero-canvas">
-      <div class="art-circle art-c1"></div>
-      <div class="art-circle art-c2"></div>
-      <div class="art-circle art-c3"></div>
-      <div style="position:absolute;top:20%;right:20%;width:140px;height:2px;background:rgba(255,255,255,.1);transform:rotate(30deg)"></div>
-      <div style="position:absolute;bottom:25%;left:15%;width:80px;height:2px;background:rgba(255,255,255,.08);transform:rotate(-20deg)"></div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:120px;color:rgba(255,255,255,.04);position:absolute;bottom:-10px;right:-10px;line-height:1">S</div>
-    </div>
-  </div>
-</section>
-
-<!-- VALUES -->
-<section class="section" id="valores">
-  <div class="section-inner">
-    <div class="tag-line" style="color:var(--grn)">Por qué Paradise Studio</div>
-    <h2 class="section-h">El arte no es para<br><em>los que tienen talento.</em></h2>
-    <p class="section-p">Es para quien quiere crear. El talento es un mito — lo que existe es método, práctica y el espacio correcto.</p>
-    <div class="values-container">
-      <div class="values-row row-1">
-        <div class="val val-dark">
-          <span class="val-icon">🖼️</span>
-          <div class="val-title">Exposición de fin de ciclo</div>
-          <div class="val-desc">Al final de cada ciclo, los alumnos no entregan un examen — exponen sus obras. Las familias vienen. Es un evento real, no un ejercicio.</div>
-          <div class="val-deco">E</div>
-        </div>
-        <div class="val val-light">
-          <span class="val-icon">👶</span>
-          <div class="val-title">Desde los 6 años</div>
-          <div class="val-desc">Talleres diseñados para cada etapa: niños, teens con portafolio y adultos que empiezan desde cero.</div>
-        </div>
-        <div class="val val-green">
-          <span class="val-icon">🎨</span>
-          <div class="val-title">Sin experiencia previa</div>
-          <div class="val-desc">Nadie necesita saber dibujar para inscribirse. Empezamos desde la primera línea.</div>
-          <div class="val-deco">0</div>
-        </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-texture"></div>
+    <div class="hero-left">
+      <div class="hero-eyebrow">Paradise Academy · Lima, Perú</div>
+      <h1 class="hero-title">Tu estudio.<br>Tu obra.<br><em>Tu mundo.</em></h1>
+      <p class="hero-sub">Talleres de arte para niños, jóvenes y adultos. Dibujo, pintura y creatividad sin presión —
+        porque crear es una necesidad, no un lujo.</p>
+      <div class="hero-actions">
+        <button class="btn-amber"
+          onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Studio.', '_blank')">Reservar
+          clase de prueba →</button>
+        <button class="btn-outline" onclick="window.location.href='#talleres'">Ver talleres</button>
       </div>
-      <div class="values-row row-2">
-        <div class="val val-amber">
-          <span class="val-icon">🧘</span>
-          <div class="val-title">Arte como bienestar</div>
-          <div class="val-desc">Dibujar reduce el cortisol hasta un 75%. El taller de adultos es un espacio de desconexión real — sin pantallas, solo crear.</div>
-        </div>
-        <div class="val val-dark">
-          <span class="val-icon">📐</span>
-          <div class="val-title">Track de portafolio para teens</div>
-          <div class="val-desc">Para quienes quieren estudiar diseño, arquitectura o artes. Construimos un portafolio sólido para postular a la carrera que sueñan.</div>
-          <div class="val-deco">P</div>
-        </div>
-        <div class="val val-mid">
-          <span class="val-icon">🎂</span>
-          <div class="val-title">Fiestas de arte</div>
-          <div class="val-desc">Una experiencia de cumpleaños diferente. Los niños crean, se divierten y se van con su obra como recuerdo. Sin pantallas.</div>
-        </div>
+      <div class="hero-tags">
+        <span class="hero-tag">Niños desde 6 años</span>
+        <span class="hero-tag">Teens con portafolio</span>
+        <span class="hero-tag">Adultos sin experiencia</span>
+        <span class="hero-tag">Exposición al final del ciclo</span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- CTA BAND 1 -->
-<div style="background:var(--grn);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-  <div><div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">¿Ya sabes qué taller quieres?</div><div style="font-size:13px;color:rgba(255,255,255,.65)">Selecciona tu taller, ve todos los detalles y escríbenos directamente por WhatsApp.</div></div>
-  <a href="paradise-programs.html?brand=studio" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:#E8A838;color:#0F0E0C;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona tu programa →</a>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="section" id="como-funciona" style="background:var(--white)">
-  <div class="section-inner">
-    <div class="tag-line" style="color:var(--grn)">El proceso</div>
-    <h2 class="section-h">De la hoja en blanco<br><em>a tu primera obra.</em></h2>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:3rem">
-      <div style="background:var(--white);padding:1.75rem">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--grn-l);line-height:1;margin-bottom:1rem">01</div>
-        <div style="font-size:22px;margin-bottom:.75rem">📞</div>
-        <div style="font-size:16px;font-weight:600;margin-bottom:.4rem">Nos contactas</div>
-        <div style="font-size:13px;color:var(--muted);line-height:1.6">Cuéntanos tu edad, qué te interesa aprender y tu disponibilidad. Te decimos qué taller encaja.</div>
-      </div>
-      <div style="background:var(--white);padding:1.75rem">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--grn-l);line-height:1;margin-bottom:1rem">02</div>
-        <div style="font-size:22px;margin-bottom:.75rem">✏️</div>
-        <div style="font-size:16px;font-weight:600;margin-bottom:.4rem">Clase de prueba</div>
-        <div style="font-size:13px;color:var(--muted);line-height:1.6">Asistes a una clase completa sin costo. Sin materiales — todo está incluido. Solo ven y crea.</div>
-      </div>
-      <div style="background:var(--white);padding:1.75rem">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--grn-l);line-height:1;margin-bottom:1rem">03</div>
-        <div style="font-size:22px;margin-bottom:.75rem">✅</div>
-        <div style="font-size:16px;font-weight:600;margin-bottom:.4rem">Te inscribes</div>
-        <div style="font-size:13px;color:var(--muted);line-height:1.6">Pago mensual. Sin contratos largos. Materiales básicos incluidos para niños.</div>
-      </div>
-      <div style="background:var(--grn-d);padding:1.75rem">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:rgba(255,255,255,.12);line-height:1;margin-bottom:1rem">04</div>
-        <div style="font-size:22px;margin-bottom:.75rem">🖼️</div>
-        <div style="font-size:16px;font-weight:600;margin-bottom:.4rem;color:var(--white)">Expones tu obra</div>
-        <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6">Al final del ciclo, tu familia ve lo que creaste. Ese momento lo cambia todo.</div>
+    <div class="hero-right">
+      <div class="hero-canvas">
+        <div class="art-circle art-c1"></div>
+        <div class="art-circle art-c2"></div>
+        <div class="art-circle art-c3"></div>
+        <div
+          style="position:absolute;top:20%;right:20%;width:140px;height:2px;background:rgba(255,255,255,.1);transform:rotate(30deg)">
+        </div>
+        <div
+          style="position:absolute;bottom:25%;left:15%;width:80px;height:2px;background:rgba(255,255,255,.08);transform:rotate(-20deg)">
+        </div>
+        <div
+          style="font-family:'Cormorant Garamond',serif;font-size:120px;color:rgba(255,255,255,.04);position:absolute;bottom:-10px;right:-10px;line-height:1">
+          S</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROGRAMS -->
-<section class="section" id="talleres">
-  <div class="section-inner">
-    <div class="tag-line" style="color:var(--grn)">Talleres disponibles</div>
-    <h2 class="section-h">Un taller para<br><em>cada momento de vida.</em></h2>
-    <div class="prog-flow">
-      <div class="prog">
-        <div class="prog-header">
-          <span class="prog-icon">🧒</span>
-          <div class="prog-price">S/165<span>por mes</span></div>
+  <!-- VALUES -->
+  <section class="section" id="valores">
+    <div class="section-inner">
+      <div class="tag-line" style="color:var(--grn)">Por qué Paradise Studio</div>
+      <h2 class="section-h">El arte no es para<br><em>los que tienen talento.</em></h2>
+      <p class="section-p">Es para quien quiere crear. El talento es un mito — lo que existe es método, práctica y el
+        espacio correcto.</p>
+      <div class="values-container">
+        <div class="values-row row-1">
+          <div class="val val-dark">
+            <span class="val-icon">🖼️</span>
+            <div class="val-title">Exposición de fin de ciclo</div>
+            <div class="val-desc">Al final de cada ciclo, los alumnos no entregan un examen — exponen sus obras. Las
+              familias vienen. Es un evento real, no un ejercicio.</div>
+            <div class="val-deco">E</div>
+          </div>
+          <div class="val val-light">
+            <span class="val-icon">👶</span>
+            <div class="val-title">Desde los 6 años</div>
+            <div class="val-desc">Talleres diseñados para cada etapa: niños, teens con portafolio y adultos que empiezan
+              desde cero.</div>
+          </div>
+          <div class="val val-green">
+            <span class="val-icon">🎨</span>
+            <div class="val-title">Sin experiencia previa</div>
+            <div class="val-desc">Nadie necesita saber dibujar para inscribirse. Empezamos desde la primera línea.</div>
+            <div class="val-deco">0</div>
+          </div>
         </div>
-        <div class="prog-name">Taller de niños</div>
-        <div class="prog-tag">Dibujo y pintura · Desde 6 años</div>
-        <div class="prog-details">
-          <div class="prog-det">Grupos de hasta 10 alumnos</div>
-          <div class="prog-det">Tardes después del colegio</div>
-          <div class="prog-det">Sábados disponibles</div>
-          <div class="prog-det">Materiales básicos incluidos</div>
-        </div>
-      </div>
-      <div class="prog">
-        <div class="prog-header">
-          <span class="prog-icon">🔥</span>
-          <div class="prog-price">S/240<span>por mes</span></div>
-        </div>
-        <div class="prog-name">Intensivo niños</div>
-        <div class="prog-tag">2 veces por semana · Avanza más rápido</div>
-        <div class="prog-details">
-          <div class="prog-det">Mismos grupos reducidos</div>
-          <div class="prog-det">Mayor progresión técnica</div>
-          <div class="prog-det">Ideal si hay exposición próxima</div>
-          <div class="prog-det">Materiales incluidos</div>
-        </div>
-      </div>
-      <div class="prog prog-special">
-        <div class="prog-header">
-          <span class="prog-icon">📐</span>
-          <div class="prog-price" style="color:var(--amb)">S/280<span style="color:rgba(255,255,255,.4)">por mes</span></div>
-        </div>
-        <div class="prog-name">Track de portafolio</div>
-        <div class="prog-tag" style="color:rgba(255,255,255,.45)">Teens 14–18 · Carrera artística</div>
-        <div class="prog-details">
-          <div class="prog-det">Dibujo técnico + composición</div>
-          <div class="prog-det">Construcción de portafolio real</div>
-          <div class="prog-det">Para PUCP, ULIMA, Bellas Artes</div>
-          <div class="prog-det">Seguimiento individual</div>
-        </div>
-      </div>
-      <div class="prog">
-        <div class="prog-header">
-          <span class="prog-icon">🌿</span>
-          <div class="prog-price">S/210<span>por mes</span></div>
-        </div>
-        <div class="prog-name">Taller de adultos</div>
-        <div class="prog-tag">Fines de semana · Sin experiencia</div>
-        <div class="prog-details">
-          <div class="prog-det">Sábados y domingos</div>
-          <div class="prog-det">Ambiente sin presión</div>
-          <div class="prog-det">Dibujo, acuarela y acrílico</div>
-          <div class="prog-det">Tu espacio de desconexión</div>
+        <div class="values-row row-2">
+          <div class="val val-amber">
+            <span class="val-icon">🧘</span>
+            <div class="val-title">Arte como bienestar</div>
+            <div class="val-desc">Dibujar reduce el cortisol hasta un 75%. El taller de adultos es un espacio de
+              desconexión real — sin pantallas, solo crear.</div>
+          </div>
+          <div class="val val-dark">
+            <span class="val-icon">📐</span>
+            <div class="val-title">Track de portafolio para teens</div>
+            <div class="val-desc">Para quienes quieren estudiar diseño, arquitectura o artes. Construimos un portafolio
+              sólido para postular a la carrera que sueñan.</div>
+            <div class="val-deco">P</div>
+          </div>
+          <div class="val val-mid">
+            <span class="val-icon">🎂</span>
+            <div class="val-title">Fiestas de arte</div>
+            <div class="val-desc">Una experiencia de cumpleaños diferente. Los niños crean, se divierten y se van con su
+              obra como recuerdo. Sin pantallas.</div>
+          </div>
         </div>
       </div>
     </div>
-    <div style="background:var(--amb-l);border:1px solid rgba(232,168,56,.2);border-radius:12px;padding:1.25rem 1.5rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-      <div>
-        <div style="font-size:14px;font-weight:600;margin-bottom:.2rem">🎂 Fiesta de arte para cumpleaños</div>
-        <div style="font-size:13px;color:var(--muted)">Los niños crean, se divierten y se van con su obra. Una experiencia diferente desde S/380 por evento.</div>
-      </div>
-      <button class="btn-grn" onclick="window.location.href='#cta'" style="white-space:nowrap">Consultar fechas</button>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- COMPARISON -->
-<section class="comp-section" id="comparacion">
-  <div class="section-inner">
-    <div class="tag-line" style="color:var(--grn)">Comparación</div>
-    <h2 class="section-h">Studio vs.<br><em>otras opciones en Lima.</em></h2>
-    <div class="comp-grid">
-      <div class="comp-col ours">
-        <div class="comp-col-header">
-          <div class="comp-col-badge">Nuestra opción</div>
-          <div class="comp-col-name">Paradise Studio</div>
-          <div class="comp-col-sub">Academia moderna · Lima 2025</div>
+  <!-- CTA BAND 1 -->
+  <div
+    style="background:var(--grn);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div>
+      <div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">¿Ya sabes qué taller quieres?</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.65)">Selecciona tu taller, ve todos los detalles y escríbenos
+        directamente por WhatsApp.</div>
+    </div>
+    <a href="paradise-programs.html?brand=studio"
+      style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:#E8A838;color:#0F0E0C;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona
+      tu programa →</a>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" id="como-funciona" style="background:var(--white)">
+    <div class="section-inner">
+      <div class="tag-line" style="color:var(--grn)">El proceso</div>
+      <h2 class="section-h">De la hoja en blanco<br><em>a tu primera obra.</em></h2>
+      <div
+        style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:16px;overflow:hidden;margin-top:3rem">
+        <div style="background:var(--white);padding:1.75rem">
+          <div
+            style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--grn-l);line-height:1;margin-bottom:1rem">
+            01</div>
+          <div style="font-size:22px;margin-bottom:.75rem">📞</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:.4rem">Nos contactas</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">Cuéntanos tu edad, qué te interesa aprender y
+            tu disponibilidad. Te decimos qué taller encaja.</div>
         </div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Grupos</div><div class="comp-feat-val yes">Máx. 10 alumnos</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Exposición de fin de ciclo</div><div class="comp-feat-val yes">✓ Siempre</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Track de portafolio</div><div class="comp-feat-val yes">✓ Teens</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Fiestas de arte</div><div class="comp-feat-val yes">✓ Disponible</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Adultos sin experiencia</div><div class="comp-feat-val yes">✓ Fines de semana</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Precio</div><div class="comp-feat-val yes">S/165–280/mes</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Presencia en redes</div><div class="comp-feat-val yes">✓ Activa</div></div>
-      </div>
-      <div class="comp-col">
-        <div class="comp-col-header">
-          <div class="comp-col-name">Museos / Cultura</div>
-          <div class="comp-col-sub">MALI, MAC Lima, municipales</div>
+        <div style="background:var(--white);padding:1.75rem">
+          <div
+            style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--grn-l);line-height:1;margin-bottom:1rem">
+            02</div>
+          <div style="font-size:22px;margin-bottom:.75rem">✏️</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:.4rem">Clase de prueba</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">Asistes a una clase completa sin costo. Sin
+            materiales — todo está incluido. Solo ven y crea.</div>
         </div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Grupos</div><div class="comp-feat-val partial">Variable</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Exposición</div><div class="comp-feat-val partial">A veces</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Track portafolio</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Fiestas de arte</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Adultos sin exp.</div><div class="comp-feat-val partial">Limitado</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Precio</div><div class="comp-feat-val">Similar</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Presencia en redes</div><div class="comp-feat-val no">✗ Casi nula</div></div>
-      </div>
-      <div class="comp-col">
-        <div class="comp-col-header">
-          <div class="comp-col-name">Academia de barrio</div>
-          <div class="comp-col-sub">Sin branding ni diferenciación</div>
+        <div style="background:var(--white);padding:1.75rem">
+          <div
+            style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--grn-l);line-height:1;margin-bottom:1rem">
+            03</div>
+          <div style="font-size:22px;margin-bottom:.75rem">✅</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:.4rem">Te inscribes</div>
+          <div style="font-size:13px;color:var(--muted);line-height:1.6">Pago mensual. Sin contratos largos. Materiales
+            básicos incluidos para niños.</div>
         </div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Grupos</div><div class="comp-feat-val partial">Variable</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Exposición</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Track portafolio</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Fiestas de arte</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Adultos sin exp.</div><div class="comp-feat-val partial">Raro</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Precio</div><div class="comp-feat-val partial">Más bajo</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Presencia en redes</div><div class="comp-feat-val no">✗</div></div>
-      </div>
-      <div class="comp-col">
-        <div class="comp-col-header">
-          <div class="comp-col-name">Clases online</div>
-          <div class="comp-col-sub">YouTube, Skillshare, etc.</div>
+        <div style="background:var(--grn-d);padding:1.75rem">
+          <div
+            style="font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:rgba(255,255,255,.12);line-height:1;margin-bottom:1rem">
+            04</div>
+          <div style="font-size:22px;margin-bottom:.75rem">🖼️</div>
+          <div style="font-size:16px;font-weight:600;margin-bottom:.4rem;color:var(--white)">Expones tu obra</div>
+          <div style="font-size:13px;color:rgba(255,255,255,.5);line-height:1.6">Al final del ciclo, tu familia ve lo
+            que creaste. Ese momento lo cambia todo.</div>
         </div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Grupos</div><div class="comp-feat-val no">✗ Solo</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Exposición</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Track portafolio</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Fiestas de arte</div><div class="comp-feat-val no">✗</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Adultos</div><div class="comp-feat-val yes">✓ Flexible</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Precio</div><div class="comp-feat-val yes">Bajo</div></div>
-        <div class="comp-feat"><div class="comp-feat-lbl">Comunidad real</div><div class="comp-feat-val no">✗</div></div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA BAND 2 -->
-<div style="background:var(--grn-d);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-  <div><div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">Elige tu taller y reserva tu clase de prueba.</div><div style="font-size:13px;color:rgba(255,255,255,.5)">Ve los detalles de cada taller y contáctanos en un solo paso.</div></div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap">
-    <a href="paradise-programs.html?brand=studio" style="display:inline-flex;align-items:center;padding:.8rem 1.75rem;border-radius:10px;background:#E8A838;color:#0F0E0C;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona tu programa →</a>
-    <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Studio.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:10px;background:#25D366;color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
-  </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<section class="testi-section" id="testimonios">
-  <div class="section-inner">
-    <div class="tag-line" style="color:var(--amb)">Lo que dicen</div>
-    <h2 class="section-h" style="color:var(--white)">Historias que<br><em style="color:rgba(255,255,255,.38)">empezaron en blanco.</em></h2>
-    <div class="testi-grid">
-      <div class="testi">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-q">"Mi hija entró en silencio. Salió con una obra que enmarcamos en casa. El cambio fue total."</div>
-        <div class="testi-author-name">Mamá de alumna, 9 años</div>
-        <div class="testi-author-role">Taller de niños · Sábados</div>
+  <!-- PROGRAMS -->
+  <section class="section" id="talleres">
+    <div class="section-inner">
+      <div class="tag-line" style="color:var(--grn)">Talleres disponibles</div>
+      <h2 class="section-h">Un taller para<br><em>cada momento de vida.</em></h2>
+      <div class="prog-flow">
+        <div class="prog" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=studio&prog=ninos'">
+          <div class="prog-header">
+            <span class="prog-icon">🧒</span>
+            <div class="prog-price">S/165<span>por mes</span></div>
+          </div>
+          <div class="prog-name">Taller de niños</div>
+          <div class="prog-tag">Dibujo y pintura · Desde 6 años</div>
+          <div class="prog-details">
+            <div class="prog-det">Grupos de hasta 10 alumnos</div>
+            <div class="prog-det">Tardes después del colegio</div>
+            <div class="prog-det">Sábados disponibles</div>
+            <div class="prog-det">Materiales básicos incluidos</div>
+          </div>
+        </div>
+        <div class="prog" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=studio&prog=intensivo'">
+          <div class="prog-header">
+            <span class="prog-icon">🔥</span>
+            <div class="prog-price">S/240<span>por mes</span></div>
+          </div>
+          <div class="prog-name">Intensivo niños</div>
+          <div class="prog-tag">2 veces por semana · Avanza más rápido</div>
+          <div class="prog-details">
+            <div class="prog-det">Mismos grupos reducidos</div>
+            <div class="prog-det">Mayor progresión técnica</div>
+            <div class="prog-det">Ideal si hay exposición próxima</div>
+            <div class="prog-det">Materiales incluidos</div>
+          </div>
+        </div>
+        <div class="prog prog-special" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=studio&prog=portfolio'">
+          <div class="prog-header">
+            <span class="prog-icon">📐</span>
+            <div class="prog-price" style="color:var(--amb)">S/280<span style="color:rgba(255,255,255,.4)">por
+                mes</span></div>
+          </div>
+          <div class="prog-name">Track de portafolio</div>
+          <div class="prog-tag" style="color:rgba(255,255,255,.45)">Teens 14–18 · Carrera artística</div>
+          <div class="prog-details">
+            <div class="prog-det">Dibujo técnico + composición</div>
+            <div class="prog-det">Construcción de portafolio real</div>
+            <div class="prog-det">Para PUCP, ULIMA, Bellas Artes</div>
+            <div class="prog-det">Seguimiento individual</div>
+          </div>
+        </div>
+        <div class="prog" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=studio&prog=adultos'">
+          <div class="prog-header">
+            <span class="prog-icon">🌿</span>
+            <div class="prog-price">S/210<span>por mes</span></div>
+          </div>
+          <div class="prog-name">Taller de adultos</div>
+          <div class="prog-tag">Fines de semana · Sin experiencia</div>
+          <div class="prog-details">
+            <div class="prog-det">Sábados y domingos</div>
+            <div class="prog-det">Ambiente sin presión</div>
+            <div class="prog-det">Dibujo, acuarela y acrílico</div>
+            <div class="prog-det">Tu espacio de desconexión</div>
+          </div>
+        </div>
       </div>
-      <div class="testi">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-q">"Llevaba años diciendo que no tenía talento. En la quinta clase terminé una acuarela que no creí que podía hacer."</div>
-        <div class="testi-author-name">Valeria R., 34 años</div>
-        <div class="testi-author-role">Taller de adultos · Domingos</div>
-      </div>
-      <div class="testi">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-q">"El track de portafolio fue exactamente lo que necesitaba para postular a diseño gráfico. Ingresé."</div>
-        <div class="testi-author-name">Diego M., 17 años</div>
-        <div class="testi-author-role">Track de portafolio teens</div>
+      <div
+        style="background:var(--amb-l);border:1px solid rgba(232,168,56,.2);border-radius:12px;padding:1.25rem 1.5rem;margin-top:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+        <div>
+          <div style="font-size:14px;font-weight:600;margin-bottom:.2rem">🎂 Fiesta de arte para cumpleaños</div>
+          <div style="font-size:13px;color:var(--muted)">Los niños crean, se divierten y se van con su obra. Una
+            experiencia diferente desde S/380 por evento.</div>
+        </div>
+        <button class="btn-grn" onclick="window.location.href='#cta'" style="white-space:nowrap">Consultar
+          fechas</button>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section class="faq-s" id="faq">
-  <div class="section-inner">
-    <div class="tag-line" style="color:var(--grn)">Preguntas frecuentes</div>
-    <h2 class="section-h">Lo que siempre<br><em>nos preguntan.</em></h2>
-    <div class="faq-list">
-      <div class="faq-i"><div class="faq-q o" onclick="tg(this)">¿Necesito traer materiales? <span class="faq-ico">+</span></div><div class="faq-a o">Para el taller de niños, los materiales básicos (papel, pinceles, pintura) están incluidos. Para el track de portafolio y adultos, algunos materiales específicos pueden requerir compra individual — te avisamos con anticipación y el costo es mínimo.</div></div>
-      <div class="faq-i"><div class="faq-q" onclick="tg(this)">¿Qué pasa si mi hijo no tiene ninguna habilidad artística? <span class="faq-ico">+</span></div><div class="faq-a">Perfecto — ese es exactamente el punto de partida ideal. El método está diseñado para empezar desde cero. En las primeras clases se trabaja percepción y coordinación antes de la técnica.</div></div>
-      <div class="faq-i"><div class="faq-q" onclick="tg(this)">¿Cuándo es la exposición de fin de ciclo? <span class="faq-ico">+</span></div><div class="faq-a">Al final de cada ciclo (aproximadamente cada 3 meses). Las familias son invitadas formalmente. Es un evento real en las instalaciones del colegio — no solo una muestra informal.</div></div>
-      <div class="faq-i"><div class="faq-q" onclick="tg(this)">¿Puedo inscribir a mi hijo en el taller de niños Y en el intensivo? <span class="faq-ico">+</span></div><div class="faq-a">Sí. El intensivo (2x semana) es simplemente el taller con mayor frecuencia. Puedes elegir 1x semana para empezar y subir a 2x cuando veas que tu hijo quiere más.</div></div>
-      <div class="faq-i"><div class="faq-q" onclick="tg(this)">¿Las fiestas de arte son solo para alumnos de Studio? <span class="faq-ico">+</span></div><div class="faq-a">No. Las fiestas de arte están abiertas para cualquier grupo de niños — no tienen que ser alumnos del taller. Es una experiencia independiente que puedes contratar para el cumpleaños de tu hijo.</div></div>
+  <!-- COMPARISON -->
+  <section class="comp-section" id="comparacion">
+    <div class="section-inner">
+      <div class="tag-line" style="color:var(--grn)">Comparación</div>
+      <h2 class="section-h">Studio vs.<br><em>otras opciones en Lima.</em></h2>
+      <div class="comp-grid">
+        <div class="comp-col ours">
+          <div class="comp-col-header">
+            <div class="comp-col-badge">Nuestra opción</div>
+            <div class="comp-col-name">Paradise Studio</div>
+            <div class="comp-col-sub">Academia moderna · Lima 2025</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Grupos</div>
+            <div class="comp-feat-val yes">Máx. 10 alumnos</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Exposición de fin de ciclo</div>
+            <div class="comp-feat-val yes">✓ Siempre</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Track de portafolio</div>
+            <div class="comp-feat-val yes">✓ Teens</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Fiestas de arte</div>
+            <div class="comp-feat-val yes">✓ Disponible</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Adultos sin experiencia</div>
+            <div class="comp-feat-val yes">✓ Fines de semana</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Precio</div>
+            <div class="comp-feat-val yes">S/165–280/mes</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Presencia en redes</div>
+            <div class="comp-feat-val yes">✓ Activa</div>
+          </div>
+        </div>
+        <div class="comp-col">
+          <div class="comp-col-header">
+            <div class="comp-col-name">Museos / Cultura</div>
+            <div class="comp-col-sub">MALI, MAC Lima, municipales</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Grupos</div>
+            <div class="comp-feat-val partial">Variable</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Exposición</div>
+            <div class="comp-feat-val partial">A veces</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Track portafolio</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Fiestas de arte</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Adultos sin exp.</div>
+            <div class="comp-feat-val partial">Limitado</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Precio</div>
+            <div class="comp-feat-val">Similar</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Presencia en redes</div>
+            <div class="comp-feat-val no">✗ Casi nula</div>
+          </div>
+        </div>
+        <div class="comp-col">
+          <div class="comp-col-header">
+            <div class="comp-col-name">Academia de barrio</div>
+            <div class="comp-col-sub">Sin branding ni diferenciación</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Grupos</div>
+            <div class="comp-feat-val partial">Variable</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Exposición</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Track portafolio</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Fiestas de arte</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Adultos sin exp.</div>
+            <div class="comp-feat-val partial">Raro</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Precio</div>
+            <div class="comp-feat-val partial">Más bajo</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Presencia en redes</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+        </div>
+        <div class="comp-col">
+          <div class="comp-col-header">
+            <div class="comp-col-name">Clases online</div>
+            <div class="comp-col-sub">YouTube, Skillshare, etc.</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Grupos</div>
+            <div class="comp-feat-val no">✗ Solo</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Exposición</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Track portafolio</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Fiestas de arte</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Adultos</div>
+            <div class="comp-feat-val yes">✓ Flexible</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Precio</div>
+            <div class="comp-feat-val yes">Bajo</div>
+          </div>
+          <div class="comp-feat">
+            <div class="comp-feat-lbl">Comunidad real</div>
+            <div class="comp-feat-val no">✗</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND 2 -->
+  <div
+    style="background:var(--grn-d);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div>
+      <div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">Elige tu taller y reserva tu clase de
+        prueba.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.5)">Ve los detalles de cada taller y contáctanos en un solo
+        paso.</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="paradise-programs.html?brand=studio"
+        style="display:inline-flex;align-items:center;padding:.8rem 1.75rem;border-radius:10px;background:#E8A838;color:#0F0E0C;font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona
+        tu programa →</a>
+      <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Studio.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        target="_blank"
+        style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:10px;background:#25D366;color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap"><svg
+          width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>WhatsApp</a>
     </div>
   </div>
-</section>
 
-<!-- CTA -->
-<section class="cta-s" id="cta">
-  <div class="cta-inner">
-    <h2 class="cta-h">El momento perfecto<br><em>es este.</em></h2>
-    <p class="cta-p">Clase de prueba gratis. Sin materiales. Sin requisitos. Solo ven y crea algo.</p>
-    <div class="cta-btns">
-      <button class="btn-grn" onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Studio.', '_blank')">Reservar mi clase de prueba →</button>
-      <button class="btn-grn-out" onclick="window.open('https://wa.me/51952381451?text=Hola,%20quisiera%20más%20información%20sobre%20Paradise%20Studio.', '_blank')">Escribir por WhatsApp</button>
+  <!-- TESTIMONIALS -->
+  <section class="testi-section" id="testimonios">
+    <div class="section-inner">
+      <div class="tag-line" style="color:var(--amb)">Lo que dicen</div>
+      <h2 class="section-h" style="color:var(--white)">Historias que<br><em
+          style="color:rgba(255,255,255,.38)">empezaron en blanco.</em></h2>
+      <div class="testi-grid">
+        <div class="testi">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-q">"Mi hija entró en silencio. Salió con una obra que enmarcamos en casa. El cambio fue
+            total."</div>
+          <div class="testi-author-name">Mamá de alumna, 9 años</div>
+          <div class="testi-author-role">Taller de niños · Sábados</div>
+        </div>
+        <div class="testi">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-q">"Llevaba años diciendo que no tenía talento. En la quinta clase terminé una acuarela que
+            no creí que podía hacer."</div>
+          <div class="testi-author-name">Valeria R., 34 años</div>
+          <div class="testi-author-role">Taller de adultos · Domingos</div>
+        </div>
+        <div class="testi">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-q">"El track de portafolio fue exactamente lo que necesitaba para postular a diseño gráfico.
+            Ingresé."</div>
+          <div class="testi-author-name">Diego M., 17 años</div>
+          <div class="testi-author-role">Track de portafolio teens</div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <strong>Paradise Academy</strong> · Lima, Perú · 2025
-  <div class="footer-links">
-    <a class="footer-link" href="paradise-atlas-landing.html">Paradise Atlas →</a>
-    <a class="footer-link" href="paradise-ascend-landing.html">Paradise Ascend →</a>
-  </div>
-</footer>
+  <!-- FAQ -->
+  <section class="faq-s" id="faq">
+    <div class="section-inner">
+      <div class="tag-line" style="color:var(--grn)">Preguntas frecuentes</div>
+      <h2 class="section-h">Lo que siempre<br><em>nos preguntan.</em></h2>
+      <div class="faq-list">
+        <div class="faq-i">
+          <div class="faq-q o" onclick="tg(this)">¿Necesito traer materiales? <span class="faq-ico">+</span></div>
+          <div class="faq-a o">Para el taller de niños, los materiales básicos (papel, pinceles, pintura) están
+            incluidos. Para el track de portafolio y adultos, algunos materiales específicos pueden requerir compra
+            individual — te avisamos con anticipación y el costo es mínimo.</div>
+        </div>
+        <div class="faq-i">
+          <div class="faq-q" onclick="tg(this)">¿Qué pasa si mi hijo no tiene ninguna habilidad artística? <span
+              class="faq-ico">+</span></div>
+          <div class="faq-a">Perfecto — ese es exactamente el punto de partida ideal. El método está diseñado para
+            empezar desde cero. En las primeras clases se trabaja percepción y coordinación antes de la técnica.</div>
+        </div>
+        <div class="faq-i">
+          <div class="faq-q" onclick="tg(this)">¿Cuándo es la exposición de fin de ciclo? <span class="faq-ico">+</span>
+          </div>
+          <div class="faq-a">Al final de cada ciclo (aproximadamente cada 3 meses). Las familias son invitadas
+            formalmente. Es un evento real en las instalaciones del colegio — no solo una muestra informal.</div>
+        </div>
+        <div class="faq-i">
+          <div class="faq-q" onclick="tg(this)">¿Puedo inscribir a mi hijo en el taller de niños Y en el intensivo?
+            <span class="faq-ico">+</span></div>
+          <div class="faq-a">Sí. El intensivo (2x semana) es simplemente el taller con mayor frecuencia. Puedes elegir
+            1x semana para empezar y subir a 2x cuando veas que tu hijo quiere más.</div>
+        </div>
+        <div class="faq-i">
+          <div class="faq-q" onclick="tg(this)">¿Las fiestas de arte son solo para alumnos de Studio? <span
+              class="faq-ico">+</span></div>
+          <div class="faq-a">No. Las fiestas de arte están abiertas para cualquier grupo de niños — no tienen que ser
+            alumnos del taller. Es una experiencia independiente que puedes contratar para el cumpleaños de tu hijo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-var nav = document.getElementById('nav');
-window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 80); });
-function tg(el){
-  var a=el.nextElementSibling;
-  var open=el.classList.contains('o');
-  el.classList.toggle('o',!open);
-  a.classList.toggle('o',!open);
-}
-document.addEventListener("DOMContentLoaded", function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+  <!-- CTA -->
+  <section class="cta-s" id="cta">
+    <div class="cta-inner">
+      <h2 class="cta-h">El momento perfecto<br><em>es este.</em></h2>
+      <p class="cta-p">Clase de prueba gratis. Sin materiales. Sin requisitos. Solo ven y crea algo.</p>
+      <div class="cta-btns">
+        <button class="btn-grn"
+          onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Studio.', '_blank')">Reservar
+          mi clase de prueba →</button>
+        <button class="btn-grn-out"
+          onclick="window.open('https://wa.me/51952381451?text=Hola,%20quisiera%20más%20información%20sobre%20Paradise%20Studio.', '_blank')">Escribir
+          por WhatsApp</button>
+      </div>
+    </div>
+  </section>
 
-  document.querySelectorAll('.section, .val, .prog, .testi, .comp-col').forEach((el, index) => {
-    el.classList.add('animate');
-    if(el.classList.contains('val') || el.classList.contains('prog') || el.classList.contains('testi') || el.classList.contains('comp-col')) {
-       el.style.transitionDelay = (index % 3) * 0.1 + 's';
+  <footer class="footer">
+    <strong>Paradise Academy</strong> · Lima, Perú · 2025
+    <div class="footer-links">
+      <a class="footer-link" href="paradise-atlas.html">Paradise Atlas →</a>
+    <a class="footer-link" href="paradise-ascend.html">Paradise Ascend →</a>
+    </div>
+  </footer>
+
+  <script>
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function () { nav.classList.toggle('scrolled', window.scrollY > 80); });
+    function tg(el) {
+      var a = el.nextElementSibling;
+      var open = el.classList.contains('o');
+      el.classList.toggle('o', !open);
+      a.classList.toggle('o', !open);
     }
-    observer.observe(el);
-  });
-});
-</script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      document.querySelectorAll('.section, .val, .prog, .testi, .comp-col').forEach((el, index) => {
+        el.classList.add('animate');
+        if (el.classList.contains('val') || el.classList.contains('prog') || el.classList.contains('testi') || el.classList.contains('comp-col')) {
+          el.style.transitionDelay = (index % 3) * 0.1 + 's';
+        }
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
+
 </html>

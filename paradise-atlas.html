@@ -1,578 +1,1713 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paradise Atlas — Aprende Inglés en Lima</title>
-<meta name="description" content="Paradise Atlas — El inglés que sí se habla. Clases conversacionales en Lima, Perú.">
-<meta property="og:title" content="Paradise Atlas | Lima">
-<meta property="og:description" content="Descubre Atlas. El programa presencial donde hablas inglés desde el primer día.">
-<meta property="og:image" content="assets/og-image.jpg">
-<meta property="og:type" content="website">
-<link rel="icon" type="image/png" href="assets/favicon.png">
-<link rel="apple-touch-icon" href="assets/favicon.png">
-<!-- Google Analytics Placeholder -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
-<!-- Meta Pixel Placeholder -->
-<!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', 'XXXXXXXXXXXXXXXX');fbq('track', 'PageView');</script> -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-:root{
-  --blue:#1B5FA8;--blue-d:#0D3B6E;--blue-m:#3578C2;--blue-l:#E8F0FB;--blue-xl:#F0F5FD;
-  --gold:#C8993A;--gold-l:#FDF6E8;
-  --ink:#0C0F1A;--paper:#F8F7F4;--white:#ffffff;
-  --muted:#6B7280;--border:#E5E7EB;--mid:#F3F4F6;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;overflow-x:hidden}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradise Atlas — Aprende Inglés en Lima</title>
+  <meta name="description" content="Paradise Atlas — El inglés que sí se habla. Clases conversacionales en Lima, Perú.">
+  <meta property="og:title" content="Paradise Atlas | Lima">
+  <meta property="og:description"
+    content="Descubre Atlas. El programa presencial donde hablas inglés desde el primer día.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+  <!-- Google Analytics Placeholder -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+  <!-- Meta Pixel Placeholder -->
+  <!-- <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', 'XXXXXXXXXXXXXXXX');fbq('track', 'PageView');</script> -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent
+    }
 
-/* ── NAVBAR ── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;transition:all .3s}
-.nav.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:.75rem 2rem}
-.nav-brand{display:flex;align-items:baseline;gap:.35rem}
-.nav-brand-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;color:var(--white);transition:color .3s}
-.nav.scrolled .nav-brand-name{color:var(--ink)}
-.nav-brand-prog{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);transition:color .3s}
-.nav.scrolled .nav-brand-prog{color:var(--blue)}
-.nav-cta{padding:.55rem 1.25rem;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s;border:none;background:var(--white);color:var(--blue)}
-.nav.scrolled .nav-cta{background:var(--blue);color:var(--white)}
-.nav-cta:hover{transform:translateY(-1px)}
+    :root {
+      --blue: #1B5FA8;
+      --blue-d: #0D3B6E;
+      --blue-m: #3578C2;
+      --blue-l: #E8F0FB;
+      --blue-xl: #F0F5FD;
+      --gold: #C8993A;
+      --gold-l: #FDF6E8;
+      --ink: #0C0F1A;
+      --paper: #F8F7F4;
+      --white: #ffffff;
+      --muted: #6B7280;
+      --border: #E5E7EB;
+      --mid: #F3F4F6;
+    }
 
-/* ── HERO ── */
-.hero{min-height:100vh;background:var(--blue-d);position:relative;display:flex;align-items:center;overflow:hidden;padding:6rem 2rem 4rem}
-.hero-bg-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(var(--white) 1px,transparent 1px),linear-gradient(90deg,var(--white) 1px,transparent 1px);background-size:60px 60px}
-.hero-deco-1{position:absolute;top:-20%;right:-10%;width:700px;height:700px;border-radius:50%;border:1px solid rgba(255,255,255,.06)}
-.hero-deco-2{position:absolute;bottom:-30%;right:5%;width:400px;height:400px;border-radius:50%;background:var(--blue-m);opacity:.2}
-.hero-deco-3{position:absolute;top:20%;left:-5%;width:200px;height:200px;border-radius:50%;background:var(--gold);opacity:.08}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;position:relative;z-index:1}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;background:rgba(200,153,58,.1);border:1px solid rgba(200,153,58,.25);padding:.4rem 1rem;border-radius:100px}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(48px,7vw,88px);font-weight:400;color:var(--white);line-height:.92;margin-bottom:1.5rem}
-.hero-title em{font-style:italic;color:rgba(255,255,255,.4)}
-.hero-subtitle{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.55);max-width:520px;line-height:1.65;margin-bottom:2.5rem;font-weight:300}
-.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:3.5rem}
-.btn-primary{padding:.85rem 2rem;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;border:none;background:var(--gold);color:var(--ink);display:inline-flex;align-items:center;gap:.5rem}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,153,58,.4)}
-.btn-ghost{padding:.85rem 2rem;border-radius:10px;font-size:15px;font-weight:500;cursor:pointer;transition:all .2s;background:transparent;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.8)}
-.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:var(--white)}
-.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap}
-.hero-stat-n{font-family:'Playfair Display',serif;font-size:32px;font-weight:400;color:var(--white);line-height:1}
-.hero-stat-l{font-size:12px;color:rgba(255,255,255,.4);margin-top:.2rem}
-.hero-scroll{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:rgba(255,255,255,.3);font-size:11px;letter-spacing:.1em;text-transform:uppercase;animation:bounce 2s infinite}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+    html {
+      scroll-behavior: smooth
+    }
 
-/* ── SECTIONS ── */
-.section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-label{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);margin-bottom:.75rem}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,48px);font-weight:400;line-height:1.1;margin-bottom:1rem}
-.section-title em{font-style:italic;color:var(--muted)}
-.section-desc{font-size:16px;color:var(--muted);max-width:540px;line-height:1.7;font-weight:300}
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden
+    }
 
-/* ── VALUES ── */
-.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
-@media(max-width:768px){.values-grid{grid-template-columns:1fr}}
-.value-card{padding:2rem;border-radius:16px;border:1px solid var(--border);background:var(--white);transition:all .25s;position:relative;overflow:hidden}
-.value-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:3px 3px 0 0;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.value-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(27,95,168,.1);border-color:var(--blue-l)}
-.value-card:hover::before{transform:scaleX(1)}
-.value-icon{font-size:28px;margin-bottom:1.1rem;display:block}
-.value-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:400;color:var(--blue-l);line-height:1;margin-bottom:.5rem;position:absolute;top:1.5rem;right:1.75rem}
-.value-title{font-size:17px;font-weight:600;margin-bottom:.5rem}
-.value-desc{font-size:14px;color:var(--muted);line-height:1.65}
+    /* ── NAVBAR ── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all .3s
+    }
 
-/* ── HOW IT WORKS ── */
-.hiw{background:var(--ink);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
-.hiw-inner{max-width:1100px;margin:0 auto}
-.hiw-label{font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.hiw-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4.5vw,48px);font-weight:400;color:var(--white);line-height:1.1;margin-bottom:3rem}
-.hiw-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);border-radius:16px;overflow:hidden}
-@media(max-width:768px){.hiw-steps{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.hiw-steps{grid-template-columns:1fr}}
-.hiw-step{background:var(--ink);padding:2rem 1.75rem;position:relative}
-.hiw-step:hover{background:rgba(255,255,255,.03)}
-.hiw-step-n{font-family:'Playfair Display',serif;font-size:48px;font-weight:400;color:rgba(255,255,255,.06);line-height:1;margin-bottom:1rem}
-.hiw-step-icon{font-size:24px;margin-bottom:.85rem;display:block}
-.hiw-step-title{font-size:16px;font-weight:600;color:var(--white);margin-bottom:.4rem}
-.hiw-step-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+    .nav.scrolled {
+      background: rgba(255, 255, 255, .95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: .75rem 2rem
+    }
 
-/* ── PROGRAMS ── */
-.programs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem}
-@media(max-width:900px){.programs-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.programs-grid{grid-template-columns:1fr}}
-.prog-card{border-radius:14px;border:1.5px solid var(--border);background:var(--white);overflow:hidden;transition:all .25s;cursor:default}
-.prog-card:hover{border-color:var(--blue);box-shadow:0 8px 32px rgba(27,95,168,.12)}
-.prog-card-top{padding:1.5rem 1.5rem 1rem;border-bottom:1px solid var(--border)}
-.prog-card-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;margin-bottom:.85rem}
-.prog-card-name{font-family:'Playfair Display',serif;font-size:20px;font-weight:400;margin-bottom:.35rem}
-.prog-card-tag{font-size:13px;color:var(--muted)}
-.prog-card-body{padding:1rem 1.5rem 1.5rem}
-.prog-detail{display:flex;justify-content:space-between;align-items:center;padding:.45rem 0;border-bottom:1px solid var(--mid);font-size:13px}
-.prog-detail:last-child{border-bottom:none}
-.prog-detail-lbl{color:var(--muted)}
-.prog-detail-val{font-weight:500}
+    .nav-brand {
+      display: flex;
+      align-items: baseline;
+      gap: .35rem
+    }
 
-/* ── COMPARISON ── */
-.comparison{background:var(--white);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
-.comp-table-wrap{overflow-x:auto;margin-top:3rem;border-radius:16px;border:1px solid var(--border)}
-table.comp{width:100%;border-collapse:collapse;min-width:560px}
-.comp thead tr th{padding:1.1rem 1.25rem;text-align:center;font-size:13px;font-weight:600;border-bottom:1px solid var(--border)}
-.comp thead tr th:first-child{text-align:left;width:35%}
-.comp thead tr th.ours{background:var(--blue);color:var(--white);position:relative}
-.comp thead tr th.ours::after{content:'Nuestra opción';position:absolute;top:-28px;left:50%;transform:translateX(-50%);font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;color:var(--gold);background:var(--blue-d);padding:3px 10px;border-radius:100px 100px 0 0}
-.comp tbody tr{border-bottom:1px solid var(--mid)}
-.comp tbody tr:last-child{border-bottom:none}
-.comp tbody tr:hover{background:var(--mid)}
-.comp tbody td{padding:.85rem 1.25rem;font-size:13px;text-align:center;color:var(--muted)}
-.comp tbody td:first-child{text-align:left;font-weight:500;color:var(--ink)}
-.comp tbody td.ours{background:var(--blue-xl);color:var(--ink);font-weight:500}
-.chk-yes{color:#0F7A55;font-size:16px}
-.chk-no{color:#D1D5DB;font-size:16px}
-.chk-mid{color:var(--gold);font-size:13px;font-weight:600}
+    .nav-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--white);
+      transition: color .3s
+    }
 
-/* ── PRICING ── */
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
-@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}}
-.price-card{border-radius:16px;border:1.5px solid var(--border);padding:2rem;background:var(--white);position:relative;transition:all .25s}
-.price-card.featured{border-color:var(--blue);background:var(--blue);color:var(--white)}
-.price-card:hover:not(.featured){transform:translateY(-4px);border-color:var(--blue-m);box-shadow:0 16px 40px rgba(27,95,168,.1)}
-.price-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;margin-bottom:1.1rem}
-.price-card:not(.featured) .price-badge{background:var(--blue-l);color:var(--blue)}
-.price-card.featured .price-badge{background:rgba(255,255,255,.15);color:var(--gold)}
-.price-name{font-size:17px;font-weight:600;margin-bottom:.35rem}
-.price-desc{font-size:13px;opacity:.65;margin-bottom:1.5rem;line-height:1.55}
-.price-amount{font-family:'Playfair Display',serif;font-size:40px;font-weight:400;line-height:1;margin-bottom:.25rem}
-.price-period{font-size:12px;opacity:.55;margin-bottom:1.5rem}
-.price-features{list-style:none;display:flex;flex-direction:column;gap:.55rem;margin-bottom:2rem}
-.price-features li{font-size:13px;display:flex;align-items:flex-start;gap:.5rem;opacity:.8;line-height:1.45}
-.price-features li::before{content:'✓';font-weight:700;flex-shrink:0;margin-top:.05em}
-.price-card:not(.featured) .price-features li::before{color:var(--blue)}
-.price-card.featured .price-features li::before{color:var(--gold)}
-.price-cta{width:100%;padding:.85rem;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;border:none}
-.price-card:not(.featured) .price-cta{background:var(--blue);color:var(--white)}
-.price-card:not(.featured) .price-cta:hover{background:var(--blue-d)}
-.price-card.featured .price-cta{background:var(--gold);color:var(--ink)}
-.price-card.featured .price-cta:hover{opacity:.9}
+    .nav.scrolled .nav-brand-name {
+      color: var(--ink)
+    }
 
-/* ── TESTIMONIALS ── */
-.testimonials{background:var(--paper);padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem)}
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3rem}
-@media(max-width:768px){.testi-grid{grid-template-columns:1fr}}
-.testi-card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.75rem;transition:all .25s}
-.testi-card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.06)}
-.testi-stars{color:var(--gold);font-size:14px;margin-bottom:1rem;letter-spacing:.1em}
-.testi-quote{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;font-weight:400;line-height:1.55;margin-bottom:1.25rem;color:var(--ink)}
-.testi-author{display:flex;align-items:center;gap:.75rem}
-.testi-avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:600;background:var(--blue-l);color:var(--blue);flex-shrink:0}
-.testi-name{font-size:13px;font-weight:600}
-.testi-role{font-size:12px;color:var(--muted)}
+    .nav-brand-prog {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .5);
+      transition: color .3s
+    }
 
-/* ── FAQ ── */
-.faq-section{padding:clamp(4rem,8vw,7rem) clamp(1.5rem,3vw,2rem);background:var(--white)}
-.faq-list{margin-top:2.5rem;display:flex;flex-direction:column;gap:8px;max-width:740px}
-.faq-item{border:1px solid var(--border);border-radius:12px;overflow:hidden}
-.faq-q{padding:1.1rem 1.25rem;font-size:15px;font-weight:500;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:background .15s;user-select:none}
-.faq-q:hover,.faq-q.open{background:var(--mid)}
-.faq-q-icon{font-size:18px;color:var(--blue);flex-shrink:0;transition:transform .2s;font-style:normal}
-.faq-q.open .faq-q-icon{transform:rotate(45deg)}
-.faq-a{display:none;padding:.75rem 1.25rem 1.1rem;font-size:14px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border)}
-.faq-a.open{display:block}
+    .nav.scrolled .nav-brand-prog {
+      color: var(--blue)
+    }
 
-/* ── CTA FINAL ── */
-.cta-final{background:var(--blue-d);padding:clamp(4rem,8vw,6rem) clamp(1.5rem,3vw,2rem);text-align:center;position:relative;overflow:hidden}
-.cta-final-deco{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;border:1px solid rgba(255,255,255,.05)}
-.cta-final-inner{position:relative;z-index:1;max-width:600px;margin:0 auto}
-.cta-final-title{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);font-weight:400;color:var(--white);line-height:1.1;margin-bottom:1rem}
-.cta-final-title em{font-style:italic;color:rgba(255,255,255,.45)}
-.cta-final-sub{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:2.5rem;font-weight:300}
-.cta-final-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-gold{padding:.9rem 2.25rem;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer;background:var(--gold);color:var(--ink);border:none;transition:all .2s}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(200,153,58,.4)}
+    .nav-cta {
+      padding: .55rem 1.25rem;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      border: none;
+      background: var(--white);
+      color: var(--blue)
+    }
 
-/* ── FOOTER ── */
-.footer{background:var(--ink);padding:2rem;text-align:center;font-size:12px;color:rgba(255,255,255,.3)}
-.footer strong{color:rgba(255,255,255,.55)}
-.footer-programs{display:flex;gap:16px;justify-content:center;margin-top:.75rem;flex-wrap:wrap}
-.footer-prog-link{font-size:11px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .15s}
-.footer-prog-link:hover{color:rgba(255,255,255,.6)}
+    .nav.scrolled .nav-cta {
+      background: var(--blue);
+      color: var(--white)
+    }
 
-@media(max-width:480px){
-  .hero-stats{gap:1.5rem}
-  .hiw-steps{grid-template-columns:1fr}
-  .pricing-grid,.testi-grid{grid-template-columns:1fr}
-  .programs-grid{grid-template-columns:1fr}
-}
-  .btn-primary:active, .btn-gold:active, .btn-ghost:active, .nav-cta:active { transform: translateY(0) scale(0.97) !important; box-shadow: none !important; }
-  .nav.s { backdrop-filter: blur(16px) !important; -webkit-backdrop-filter: blur(16px) !important; background: rgba(255, 255, 255, 0.85) !important; }
-  .val-card, .cycle, .testi-c { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important; }
-  .val-card:hover, .cycle:hover, .testi-c:hover { transform: translateY(-4px) !important; box-shadow: 0 16px 40px rgba(0,0,0,0.06) !important; }
-  
-  /* APPLE-TIER UX OVERRIDES */
-  .section { padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 4vw, 3rem) !important; }
-  .hero { min-height: 100svh !important; }
-  .hero-title { letter-spacing: -0.03em !important; }
-  .cycle-badge, .uni-tag { letter-spacing: 0.16em !important; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--eng); outline-offset: 4px; border-radius: inherit; }
-  .animate { animation: none !important; opacity: 0; transform: translateY(40px); transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
-  .animate.is-visible { opacity: 1; transform: translateY(0); }
-</style>
+    .nav-cta:hover {
+      transform: translateY(-1px)
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: var(--blue-d);
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 6rem 2rem 4rem
+    }
+
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .04;
+      background-image: linear-gradient(var(--white) 1px, transparent 1px), linear-gradient(90deg, var(--white) 1px, transparent 1px);
+      background-size: 60px 60px
+    }
+
+    .hero-deco-1 {
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .06)
+    }
+
+    .hero-deco-2 {
+      position: absolute;
+      bottom: -30%;
+      right: 5%;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: var(--blue-m);
+      opacity: .2
+    }
+
+    .hero-deco-3 {
+      position: absolute;
+      top: 20%;
+      left: -5%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: var(--gold);
+      opacity: .08
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      width: 100%;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      background: rgba(200, 153, 58, .1);
+      border: 1px solid rgba(200, 153, 58, .25);
+      padding: .4rem 1rem;
+      border-radius: 100px
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(48px, 7vw, 88px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: .92;
+      margin-bottom: 1.5rem
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .4)
+    }
+
+    .hero-subtitle {
+      font-size: clamp(16px, 2vw, 20px);
+      color: rgba(255, 255, 255, .55);
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      font-weight: 300
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem
+    }
+
+    .btn-primary {
+      padding: .85rem 2rem;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      border: none;
+      background: var(--gold);
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 153, 58, .4)
+    }
+
+    .btn-ghost {
+      padding: .85rem 2rem;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, .8)
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, .5);
+      color: var(--white)
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap
+    }
+
+    .hero-stat-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1
+    }
+
+    .hero-stat-l {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .4);
+      margin-top: .2rem
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .4rem;
+      color: rgba(255, 255, 255, .3);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateX(-50%) translateY(0)
+      }
+
+      50% {
+        transform: translateX(-50%) translateY(6px)
+      }
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem)
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: .75rem
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1rem
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--muted)
+    }
+
+    .section-desc {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.7;
+      font-weight: 300
+    }
+
+    /* ── VALUES ── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem
+    }
+
+    @media(max-width:768px) {
+      .values-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .value-card {
+      padding: 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--white);
+      transition: all .25s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .value-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 3px 3px 0 0;
+      background: var(--blue);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(27, 95, 168, .1);
+      border-color: var(--blue-l)
+    }
+
+    .value-card:hover::before {
+      transform: scaleX(1)
+    }
+
+    .value-icon {
+      font-size: 28px;
+      margin-bottom: 1.1rem;
+      display: block
+    }
+
+    .value-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 400;
+      color: var(--blue-l);
+      line-height: 1;
+      margin-bottom: .5rem;
+      position: absolute;
+      top: 1.5rem;
+      right: 1.75rem
+    }
+
+    .value-title {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: .5rem
+    }
+
+    .value-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65
+    }
+
+    /* ── HOW IT WORKS ── */
+    .hiw {
+      background: var(--ink);
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem)
+    }
+
+    .hiw-inner {
+      max-width: 1100px;
+      margin: 0 auto
+    }
+
+    .hiw-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: .75rem
+    }
+
+    .hiw-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4.5vw, 48px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 3rem
+    }
+
+    .hiw-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255, 255, 255, .07);
+      border-radius: 16px;
+      overflow: hidden
+    }
+
+    @media(max-width:768px) {
+      .hiw-steps {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:480px) {
+      .hiw-steps {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .hiw-step {
+      background: var(--ink);
+      padding: 2rem 1.75rem;
+      position: relative
+    }
+
+    .hiw-step:hover {
+      background: rgba(255, 255, 255, .03)
+    }
+
+    .hiw-step-n {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .06);
+      line-height: 1;
+      margin-bottom: 1rem
+    }
+
+    .hiw-step-icon {
+      font-size: 24px;
+      margin-bottom: .85rem;
+      display: block
+    }
+
+    .hiw-step-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: .4rem
+    }
+
+    .hiw-step-desc {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .45);
+      line-height: 1.6
+    }
+
+    /* ── PROGRAMS ── */
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 3rem
+    }
+
+    @media(max-width:900px) {
+      .programs-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    @media(max-width:560px) {
+      .programs-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .prog-card {
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: var(--white);
+      overflow: hidden;
+      transition: all .25s;
+      cursor: default
+    }
+
+    .prog-card:hover {
+      border-color: var(--blue);
+      box-shadow: 0 8px 32px rgba(27, 95, 168, .12)
+    }
+
+    .prog-card-top {
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .prog-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .25rem .7rem;
+      border-radius: 100px;
+      margin-bottom: .85rem
+    }
+
+    .prog-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: .35rem
+    }
+
+    .prog-card-tag {
+      font-size: 13px;
+      color: var(--muted)
+    }
+
+    .prog-card-body {
+      padding: 1rem 1.5rem 1.5rem
+    }
+
+    .prog-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .45rem 0;
+      border-bottom: 1px solid var(--mid);
+      font-size: 13px
+    }
+
+    .prog-detail:last-child {
+      border-bottom: none
+    }
+
+    .prog-detail-lbl {
+      color: var(--muted)
+    }
+
+    .prog-detail-val {
+      font-weight: 500
+    }
+
+    /* ── COMPARISON ── */
+    .comparison {
+      background: var(--white);
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem)
+    }
+
+    .comp-table-wrap {
+      overflow-x: auto;
+      margin-top: 3rem;
+      border-radius: 16px;
+      border: 1px solid var(--border)
+    }
+
+    table.comp {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px
+    }
+
+    .comp thead tr th {
+      padding: 1.1rem 1.25rem;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .comp thead tr th:first-child {
+      text-align: left;
+      width: 35%
+    }
+
+    .comp thead tr th.ours {
+      background: var(--blue);
+      color: var(--white);
+      position: relative
+    }
+
+    .comp thead tr th.ours::after {
+      content: 'Nuestra opción';
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: var(--gold);
+      background: var(--blue-d);
+      padding: 3px 10px;
+      border-radius: 100px 100px 0 0
+    }
+
+    .comp tbody tr {
+      border-bottom: 1px solid var(--mid)
+    }
+
+    .comp tbody tr:last-child {
+      border-bottom: none
+    }
+
+    .comp tbody tr:hover {
+      background: var(--mid)
+    }
+
+    .comp tbody td {
+      padding: .85rem 1.25rem;
+      font-size: 13px;
+      text-align: center;
+      color: var(--muted)
+    }
+
+    .comp tbody td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--ink)
+    }
+
+    .comp tbody td.ours {
+      background: var(--blue-xl);
+      color: var(--ink);
+      font-weight: 500
+    }
+
+    .chk-yes {
+      color: #0F7A55;
+      font-size: 16px
+    }
+
+    .chk-no {
+      color: #D1D5DB;
+      font-size: 16px
+    }
+
+    .chk-mid {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    /* ── PRICING ── */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem
+    }
+
+    @media(max-width:768px) {
+      .pricing-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .price-card {
+      border-radius: 16px;
+      border: 1.5px solid var(--border);
+      padding: 2rem;
+      background: var(--white);
+      position: relative;
+      transition: all .25s
+    }
+
+    .price-card.featured {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: var(--white)
+    }
+
+    .price-card:hover:not(.featured) {
+      transform: translateY(-4px);
+      border-color: var(--blue-m);
+      box-shadow: 0 16px 40px rgba(27, 95, 168, .1)
+    }
+
+    .price-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: .3rem .8rem;
+      border-radius: 100px;
+      margin-bottom: 1.1rem
+    }
+
+    .price-card:not(.featured) .price-badge {
+      background: var(--blue-l);
+      color: var(--blue)
+    }
+
+    .price-card.featured .price-badge {
+      background: rgba(255, 255, 255, .15);
+      color: var(--gold)
+    }
+
+    .price-name {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: .35rem
+    }
+
+    .price-desc {
+      font-size: 13px;
+      opacity: .65;
+      margin-bottom: 1.5rem;
+      line-height: 1.55
+    }
+
+    .price-amount {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 400;
+      line-height: 1;
+      margin-bottom: .25rem
+    }
+
+    .price-period {
+      font-size: 12px;
+      opacity: .55;
+      margin-bottom: 1.5rem
+    }
+
+    .price-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      margin-bottom: 2rem
+    }
+
+    .price-features li {
+      font-size: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: .5rem;
+      opacity: .8;
+      line-height: 1.45
+    }
+
+    .price-features li::before {
+      content: '✓';
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05em
+    }
+
+    .price-card:not(.featured) .price-features li::before {
+      color: var(--blue)
+    }
+
+    .price-card.featured .price-features li::before {
+      color: var(--gold)
+    }
+
+    .price-cta {
+      width: 100%;
+      padding: .85rem;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all .2s;
+      border: none
+    }
+
+    .price-card:not(.featured) .price-cta {
+      background: var(--blue);
+      color: var(--white)
+    }
+
+    .price-card:not(.featured) .price-cta:hover {
+      background: var(--blue-d)
+    }
+
+    .price-card.featured .price-cta {
+      background: var(--gold);
+      color: var(--ink)
+    }
+
+    .price-card.featured .price-cta:hover {
+      opacity: .9
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--paper);
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem)
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem
+    }
+
+    @media(max-width:768px) {
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.75rem;
+      transition: all .25s
+    }
+
+    .testi-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, .06)
+    }
+
+    .testi-stars {
+      color: var(--gold);
+      font-size: 14px;
+      margin-bottom: 1rem;
+      letter-spacing: .1em
+    }
+
+    .testi-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      color: var(--ink)
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .75rem
+    }
+
+    .testi-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 600;
+      background: var(--blue-l);
+      color: var(--blue);
+      flex-shrink: 0
+    }
+
+    .testi-name {
+      font-size: 13px;
+      font-weight: 600
+    }
+
+    .testi-role {
+      font-size: 12px;
+      color: var(--muted)
+    }
+
+    /* ── FAQ ── */
+    .faq-section {
+      padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 3vw, 2rem);
+      background: var(--white)
+    }
+
+    .faq-list {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 740px
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden
+    }
+
+    .faq-q {
+      padding: 1.1rem 1.25rem;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      transition: background .15s;
+      user-select: none
+    }
+
+    .faq-q:hover,
+    .faq-q.open {
+      background: var(--mid)
+    }
+
+    .faq-q-icon {
+      font-size: 18px;
+      color: var(--blue);
+      flex-shrink: 0;
+      transition: transform .2s;
+      font-style: normal
+    }
+
+    .faq-q.open .faq-q-icon {
+      transform: rotate(45deg)
+    }
+
+    .faq-a {
+      display: none;
+      padding: .75rem 1.25rem 1.1rem;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border)
+    }
+
+    .faq-a.open {
+      display: block
+    }
+
+    /* ── CTA FINAL ── */
+    .cta-final {
+      background: var(--blue-d);
+      padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 3vw, 2rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta-final-deco {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .05)
+    }
+
+    .cta-final-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto
+    }
+
+    .cta-final-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1rem
+    }
+
+    .cta-final-title em {
+      font-style: italic;
+      color: rgba(255, 255, 255, .45)
+    }
+
+    .cta-final-sub {
+      font-size: 16px;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 2.5rem;
+      font-weight: 300
+    }
+
+    .cta-final-btns {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .btn-gold {
+      padding: .9rem 2.25rem;
+      border-radius: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: var(--gold);
+      color: var(--ink);
+      border: none;
+      transition: all .2s
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200, 153, 58, .4)
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: var(--ink);
+      padding: 2rem;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255, 255, 255, .3)
+    }
+
+    .footer strong {
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .footer-programs {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: .75rem;
+      flex-wrap: wrap
+    }
+
+    .footer-prog-link {
+      font-size: 11px;
+      color: rgba(255, 255, 255, .3);
+      text-decoration: none;
+      transition: color .15s
+    }
+
+    .footer-prog-link:hover {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    @media(max-width:480px) {
+      .hero-stats {
+        gap: 1.5rem
+      }
+
+      .hiw-steps {
+        grid-template-columns: 1fr
+      }
+
+      .pricing-grid,
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .programs-grid {
+        grid-template-columns: 1fr
+      }
+    }
+
+    .btn-primary:active,
+    .btn-gold:active,
+    .btn-ghost:active,
+    .nav-cta:active {
+      transform: translateY(0) scale(0.97) !important;
+      box-shadow: none !important;
+    }
+
+    .nav.s {
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      background: rgba(255, 255, 255, 0.85) !important;
+    }
+
+    .val-card,
+    .cycle,
+    .testi-c {
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    }
+
+    .val-card:hover,
+    .cycle:hover,
+    .testi-c:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    /* APPLE-TIER UX OVERRIDES */
+    .section {
+      padding: clamp(6rem, 12vw, 10rem) clamp(1.5rem, 4vw, 3rem) !important;
+    }
+
+    .hero {
+      min-height: 100svh !important;
+    }
+
+    .hero-title {
+      letter-spacing: -0.03em !important;
+    }
+
+    .cycle-badge,
+    .uni-tag {
+      letter-spacing: 0.16em !important;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--eng);
+      outline-offset: 4px;
+      border-radius: inherit;
+    }
+
+    .animate {
+      animation: none !important;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.9s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .animate.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="nav" id="navbar">
-  <div class="nav-brand">
-    <span class="nav-brand-name">Paradise</span>
-    <span class="nav-brand-prog">Atlas</span>
-  </div>
-  <div style="display:flex;align-items:center;gap:.5rem">
-    <a href="paradise-programs.html?brand=atlas" style="font-size:12px;padding:.4rem .85rem;border-radius:6px;text-decoration:none;color:rgba(255,255,255,.6);transition:color .15s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Programas</a>
-    <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Atlas" target="_blank" style="display:inline-flex;align-items:center;gap:.35rem;font-size:12px;font-weight:600;padding:.45rem 1rem;border-radius:7px;background:#25D366;color:#fff;text-decoration:none;transition:background .15s" onmouseover="this.style.background='#1DA851'" onmouseout="this.style.background='#25D366'">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg-grid"></div>
-  <div class="hero-deco-1"></div>
-  <div class="hero-deco-2"></div>
-  <div class="hero-deco-3"></div>
-  <div class="hero-inner">
-    <div class="hero-eyebrow">Paradise Academy · Lima, Perú</div>
-    <h1 class="hero-title">El inglés<br>que <em>sí</em><br>se habla.</h1>
-    <p class="hero-subtitle">Clases de inglés conversacional para niños, jóvenes y adultos. Grupos pequeños, método que funciona y horarios que se adaptan a tu vida.</p>
-    <div class="hero-actions">
-      <button class="btn-primary" onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Atlas.', '_blank')">Tu primera clase es gratis →</button>
-      <button class="btn-ghost" onclick="window.location.href='#programas'">Ver programas</button>
+  <!-- NAV -->
+  <nav class="nav" id="navbar">
+    <div class="nav-brand">
+      <span class="nav-brand-name">Paradise</span>
+      <span class="nav-brand-prog">Atlas</span>
     </div>
-    <div class="hero-stats">
-      <div><div class="hero-stat-n">12</div><div class="hero-stat-l">alumnos máx. por grupo</div></div>
-      <div><div class="hero-stat-n">5</div><div class="hero-stat-l">modalidades disponibles</div></div>
-      <div><div class="hero-stat-n">día 1</div><div class="hero-stat-l">empiezas a hablar</div></div>
+    <div style="display:flex;align-items:center;gap:.5rem">
+      <a href="paradise-programs.html?brand=atlas"
+        style="font-size:12px;padding:.4rem .85rem;border-radius:6px;text-decoration:none;color:rgba(255,255,255,.6);transition:color .15s"
+        onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.6)'">Programas</a>
+      <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Atlas" target="_blank"
+        style="display:inline-flex;align-items:center;gap:.35rem;font-size:12px;font-weight:600;padding:.45rem 1rem;border-radius:7px;background:#25D366;color:#fff;text-decoration:none;transition:background .15s"
+        onmouseover="this.style.background='#1DA851'" onmouseout="this.style.background='#25D366'">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        WhatsApp
+      </a>
     </div>
-  </div>
-  <div class="hero-scroll">↓ descubre más</div>
-</section>
+  </nav>
 
-<!-- VALUES -->
-<section class="section" id="valores">
-  <div class="section-inner">
-    <div class="section-label">Por qué Atlas</div>
-    <h2 class="section-title">Todo lo que necesitas.<br><em>Nada de lo que no.</em></h2>
-    <p class="section-desc">Diseñamos Paradise Atlas para resolver los problemas reales de aprender inglés en Lima — no los de una academia genérica.</p>
-    <div class="values-grid">
-      <div class="value-card">
-        <span class="value-num">12</span>
-        <span class="value-icon">👥</span>
-        <div class="value-title">Grupos pequeños de verdad</div>
-        <div class="value-desc">Máximo 12 alumnos por grupo. El profesor te conoce, corrige tus errores específicos y tú practicas en cada clase — no solo escuchas.</div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-deco-1"></div>
+    <div class="hero-deco-2"></div>
+    <div class="hero-deco-3"></div>
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Paradise Academy · Lima, Perú</div>
+      <h1 class="hero-title">El inglés<br>que <em>sí</em><br>se habla.</h1>
+      <p class="hero-subtitle">Clases de inglés conversacional para niños, jóvenes y adultos. Grupos pequeños, método
+        que funciona y horarios que se adaptan a tu vida.</p>
+      <div class="hero-actions">
+        <button class="btn-primary"
+          onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Atlas.', '_blank')">Tu
+          primera clase es gratis →</button>
+        <button class="btn-ghost" onclick="window.location.href='#programas'">Ver programas</button>
       </div>
-      <div class="value-card">
-        <span class="value-num">1</span>
-        <span class="value-icon">🗣️</span>
-        <div class="value-title">Hablas desde el día 1</div>
-        <div class="value-desc">El método es conversacional desde la primera clase. Sin esperar a "tener el nivel". Sin memorizar reglas antes de hablar. Solo inglés real.</div>
-      </div>
-      <div class="value-card">
-        <span class="value-num">5</span>
-        <span class="value-icon">🗓️</span>
-        <div class="value-title">Horarios para tu vida real</div>
-        <div class="value-desc">Mañana, tarde, noche, intensivo 5x semana o solo sábados. Una modalidad para cada estilo de vida — incluido el tuyo.</div>
-      </div>
-      <div class="value-card">
-        <span class="value-num">∞</span>
-        <span class="value-icon">🌎</span>
-        <div class="value-title">Del colegio al mundo</div>
-        <div class="value-desc">Operamos dentro del colegio, con la confianza que eso genera. Pero el inglés que enseñamos abre puertas en cualquier parte del mundo.</div>
-      </div>
-      <div class="value-card">
-        <span class="value-num">✓</span>
-        <span class="value-icon">🎓</span>
-        <div class="value-title">Ruta Cambridge disponible</div>
-        <div class="value-desc">Si quieres una certificación internacional, nuestro programa está alineado con los niveles Cambridge para que puedas obtenerla cuando estés listo.</div>
-      </div>
-      <div class="value-card">
-        <span class="value-num">0</span>
-        <span class="value-icon">🆓</span>
-        <div class="value-title">Primera clase sin compromiso</div>
-        <div class="value-desc">Ven, prueba, siente el ambiente y conoce al profesor. Sin pagar, sin firmar nada. Solo así puedes saber si Atlas es para ti.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND 1 -->
-<div style="background:var(--blue);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-  <div><div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">¿Ya sabes qué modalidad quieres?</div><div style="font-size:13px;color:rgba(255,255,255,.6)">Selecciona tu programa, ve todos los detalles y escríbenos directamente por WhatsApp.</div></div>
-  <a href="paradise-programs.html?brand=atlas" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona tu programa →</a>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="hiw" id="como-funciona">
-  <div class="hiw-inner">
-    <div class="hiw-label">Cómo funciona</div>
-    <h2 class="hiw-title">Simple. Sin sorpresas.<br>Sin complicaciones.</h2>
-    <div class="hiw-steps">
-      <div class="hiw-step">
-        <div class="hiw-step-n">01</div>
-        <span class="hiw-step-icon">📞</span>
-        <div class="hiw-step-title">Nos escribes</div>
-        <div class="hiw-step-desc">WhatsApp, Instagram o por el formulario. Te contamos los horarios disponibles y te asignamos el nivel que corresponde.</div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-n">02</div>
-        <span class="hiw-step-icon">🎯</span>
-        <div class="hiw-step-title">Clase de prueba gratis</div>
-        <div class="hiw-step-desc">Asistes a una clase completa sin costo. Conoces al profesor, al grupo, y sientes el método. Sin compromiso.</div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-n">03</div>
-        <span class="hiw-step-icon">✅</span>
-        <div class="hiw-step-title">Te inscribes</div>
-        <div class="hiw-step-desc">Si te convence, te inscribes para el ciclo. Pago mensual, sin contratos largos. Cambias de modalidad si tu vida cambia.</div>
-      </div>
-      <div class="hiw-step">
-        <div class="hiw-step-n">04</div>
-        <span class="hiw-step-icon">🗣️</span>
-        <div class="hiw-step-title">Empiezas a hablar</div>
-        <div class="hiw-step-desc">Desde la primera clase real, hablas en inglés. El progreso es visible semana a semana — no tienes que esperar meses para sentirlo.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROGRAMS -->
-<section class="section" id="programas">
-  <div class="section-inner">
-    <div class="section-label">Modalidades</div>
-    <h2 class="section-title">Elige el programa<br><em>que encaja contigo.</em></h2>
-    <p class="section-desc">Todas las modalidades siguen el mismo método conversacional. Solo cambia la frecuencia y el perfil del grupo.</p>
-    <div class="programs-grid">
-      <div class="prog-card">
-        <div class="prog-card-top">
-          <div class="prog-card-badge" style="background:var(--blue-l);color:var(--blue)">Más popular</div>
-          <div class="prog-card-name">Grupos regulares</div>
-          <div class="prog-card-tag">Kids · Teens · Adultos</div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-n">12</div>
+          <div class="hero-stat-l">alumnos máx. por grupo</div>
         </div>
-        <div class="prog-card-body">
-          <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">3x por semana</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Horario</span><span class="prog-detail-val">Mañana, tarde o noche</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Grupos</span><span class="prog-detail-val">Máx. 12 alumnos</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val" style="color:var(--blue);font-weight:600">S/200/mes</span></div>
+        <div>
+          <div class="hero-stat-n">5</div>
+          <div class="hero-stat-l">modalidades disponibles</div>
         </div>
-      </div>
-      <div class="prog-card">
-        <div class="prog-card-top">
-          <div class="prog-card-badge" style="background:#FFF3CD;color:#856404">Avanza rápido</div>
-          <div class="prog-card-name">Intensivo</div>
-          <div class="prog-card-tag">Para resultados en semanas</div>
-        </div>
-        <div class="prog-card-body">
-          <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">5x por semana</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Duración</span><span class="prog-detail-val">4 semanas o más</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Ideal para</span><span class="prog-detail-val">Vacaciones / urgente</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val" style="color:var(--blue);font-weight:600">S/320/mes</span></div>
-        </div>
-      </div>
-      <div class="prog-card">
-        <div class="prog-card-top">
-          <div class="prog-card-badge" style="background:var(--gold-l);color:var(--gold)">Flexibilidad total</div>
-          <div class="prog-card-name">Solo Sábados</div>
-          <div class="prog-card-tag">Para la semana ocupada</div>
-        </div>
-        <div class="prog-card-body">
-          <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">Sábados 2hrs</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Perfil</span><span class="prog-detail-val">Adultos que trabajan</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Grupos</span><span class="prog-detail-val">Máx. 12 alumnos</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val" style="color:var(--blue);font-weight:600">S/180/mes</span></div>
-        </div>
-      </div>
-      <div class="prog-card">
-        <div class="prog-card-top">
-          <div class="prog-card-badge" style="background:#F0FDF4;color:#166534">Profesional</div>
-          <div class="prog-card-name">Business English</div>
-          <div class="prog-card-tag">Reuniones y entrevistas</div>
-        </div>
-        <div class="prog-card-body">
-          <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">2x por semana</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Horario</span><span class="prog-detail-val">Noche o sábado</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Enfoque</span><span class="prog-detail-val">Inglés laboral real</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val" style="color:var(--blue);font-weight:600">S/350/mes</span></div>
-        </div>
-      </div>
-      <div class="prog-card">
-        <div class="prog-card-top">
-          <div class="prog-card-badge" style="background:#EFF6FF;color:#1D4ED8">Certificación</div>
-          <div class="prog-card-name">TOEFL / IELTS Prep</div>
-          <div class="prog-card-tag">Para estudiar en el extranjero</div>
-        </div>
-        <div class="prog-card-body">
-          <div class="prog-detail"><span class="prog-detail-lbl">Formato</span><span class="prog-detail-val">Por curso (8 semanas)</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Requiere</span><span class="prog-detail-val">Inglés intermedio</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Resultado</span><span class="prog-detail-val">Score objetivo</span></div>
-          <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val" style="color:var(--blue);font-weight:600">S/450/curso</span></div>
-        </div>
-      </div>
-      <div class="prog-card" style="background:var(--blue);border-color:var(--blue);cursor:pointer" onclick="window.location.href='#cta'">
-        <div class="prog-card-top" style="border-color:rgba(255,255,255,.15)">
-          <div class="prog-card-badge" style="background:rgba(255,255,255,.15);color:var(--gold)">¿No sabes cuál?</div>
-          <div class="prog-card-name" style="color:var(--white)">Te ayudamos a elegir</div>
-          <div class="prog-card-tag" style="color:rgba(255,255,255,.55)">Conversación sin compromiso</div>
-        </div>
-        <div class="prog-card-body" style="display:flex;flex-direction:column;justify-content:flex-end;padding-top:1.5rem">
-          <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:1.25rem;line-height:1.55">Escríbenos y te recomendamos el programa ideal según tu nivel, disponibilidad y objetivos.</p>
-          <div style="font-size:14px;font-weight:600;color:var(--white);display:flex;align-items:center;gap:.4rem">Escribir ahora →</div>
+        <div>
+          <div class="hero-stat-n">día 1</div>
+          <div class="hero-stat-l">empiezas a hablar</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+    <div class="hero-scroll">↓ descubre más</div>
+  </section>
 
-<!-- COMPARISON -->
-<section class="comparison" id="comparacion">
-  <div class="section-inner">
-    <div class="section-label">Por qué elegirnos</div>
-    <h2 class="section-title">Atlas vs.<br><em>otras opciones.</em></h2>
-    <p class="section-desc">¿Por qué no El Británico, una app o una academia grande? Aquí la comparación honesta.</p>
-    <div class="comp-table-wrap">
-      <table class="comp">
-        <thead>
-          <tr>
-            <th></th>
-            <th class="ours">Paradise Atlas</th>
-            <th>Academia grande</th>
-            <th>Apps (Duolingo…)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Grupos reducidos (&lt;12)</td><td class="ours"><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span> 20–30 alumnos</td><td><span class="chk-no">✗</span></td></tr>
-          <tr><td>Hablas desde el día 1</td><td class="ours"><span class="chk-yes">✓</span></td><td><span class="chk-mid">A veces</span></td><td><span class="chk-no">✗</span></td></tr>
-          <tr><td>Horarios flexibles</td><td class="ours"><span class="chk-yes">✓</span> 5 modalidades</td><td><span class="chk-mid">Limitado</span></td><td><span class="chk-yes">✓</span></td></tr>
-          <tr><td>Retroalimentación real</td><td class="ours"><span class="chk-yes">✓</span> Profesor en vivo</td><td><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span></td></tr>
-          <tr><td>Precio accesible</td><td class="ours"><span class="chk-yes">✓</span> Desde S/200</td><td><span class="chk-no">✗</span> S/400–700</td><td><span class="chk-yes">✓</span></td></tr>
-          <tr><td>Ruta Cambridge</td><td class="ours"><span class="chk-yes">✓</span></td><td><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span></td></tr>
-          <tr><td>Primera clase gratis</td><td class="ours"><span class="chk-yes">✓</span></td><td><span class="chk-no">✗</span></td><td><span class="chk-yes">✓</span></td></tr>
-          <tr><td>Genera hablantes fluidos</td><td class="ours"><span class="chk-yes">✓</span></td><td><span class="chk-mid">Depende</span></td><td><span class="chk-no">✗</span> No demostrado</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- CTA BAND 2 -->
-<div style="background:var(--blue-d);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-  <div><div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">Elige tu modalidad y empieza hoy.</div><div style="font-size:13px;color:rgba(255,255,255,.55)">Ve los detalles completos de cada programa y escríbenos directamente por WhatsApp en un solo paso.</div></div>
-  <div style="display:flex;gap:10px;flex-wrap:wrap">
-    <a href="paradise-programs.html?brand=atlas" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona tu programa →</a>
-    <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Atlas.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F" target="_blank" style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:10px;background:#25D366;color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      WhatsApp
-    </a>
-  </div>
-</div>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials" id="testimonios">
-  <div class="section-inner">
-    <div class="section-label">Lo que dicen nuestros alumnos</div>
-    <h2 class="section-title">Resultados reales.<br><em>Historias reales.</em></h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"Llevaba años queriendo hablar inglés. En Atlas empecé a conversar desde la primera semana. El profesor realmente nos hace hablar."</div>
-        <div class="testi-author">
-          <div class="testi-avatar">LR</div>
-          <div><div class="testi-name">Luis R.</div><div class="testi-role">Profesional, 31 años · Programa adultos</div></div>
+  <!-- VALUES -->
+  <section class="section" id="valores">
+    <div class="section-inner">
+      <div class="section-label">Por qué Atlas</div>
+      <h2 class="section-title">Todo lo que necesitas.<br><em>Nada de lo que no.</em></h2>
+      <p class="section-desc">Diseñamos Paradise Atlas para resolver los problemas reales de aprender inglés en Lima —
+        no los de una academia genérica.</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <span class="value-num">12</span>
+          <span class="value-icon">👥</span>
+          <div class="value-title">Grupos pequeños de verdad</div>
+          <div class="value-desc">Máximo 12 alumnos por grupo. El profesor te conoce, corrige tus errores específicos y
+            tú practicas en cada clase — no solo escuchas.</div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"Mi hija lleva dos ciclos y el cambio es increíble. Ya puede ver series en inglés sin subtítulos. El grupo pequeño hace toda la diferencia."</div>
-        <div class="testi-author">
-          <div class="testi-avatar">MV</div>
-          <div><div class="testi-name">María V.</div><div class="testi-role">Mamá de alumna, 10 años · Grupo kids</div></div>
+        <div class="value-card">
+          <span class="value-num">1</span>
+          <span class="value-icon">🗣️</span>
+          <div class="value-title">Hablas desde el día 1</div>
+          <div class="value-desc">El método es conversacional desde la primera clase. Sin esperar a "tener el nivel".
+            Sin memorizar reglas antes de hablar. Solo inglés real.</div>
         </div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-quote">"El intensivo de 4 semanas fue exactamente lo que necesitaba antes de mi viaje. Llegué a España y me pude comunicar sin problema."</div>
-        <div class="testi-author">
-          <div class="testi-avatar">CG</div>
-          <div><div class="testi-name">Carlos G.</div><div class="testi-role">Universitario, 22 años · Programa intensivo</div></div>
+        <div class="value-card">
+          <span class="value-num">5</span>
+          <span class="value-icon">🗓️</span>
+          <div class="value-title">Horarios para tu vida real</div>
+          <div class="value-desc">Mañana, tarde, noche, intensivo 5x semana o solo sábados. Una modalidad para cada
+            estilo de vida — incluido el tuyo.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-num">∞</span>
+          <span class="value-icon">🌎</span>
+          <div class="value-title">Del colegio al mundo</div>
+          <div class="value-desc">Operamos dentro del colegio, con la confianza que eso genera. Pero el inglés que
+            enseñamos abre puertas en cualquier parte del mundo.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-num">✓</span>
+          <span class="value-icon">🎓</span>
+          <div class="value-title">Ruta Cambridge disponible</div>
+          <div class="value-desc">Si quieres una certificación internacional, nuestro programa está alineado con los
+            niveles Cambridge para que puedas obtenerla cuando estés listo.</div>
+        </div>
+        <div class="value-card">
+          <span class="value-num">0</span>
+          <span class="value-icon">🆓</span>
+          <div class="value-title">Primera clase sin compromiso</div>
+          <div class="value-desc">Ven, prueba, siente el ambiente y conoce al profesor. Sin pagar, sin firmar nada. Solo
+            así puedes saber si Atlas es para ti.</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FAQ -->
-<section class="faq-section" id="faq">
-  <div class="section-inner">
-    <div class="section-label">Preguntas frecuentes</div>
-    <h2 class="section-title">Todo lo que<br><em>necesitas saber.</em></h2>
-    <div class="faq-list">
-      <div class="faq-item"><div class="faq-q open" onclick="tgl(this)">¿Necesito tener inglés previo para inscribirme? <span class="faq-q-icon">+</span></div><div class="faq-a open">No. Tenemos grupos desde nivel completamente básico (cero inglés) hasta avanzado. Cuando te contactas, te hacemos una evaluación breve de 5 minutos para ubicarte en el nivel correcto.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tgl(this)">¿Qué pasa si necesito cambiar de horario durante el ciclo? <span class="faq-q-icon">+</span></div><div class="faq-a">Lo coordinamos con anticipación. Si hay disponibilidad en otro grupo del mismo nivel, te pasamos sin costo adicional.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tgl(this)">¿Cuánto dura cada ciclo? <span class="faq-q-icon">+</span></div><div class="faq-a">Los grupos regulares duran 3–4 meses por nivel. El intensivo puede ser tan corto como 4 semanas o tan largo como necesites. El programa de solo sábados funciona por meses continuos.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tgl(this)">¿Las clases son en inglés o en español? <span class="faq-q-icon">+</span></div><div class="faq-a">Depende del nivel. En básico se usa español como apoyo al inicio. A partir de pre-intermedio, las clases son principalmente en inglés. En avanzado, 100% inglés.</div></div>
-      <div class="faq-item"><div class="faq-q" onclick="tgl(this)">¿Hay que comprar algún libro o material? <span class="faq-q-icon">+</span></div><div class="faq-a">No imponemos un libro de texto específico. El profesor trabaja con materiales digitales y recursos propios. Si hay algún material adicional recomendado, te avisamos con anticipación.</div></div>
+  <!-- CTA BAND 1 -->
+  <div
+    style="background:var(--blue);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div>
+      <div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">¿Ya sabes qué modalidad quieres?</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.6)">Selecciona tu programa, ve todos los detalles y escríbenos
+        directamente por WhatsApp.</div>
+    </div>
+    <a href="paradise-programs.html?brand=atlas"
+      style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona
+      tu programa →</a>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="hiw" id="como-funciona">
+    <div class="hiw-inner">
+      <div class="hiw-label">Cómo funciona</div>
+      <h2 class="hiw-title">Simple. Sin sorpresas.<br>Sin complicaciones.</h2>
+      <div class="hiw-steps">
+        <div class="hiw-step">
+          <div class="hiw-step-n">01</div>
+          <span class="hiw-step-icon">📞</span>
+          <div class="hiw-step-title">Nos escribes</div>
+          <div class="hiw-step-desc">WhatsApp, Instagram o por el formulario. Te contamos los horarios disponibles y te
+            asignamos el nivel que corresponde.</div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-step-n">02</div>
+          <span class="hiw-step-icon">🎯</span>
+          <div class="hiw-step-title">Clase de prueba gratis</div>
+          <div class="hiw-step-desc">Asistes a una clase completa sin costo. Conoces al profesor, al grupo, y sientes el
+            método. Sin compromiso.</div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-step-n">03</div>
+          <span class="hiw-step-icon">✅</span>
+          <div class="hiw-step-title">Te inscribes</div>
+          <div class="hiw-step-desc">Si te convence, te inscribes para el ciclo. Pago mensual, sin contratos largos.
+            Cambias de modalidad si tu vida cambia.</div>
+        </div>
+        <div class="hiw-step">
+          <div class="hiw-step-n">04</div>
+          <span class="hiw-step-icon">🗣️</span>
+          <div class="hiw-step-title">Empiezas a hablar</div>
+          <div class="hiw-step-desc">Desde la primera clase real, hablas en inglés. El progreso es visible semana a
+            semana — no tienes que esperar meses para sentirlo.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS -->
+  <section class="section" id="programas">
+    <div class="section-inner">
+      <div class="section-label">Modalidades</div>
+      <h2 class="section-title">Elige el programa<br><em>que encaja contigo.</em></h2>
+      <p class="section-desc">Todas las modalidades siguen el mismo método conversacional. Solo cambia la frecuencia y
+        el perfil del grupo.</p>
+      <div class="programs-grid">
+        <div class="prog-card" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=atlas&prog=regular'">
+          <div class="prog-card-top">
+            <div class="prog-card-badge" style="background:var(--blue-l);color:var(--blue)">Más popular</div>
+            <div class="prog-card-name">Grupos regulares</div>
+            <div class="prog-card-tag">Kids · Teens · Adultos</div>
+          </div>
+          <div class="prog-card-body">
+            <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">3x por
+                semana</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Horario</span><span class="prog-detail-val">Mañana,
+                tarde o noche</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Grupos</span><span class="prog-detail-val">Máx. 12
+                alumnos</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val"
+                style="color:var(--blue);font-weight:600">S/200/mes</span></div>
+          </div>
+        </div>
+        <div class="prog-card" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=atlas&prog=intensivo'">
+          <div class="prog-card-top">
+            <div class="prog-card-badge" style="background:#FFF3CD;color:#856404">Avanza rápido</div>
+            <div class="prog-card-name">Intensivo</div>
+            <div class="prog-card-tag">Para resultados en semanas</div>
+          </div>
+          <div class="prog-card-body">
+            <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">5x por
+                semana</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Duración</span><span class="prog-detail-val">4
+                semanas o más</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Ideal para</span><span
+                class="prog-detail-val">Vacaciones / urgente</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val"
+                style="color:var(--blue);font-weight:600">S/320/mes</span></div>
+          </div>
+        </div>
+        <div class="prog-card" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=atlas&prog=sabados'">
+          <div class="prog-card-top">
+            <div class="prog-card-badge" style="background:var(--gold-l);color:var(--gold)">Flexibilidad total</div>
+            <div class="prog-card-name">Solo Sábados</div>
+            <div class="prog-card-tag">Para la semana ocupada</div>
+          </div>
+          <div class="prog-card-body">
+            <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span
+                class="prog-detail-val">Sábados 2hrs</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Perfil</span><span class="prog-detail-val">Adultos
+                que trabajan</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Grupos</span><span class="prog-detail-val">Máx. 12
+                alumnos</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val"
+                style="color:var(--blue);font-weight:600">S/180/mes</span></div>
+          </div>
+        </div>
+        <div class="prog-card" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=atlas&prog=business'">
+          <div class="prog-card-top">
+            <div class="prog-card-badge" style="background:#F0FDF4;color:#166534">Profesional</div>
+            <div class="prog-card-name">Business English</div>
+            <div class="prog-card-tag">Reuniones y entrevistas</div>
+          </div>
+          <div class="prog-card-body">
+            <div class="prog-detail"><span class="prog-detail-lbl">Frecuencia</span><span class="prog-detail-val">2x por
+                semana</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Horario</span><span class="prog-detail-val">Noche o
+                sábado</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Enfoque</span><span class="prog-detail-val">Inglés
+                laboral real</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val"
+                style="color:var(--blue);font-weight:600">S/350/mes</span></div>
+          </div>
+        </div>
+        <div class="prog-card" style="cursor:pointer"
+          onclick="location.href='paradise-programs.html?brand=atlas&prog=toefl'">
+          <div class="prog-card-top">
+            <div class="prog-card-badge" style="background:#EFF6FF;color:#1D4ED8">Certificación</div>
+            <div class="prog-card-name">TOEFL / IELTS Prep</div>
+            <div class="prog-card-tag">Para estudiar en el extranjero</div>
+          </div>
+          <div class="prog-card-body">
+            <div class="prog-detail"><span class="prog-detail-lbl">Formato</span><span class="prog-detail-val">Por curso
+                (8 semanas)</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Requiere</span><span class="prog-detail-val">Inglés
+                intermedio</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Resultado</span><span class="prog-detail-val">Score
+                objetivo</span></div>
+            <div class="prog-detail"><span class="prog-detail-lbl">Desde</span><span class="prog-detail-val"
+                style="color:var(--blue);font-weight:600">S/450/curso</span></div>
+          </div>
+        </div>
+        <div class="prog-card" style="background:var(--blue);border-color:var(--blue);cursor:pointer"
+          onclick="location.href='paradise-programs.html?section=contacto'">
+          <div class="prog-card-top" style="border-color:rgba(255,255,255,.15)">
+            <div class="prog-card-badge" style="background:rgba(255,255,255,.15);color:var(--gold)">¿No sabes cuál?
+            </div>
+            <div class="prog-card-name" style="color:var(--white)">Te ayudamos a elegir</div>
+            <div class="prog-card-tag" style="color:rgba(255,255,255,.55)">Conversación sin compromiso</div>
+          </div>
+          <div class="prog-card-body"
+            style="display:flex;flex-direction:column;justify-content:flex-end;padding-top:1.5rem">
+            <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:1.25rem;line-height:1.55">Escríbenos y te
+              recomendamos el programa ideal según tu nivel, disponibilidad y objetivos.</p>
+            <div style="font-size:14px;font-weight:600;color:var(--white);display:flex;align-items:center;gap:.4rem">
+              Escribir ahora →</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="comparison" id="comparacion">
+    <div class="section-inner">
+      <div class="section-label">Por qué elegirnos</div>
+      <h2 class="section-title">Atlas vs.<br><em>otras opciones.</em></h2>
+      <p class="section-desc">¿Por qué no El Británico, una app o una academia grande? Aquí la comparación honesta.</p>
+      <div class="comp-table-wrap">
+        <table class="comp">
+          <thead>
+            <tr>
+              <th></th>
+              <th class="ours">Paradise Atlas</th>
+              <th>Academia grande</th>
+              <th>Apps (Duolingo…)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Grupos reducidos (&lt;12)</td>
+              <td class="ours"><span class="chk-yes">✓</span></td>
+              <td><span class="chk-no">✗</span> 20–30 alumnos</td>
+              <td><span class="chk-no">✗</span></td>
+            </tr>
+            <tr>
+              <td>Hablas desde el día 1</td>
+              <td class="ours"><span class="chk-yes">✓</span></td>
+              <td><span class="chk-mid">A veces</span></td>
+              <td><span class="chk-no">✗</span></td>
+            </tr>
+            <tr>
+              <td>Horarios flexibles</td>
+              <td class="ours"><span class="chk-yes">✓</span> 5 modalidades</td>
+              <td><span class="chk-mid">Limitado</span></td>
+              <td><span class="chk-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Retroalimentación real</td>
+              <td class="ours"><span class="chk-yes">✓</span> Profesor en vivo</td>
+              <td><span class="chk-yes">✓</span></td>
+              <td><span class="chk-no">✗</span></td>
+            </tr>
+            <tr>
+              <td>Precio accesible</td>
+              <td class="ours"><span class="chk-yes">✓</span> Desde S/200</td>
+              <td><span class="chk-no">✗</span> S/400–700</td>
+              <td><span class="chk-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Ruta Cambridge</td>
+              <td class="ours"><span class="chk-yes">✓</span></td>
+              <td><span class="chk-yes">✓</span></td>
+              <td><span class="chk-no">✗</span></td>
+            </tr>
+            <tr>
+              <td>Primera clase gratis</td>
+              <td class="ours"><span class="chk-yes">✓</span></td>
+              <td><span class="chk-no">✗</span></td>
+              <td><span class="chk-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Genera hablantes fluidos</td>
+              <td class="ours"><span class="chk-yes">✓</span></td>
+              <td><span class="chk-mid">Depende</span></td>
+              <td><span class="chk-no">✗</span> No demostrado</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND 2 -->
+  <div
+    style="background:var(--blue-d);padding:1.75rem 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem">
+    <div>
+      <div style="font-size:17px;font-weight:600;color:#fff;margin-bottom:.2rem">Elige tu modalidad y empieza hoy.</div>
+      <div style="font-size:13px;color:rgba(255,255,255,.55)">Ve los detalles completos de cada programa y escríbenos
+        directamente por WhatsApp en un solo paso.</div>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <a href="paradise-programs.html?brand=atlas"
+        style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.75rem;border-radius:10px;background:var(--gold);color:var(--ink);font-size:14px;font-weight:700;text-decoration:none;white-space:nowrap">Selecciona
+        tu programa →</a>
+      <a href="https://wa.me/51952381451?text=Hola%2C%20me%20interesa%20Paradise%20Atlas.%20%C2%BFMe%20pueden%20dar%20m%C3%A1s%20informaci%C3%B3n%3F"
+        target="_blank"
+        style="display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:10px;background:#25D366;color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        WhatsApp
+      </a>
     </div>
   </div>
-</section>
 
-<!-- CTA FINAL -->
-<section class="cta-final" id="cta">
-  <div class="cta-final-deco"></div>
-  <div class="cta-final-inner">
-    <h2 class="cta-final-title">Tu primera<br>clase es <em>gratis.</em></h2>
-    <p class="cta-final-sub">Sin compromiso. Sin tarjeta de crédito. Solo ven y comprueba que Atlas es diferente.</p>
-    <div class="cta-final-btns">
-      <button class="btn-gold" onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Atlas.', '_blank')">Reservar mi clase gratis →</button>
-      <button class="btn-ghost" onclick="window.open('https://wa.me/51952381451?text=Hola,%20quisiera%20más%20información%20sobre%20Paradise%20Atlas.', '_blank')">Escribir al WhatsApp</button>
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonios">
+    <div class="section-inner">
+      <div class="section-label">Lo que dicen nuestros alumnos</div>
+      <h2 class="section-title">Resultados reales.<br><em>Historias reales.</em></h2>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">"Llevaba años queriendo hablar inglés. En Atlas empecé a conversar desde la primera
+            semana. El profesor realmente nos hace hablar."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">LR</div>
+            <div>
+              <div class="testi-name">Luis R.</div>
+              <div class="testi-role">Profesional, 31 años · Programa adultos</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">"Mi hija lleva dos ciclos y el cambio es increíble. Ya puede ver series en inglés sin
+            subtítulos. El grupo pequeño hace toda la diferencia."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">MV</div>
+            <div>
+              <div class="testi-name">María V.</div>
+              <div class="testi-role">Mamá de alumna, 10 años · Grupo kids</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-stars">★★★★★</div>
+          <div class="testi-quote">"El intensivo de 4 semanas fue exactamente lo que necesitaba antes de mi viaje.
+            Llegué a España y me pude comunicar sin problema."</div>
+          <div class="testi-author">
+            <div class="testi-avatar">CG</div>
+            <div>
+              <div class="testi-name">Carlos G.</div>
+              <div class="testi-role">Universitario, 22 años · Programa intensivo</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer class="footer">
-  <strong>Paradise Academy</strong> · Lima, Perú · 2025
-  <div class="footer-programs">
-    <a class="footer-prog-link" href="paradise-studio.html">Paradise Studio →</a>
-    <a class="footer-prog-link" href="paradise-ascend.html">Paradise Ascend →</a>
-  </div>
-</footer>
+  <!-- FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2 class="section-title">Todo lo que<br><em>necesitas saber.</em></h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q open" onclick="tgl(this)">¿Necesito tener inglés previo para inscribirme? <span
+              class="faq-q-icon">+</span></div>
+          <div class="faq-a open">No. Tenemos grupos desde nivel completamente básico (cero inglés) hasta avanzado.
+            Cuando te contactas, te hacemos una evaluación breve de 5 minutos para ubicarte en el nivel correcto.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tgl(this)">¿Qué pasa si necesito cambiar de horario durante el ciclo? <span
+              class="faq-q-icon">+</span></div>
+          <div class="faq-a">Lo coordinamos con anticipación. Si hay disponibilidad en otro grupo del mismo nivel, te
+            pasamos sin costo adicional.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tgl(this)">¿Cuánto dura cada ciclo? <span class="faq-q-icon">+</span></div>
+          <div class="faq-a">Los grupos regulares duran 3–4 meses por nivel. El intensivo puede ser tan corto como 4
+            semanas o tan largo como necesites. El programa de solo sábados funciona por meses continuos.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tgl(this)">¿Las clases son en inglés o en español? <span
+              class="faq-q-icon">+</span></div>
+          <div class="faq-a">Depende del nivel. En básico se usa español como apoyo al inicio. A partir de
+            pre-intermedio, las clases son principalmente en inglés. En avanzado, 100% inglés.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="tgl(this)">¿Hay que comprar algún libro o material? <span
+              class="faq-q-icon">+</span></div>
+          <div class="faq-a">No imponemos un libro de texto específico. El profesor trabaja con materiales digitales y
+            recursos propios. Si hay algún material adicional recomendado, te avisamos con anticipación.</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-var nav = document.getElementById('navbar');
-window.addEventListener('scroll', function(){
-  nav.classList.toggle('scrolled', window.scrollY > 80);
-});
-function tgl(el){
-  var a = el.nextElementSibling;
-  var open = el.classList.contains('open');
-  el.classList.toggle('open', !open);
-  a.classList.toggle('open', !open);
-}
-document.addEventListener("DOMContentLoaded", function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta">
+    <div class="cta-final-deco"></div>
+    <div class="cta-final-inner">
+      <h2 class="cta-final-title">Tu primera<br>clase es <em>gratis.</em></h2>
+      <p class="cta-final-sub">Sin compromiso. Sin tarjeta de crédito. Solo ven y comprueba que Atlas es diferente.</p>
+      <div class="cta-final-btns">
+        <button class="btn-gold"
+          onclick="window.open('https://wa.me/51952381451?text=Hola,%20me%20interesa%20agendar%20mi%20clase%20de%20prueba%20gratis%20en%20Paradise%20Atlas.', '_blank')">Reservar
+          mi clase gratis →</button>
+        <button class="btn-ghost"
+          onclick="window.open('https://wa.me/51952381451?text=Hola,%20quisiera%20más%20información%20sobre%20Paradise%20Atlas.', '_blank')">Escribir
+          al WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <strong>Paradise Academy</strong> · Lima, Perú · 2025
+    <div class="footer-programs">
+      <a class="footer-link" href="paradise-studio.html">Paradise Studio →</a>
+    <a class="footer-link" href="paradise-ascend.html">Paradise Ascend →</a>
+    </div>
+  </footer>
+
+  <script>
+    var nav = document.getElementById('navbar');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
     });
-  }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
-
-  document.querySelectorAll('.section, .value-card, .prog-card, .testi-card, .price-card').forEach((el, index) => {
-    el.classList.add('animate');
-    if(el.classList.contains('value-card') || el.classList.contains('prog-card') || el.classList.contains('testi-card')) {
-       el.style.transitionDelay = (index % 3) * 0.1 + 's';
+    function tgl(el) {
+      var a = el.nextElementSibling;
+      var open = el.classList.contains('open');
+      el.classList.toggle('open', !open);
+      a.classList.toggle('open', !open);
     }
-    observer.observe(el);
-  });
-});
-</script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+      document.querySelectorAll('.section, .value-card, .prog-card, .testi-card, .price-card').forEach((el, index) => {
+        el.classList.add('animate');
+        if (el.classList.contains('value-card') || el.classList.contains('prog-card') || el.classList.contains('testi-card')) {
+          el.style.transitionDelay = (index % 3) * 0.1 + 's';
+        }
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
+
 </html>
